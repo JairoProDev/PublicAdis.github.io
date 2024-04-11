@@ -1,10 +1,9 @@
 /*-----------------------------------------------------------------------------------
 
     landing Name:PublicAdis APP
-    landing URI: JairoSaul.com/PublicAdis
+    landing URI: PublicAdis.com
     Description: This is App Landing Page
-    Author: JairoSaul
-    Author URI: https://themeforest.net/user/JairoSaul
+    Author: Adis Team
 
 -----------------------------------------------------------------------------------
 
@@ -46,7 +45,7 @@ body {
 h1 {
   line-height: 1.4em;
   font-size: 42px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #586082;
 }
 
 h2 {
@@ -506,9 +505,9 @@ section {
 .theme-nav .nav-item {
   font-size: 14px;
   padding: 20px 5px;
-  color: #ffffff;
+  color: #586082;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 .theme-nav .dropdown-menu .nav-item {
   font-size: 13px;
@@ -556,7 +555,7 @@ section {
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: rgba(255, 255, 255, 0.6);
+  color: #586082;
 }
 
 .navbar-nav > li.dropdown {
@@ -640,7 +639,7 @@ section {
 }
 
 .main-title {
-  color: #ffffff;
+  color: #586082;
   font-weight: 600;
 }
 
@@ -3625,6 +3624,8 @@ li.nav-item.dropdown:first-child .dropdown-menu {
     font-size: 32px;
     line-height: 48px;
     margin-bottom: 20px;
+    color: #586082;
+
   }
   .about-box {
     padding-bottom: 30px;
