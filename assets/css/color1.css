@@ -2609,7 +2609,7 @@ li.nav-item.dropdown:first-child .dropdown-menu {
   padding: 0;
 }
 .faq .accordion button[aria-expanded="true"] {
-  color: #f0f8ff;
+  color: #0d6efd;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
