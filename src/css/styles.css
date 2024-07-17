@@ -3,7 +3,6 @@
 
 /* *Here we set our global vars value: */
 :root{
-
     /* * global font style: */
     --global-font: "Poppins", sans-serif;
 
@@ -76,14 +75,10 @@
     --benefit-icon-width: 104%;
     --benefit-icon-height: 104%;
 
-
     /*Animation move value*/
     --slider-animation-translate-size: 1rem;
 
-
     /* * Images size: */
-
-    /* *Slider images dimensions: */
     --slider-image-container-width: 100%;
     --slider-image-container-height: 100%;
 
@@ -96,11 +91,9 @@
     --app-slider-image-width: 25vw;
     --app-slider-image-height: 71.3vh;
 
-
     /* * Buttons size: */
     --app-button-width: 37%;
     --app-button-height: 3rem;
-
 
     /* *cards value: */
     --card-radius-value: 1.3rem;
@@ -135,638 +128,417 @@
     /* * General transition time: */
     --general-transition-time: 400ms;
 
-
     /* * shadows size: */
     --general-shadow-color: black;
     --general-shadow-x: 2rem;
     --general-shadow-y: 2rem;
-
-
-
 }
 
 /* * We set our universal settings */
 * {
-
     font-size: var(--normal-font-size);
-
     font-family: var(--global-font);
-
     color: var(--font-color);
-
     font-weight: 600;
-
 }
 
-
-/* *We set our boy display for center our motherbox */
+/* *We set our body display for center our motherbox */
 body{
-
     display: flex;
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
-
     background-color: var(--background-color);
-
 }
-
 
 /* * GLOBAL CLASSES: */
 
 /* * Here we set our main contaier dimensions */
 .motherBox{
-
     width: 98.85vw;
     height: fit-content;
-
 }
 
 .pageSection{
-
     width: 100%;
     height: 100vh;
-
     display: flex;
-
     align-items: center;
-
     overflow: hidden;
-
 }
 
 .title{
-
     font-size: var(--title-size);
-
     width: fit-content;
     height: fit-content;
-
 }
 
 .subTitle{
-
     font-size: var(--sub-titles-size);
-
     width: fit-content;
     height: fit-content;
-
-
 }
 
 .mainTitle{
-
     font-size: var(--main-titles-size);
-
     width: fit-content;
     height: fit-content;
-
     color: var(--main-title-color);
-
 }
 
 .singleComponent{
-
     background-color: var(--component-color);
-
     width: 98.85vw;
     height: 15vh;
-
 }
 
 .accessIcon{
-
     width: var(--access-icon-width);
     height: var(--access-icon-height);
-
 }
 
 .appButton{
-
     width: var(--app-button-width);
     height: var(--app-button-height);
-
     background-color: var(--app-button-color);
-
     color: var(--app-button-color-text);
-
     border-radius: var(--app-button-radius);
-
     border-style: hidden;
-
     display: flex; 
     align-items: center;
-
     gap: 10%;
-
     transition: all var(--general-transition-time);
-
     padding: 0 1.2% 0 1.2%;
     margin-top: 5%;
-
 }
 
 .appButton:hover{
-
     scale: 1.03;
-
     background-color: var(--app-button-hover-color);
-
 }
 
 .appButtonLink{
-
     color: var(--app-button-color-text);
     text-decoration: none;
-
     font-size: var(--app-button-font-size);
-
 }
 
 .sectionMainTitle{
-
     color: var(--main-section-title-span-color);
-
     width: fit-content;
-
     padding: 0 5% 0 5%;
-
     border-radius: var(--service-title-radius-value);
     background-color: white;
-
     box-sizing: border-box;
     height: 10%;
     text-align: center;
-
     font-size: var(--main-titles-size);
 }
-
 
 /* *COMPONENT CLASSES: */
 
 /* * NAV BAR: */
 
 #navBar{
-
     height: 10vh;
-
     display: flex;
-
     align-items: center;
-
     overflow: hidden;
-
     padding: 0;
     margin: 0;
-
 }
 
 #navOptionsList{
-
     display: flex;
-
     width: 65%;
-
     gap: 5%;
-
     margin-left: 3%;
-
 }
 
 .navOption{
-
     text-decoration: none;
-
     color: whitesmoke;
-
     font-size: var(--link-font-size);
-
     transition: all var(--general-transition-time);
-
 }
 
 .navOption:hover{
-
     color: var(--hover-main);
     scale: 1.005;
-
 }
 
 #pageLogoSpan{
-
     color: var(--main-span-color);
-
     transition: all var(--general-transition-time);
-
 }
 
 #pageLogoSpan:hover{
-
     color: var(--hover-main-span);
-
 }
 
 #logoTitle{
-
     transition: all var(--general-transition-time);
-
 }
 
 #logoTitle:hover{
-
     color: var(--hover-main);
-
 }
 
 .logo{
-
     text-decoration: none;
-
     margin-left: 2.5%;
-
     width: 20%;
     height: 100%;
-
     transition: all var(--general-transition-time);
-
     display: flex;
     align-items: center;
-
 }
 
 .logo:hover{
-
     scale: 1.02;
-
 }
 
 #logoIcon{
-
     border-radius: 100%;
-
     width: var(--main-icon-width);
     height: var(--main-icon-heigth);
-
 }
-
 
 /* * MAIN SLIDER COMPONENT: */
 .sliderImageContainer{
-
     width: fit-content;
     height: fit-content;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 #webAppImage{
-
     width: var(--web-app-image-width);
     height: var(--web-app-image-height) ;
-
     animation: float 2s linear infinite;
     transition: all var(--general-transition-time);
-
 }
 
 #phoneAppImage{
-
     width: var(--phone-app-image-width) ;
     height: var(--phone-app-image-height);
-
     animation: float 2s linear infinite;
     transition: all var(--general-transition-time);
-
 }
 
 /**Animation of the images*/
-
 @keyframes float {
-
     0%, 100%{
-
         transform: translateY(0rem);
-
     }
-
     50%{
-
         transform: translateY(var(--slider-animation-translate-size));
-
     }
-
 }
 
 .mainSliderImage:hover{
-
     scale: 1.03;
-
 }
 
 .mainSliderImageLink{
-
     width: fit-content;
     height: fit-content;
-
 }
-
-
-
 
 /* *INFO BOX COMPONENT CLASSES: */
 
 #mainText{
-
     width: 90%;
     height: fit-content;
-
     display: flex;
     justify-content: start;
-
     color: var(--font-color);
-
     margin-right: 10%;
     margin-bottom: 3%;
-
 }
 
 #infoBox{
-
     width: fit-content;
     height: fit-content;
-
     display: flex;
     justify-content: center;
     flex-flow: column;
     align-items: center;
-
 }
 
 #buttonsContainer{
-
     display: flex;
-
     width: 100%;
     height: fit-content;
-
     gap: 5%;
-
 }
-
 
 /* * Services components: */
 
 #servicesContainer{
-
     width: 100%;
     height: 90%;
     padding-left: 2%;
     padding-right: 2%;
-
     box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .service{
-
     width: 33.33%;
     height: 83%;
-
     border-radius: var(--card-radius-value);
-
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
     background-color: white;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
-
 }
 
 .serviceTitle{
-
     font-size: var(--service-title-font-size);
-
     width: 100%;
     height: fit-content;
-
     text-align: center;
-
     box-sizing: border-box;
-
     margin: 0;
     padding: 0;
-
 }
 
-
 .serviceTitleSpan{
-
     color: var(--service-title-span-color);
     font-size: var(--service-title-span-size);
-
 }
 
 .serviceIcon{
-
     width: var(--service-icon-width);
     height: var(--service-icon-height);
-
 }
 
 #serviceMainTitle{
-
     margin: 2% 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-
 
 /* * Benefits Components classes: */
 
 .benefitComponent{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 42%;
     height: 100%;
-
     border-radius: var(--card-radius-value);
-
     background-color: white;
-
 }
 
 .benfitsContainer{
-
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     gap: 3%;
-
     width: 100%;
     height: 42%;
-
     margin-bottom: 3%
-
 }
 
-
-
 .benefitTitle{
-
     font-size: var(--benefit-title-font-size);
     color: var(--font-color);
-
     width: fit-content;
     height: fit-content;
-
 }
 
 .benefitTitleSpan{
-
     font-size: var(--benefit-title-span-font-size);
     color: var(--benefit-title-span-color);
-
 }
 
 .benefitIcon{
-
     width: var(--benefit-icon-width);
     height: var(--benefit-icon-height);
-
 }
 
 #benefitsMainTitle{
-
     margin-bottom: 2%;    
-
 }
-
 
 /* * App slider section components: */
 .appSliderImage{
-
     width: var(--app-slider-image-width);
     height: var(--app-slider-image-height);
-
 }
 
 .stepMessage{
-
     font-size: var(--step-message-font-size);
-
     width: 99%;
     height: 3vh;
-
     margin-bottom: 1vh;
-
 }
 
 #sliderTitle{
-
     height: 7%;
-
     font-size: var(--slider-title-font-size);
-
 }
-
 
 /* *Contact section components: */
 
 .contactCard{
-
     width: 75vw;
     height: 65vh;
-
     display: flex;
-
     margin-top: 2%;
-
     border-radius: var(--contact-card-border-radius);
-
     background-color: white;
-
 }
 
-
 .contactIcon{
-
     width: var(--contact-icon-width);
     height: var(--contact-icon-height);
     transition: all var(--general-transition-time);
-
 }
 
 .contactIcon:hover{
-
     scale: 1.1;
-
 }
 
 .iconsContainer{
-
     width: 100%;
     height: fit-content;
     margin-bottom: 6.5%;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 3.5%;
-
 }
 
 .contactTitleIcon{
-
     color: var(--benefit-title-span-color);
     font-size: 1.8rem;
-
     animation: float3 linear infinite 2s;
-
 }
 
 #contactText{
-
     width: 96%;
     height: fit-content;
-
     font-size: var(--contact-text-font-size);
     color: var(--contact-text-color);
-
     text-align: center;
-
 }
 
 .contactSpan{
-
     color: var(--hover-main-span);
-
     font-size: var(--contact-span-font-size);
-
 }
 
 .contactCardSection{
@@ -774,341 +546,223 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     width: 50%;
     height: 100%;
-
 }
 
 .iconsTitle{
-
     font-size: var(--icons-title-font-size);
     margin-bottom: 1%;
-
 }
 
 .inconsTitleSpan{
-
     font-size: var(--icons-title-span-font-size);
-
     color: var(--hover-main-span);
-
 }
 
 @keyframes float2 {
-
     0%, 100%{
-
         transform: translateY(0%);
-
     }
-
     50%{
-
         transform: translateY(2%);
-
     }
-
 }
 
 @keyframes float3 {
-
     0%, 100%{
-
         transform: translateY(0rem);
-
     }
-
     50%{
-
         transform: translateY(0.4rem);
-
     }
-
 }
 
 #cardMainIcon{
-
     border-radius: 100%;
-
     width: var(--main-image-card-width);
     height: var(--main-image-card-height);
     margin-bottom: 14%;
-
     animation: infinite linear float2 2s;
-
     transition: all var(--general-transition-time);
-
 }
 
 #cardMainIcon:hover{
-
     scale: 1.07;
-
 }
 
 #contactsMainTitle{
-
     height: 8%;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
-
 
 #gmailIconMessage{
-
     display: none;
-
     content: 'Click para copiar';
-
     width: var(--contact-icon-width);
     height: var(--contact-icon-height);
-
     text-align: center;
-
     z-index: 2;
     position: absolute;
-
     left: 1;
-
     margin-right: -8%;
-
     font-size: 110%;
-
     background-color: whitesmoke;
     opacity: 50%;
-
     transition: all var(--general-transition-time);
-
 }
 
-
 /* * App features section components. */
-
 /* *Slider: */
 
 #appSlider{
-
     border-radius: var(--carousel-border-radius);
-
 }
 
 .appSlide{
-
     width: 100%;
     height: 100%;
     border-radius: var(--carousel-border-radius);
-
     background-color: white;
-
     display: flex;
     flex: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     border: var(--slide-border-size) solid var(--slide-border-color);
-
 }
 
-
 .sliderCard{
-
     display: flex;
     flex-direction: column;
-
     width: 50%;
     height: 57%;
-
     background-color: red;
 }
 
 .sliderIcon{
-
     width: 46%;
     height: 46%;
-
 }
 
 #localIcon{
-
     z-index: 2;
-
     top: 0.2%;
-
 }
 
 .slideTitle{
-
     font-size: var(--slide-title-font-size);
-
 }
 
 .slideText{
-
     font-size: var(--slide-text-size);
-
     color: var(--benefit-title-span-color);
-
     width: 65%;
     height: fit-content;
     text-align: center;
-
 }
 
 .slideTextSpan{
-
     color: var(--slide-border-color);
     font-size: var(--slide-text-span-size);
-
 }
 
 .appSliderImage{
-
     margin-top: 14.1%;
-
 }
-
-
 
 /* * SECTION STYLES */
 
 /* *Main section : */
 #infoBoxSection{
-
     box-sizing: border-box;
-
     width: 51%;
     height: 100%;
-
     padding-left: 2%;
-
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-
 }
 
 #sliderSection{
-
     width: 49%;
     height:  100%;
-
     overflow: hidden;
-
     padding: 0;
     margin: 0;
-
     gap: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 /* * Services Section: */
-
 .sectionForServices{
-
     width: 100%;
     height: 50%;
-
     display: flex;
     justify-content: center;
-
     gap: 3%;
-
 }
 
 #servicesSection{
-
     display: flex;
     flex-direction: column;
-
     margin-bottom: 4%;
-
 }
 
 #sectionForServices1{
-
     align-items: end;
-
     padding-bottom: 1%;
-
 }
 
 #sectionForServices2{
-
     align-items: start;
-
     padding-top: 1%;
     padding-bottom: 1%;
-
 }
-
 
 /* *Benefits section styles: */
-
 #benefitsSection{
-
     display: flex;
     flex-direction: column;
-
 }
-
 
 /* *Contacts section: */
 #contactsSection{
-
     height: 104vh;
-
 }
-
 
 /* * App slider section: */
 #appSliderSection{
-
     display: flex;
     flex-direction: column;
     justify-content: start;
     flex-wrap: wrap;
     align-items: center;
-
     height: 105vh;
-
 }
-
 
 /* *Application section: */
 #applicationSection{
-
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-
 #contactsSection{
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
 }
 
-
 @media(max-width:450px){
-
-
     :root{
-
         /* * global font style: */
         --global-font: "Poppins", sans-serif;
     
@@ -1181,13 +835,10 @@ body{
         --benefit-icon-width: 74%;
         --benefit-icon-height: 74%;
     
-    
         /*Animation move value*/
         --slider-animation-translate-size: 0.6rem;
     
-    
         /* * Images size: */
-    
         --web-app-image-width: 112vw;
         --web-app-image-height: 36vh; 
     
@@ -1197,199 +848,134 @@ body{
         --app-slider-image-width: 62vw;
         --app-slider-image-height: 54.3vh;
     
-    
         /* * Buttons size: */
         --app-button-width: 38%;
         --app-button-height: 2.2rem;
     
-    
         /* * General transition time: */
         --general-transition-time: 400ms;
-    
     }
 
     #mainSection{
-
         flex-direction: column-reverse;
-
     }
 
     .service{
-
         height: 62%;
-
     }
 
     #sectionForServices1{
-
         align-items: center;
-
     }
 
     .benefitComponent{
-
         height: 88%;
-
     }
 
     .benefitTitle{
-
         text-align: center;
-
     }
 
     .contactTitleIcon{
-
         font-size: 1.2rem;
-
     }
 
     .iconTitle{
-
         font-size: 0.9rem;
-
     }
 
     .contactCard{
-
         flex-direction: column;
-
         margin-top: 10%;
-
     }
 
     .contactCardSection{
-
         width: 100%;
         height: 50%;
-
     }
 
     .appSliderImage{
-
         margin-top: 24%;
     }
 
     #proveSliderContainer1{
-
         width: 89vw;
         height: 65.5vh;
-
     }
 
     .slideText{
-
         width: 83%;
-
     }
 
     #appSliderSection{
-    
         height: 80vh;
-
     }
 
     #globalSlide{
-
         padding-bottom: 15%;
-
     }
 
     #globalIcon{
-
         top: 28%;
-
     }
 
     .contactIconFooter{
-
         width: 2.4rem;
         height: 2.4rem;
-
         transition: all var(--general-transition-time);
-
     }
 
     .contactIconFooter:hover{
-
         scale: 1.1;
-
     }
 
     #sliderSection{
-
         width: 100%;
         height: 41%;
-
     }
 
     #infoBoxSection{
-
         width: 100%;
         height: 51%;
-
     }
 
     #proveSliderContainer2{
-
         width: 100vw;
-
         height: 44vh;
-
     }
 
     #navBar{
-
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
         padding: 0%;
-
         height: 20%;
-
     }
 
     #navOptionsList{
-
         background-color: #205372;
-
         justify-content: center;
         align-items: center;
-
         width: 100%;
         height: 2.3rem;
-
         margin: 0%;
-
         gap: 0.5rem;
-
     }
 
     #logoContainer{
-
         margin: 0;
-
         width: fit-content;
-
     }
 
     #contactsMainTitle{
-
         margin-bottom: 17%;
-
     }
 
     .singleComponent{
-
         width: 100%;
-
     }
 
     .motherBox{
-
         width: 100vw;
-
     }
-
 }
