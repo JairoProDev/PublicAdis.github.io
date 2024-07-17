@@ -1,2070 +1,799 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PublicAdis | Portal digital de anuncios | Avisos clasificados | Negocios y Oportunidades</title>
-    <meta charset="utf-8" />
-    <meta name="description" content="PublicAdis - Anuncia lo que ofreces y consigue más personas interesadas" />
-    <meta name="keywords" content="PublicAdis, BuscAdis, Autos, Empleos, Inmuebles, Oficios, Usados, Servicios, Productos " />
     
-    <meta property="og:title" content="PublicAdis | Avisos clasificados" />
-    <meta property="og:description" content="PublicAdis - Anuncia lo que ofreces y consigue más personas interesadas" />
-    <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
-    <meta property="og:url" content="https://PublicAdis.com" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:site_name" content="PublicAdis" />
-    <meta name="twitter:image:alt" content="PublicAdis - Anuncia lo que ofreces y consigue más personas interesadas">
-    <meta name="author" content="Adis" />
+    <!-- *Font awsome -->
+    <script src="https://kit.fontawesome.com/09fe3c9c5c.js" crossorigin="anonymous"></script>
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- favicon-->
-    <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
-    <!-- Font Family-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
-    <!-- Animation CSS-->
-    <link rel="stylesheet" href="../../assets/css/animate.min.css" />
-    <!-- Owl carousel .css-->
-    <link rel="stylesheet" href="../../assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../../assets/css/owl.theme.default.min.css" />
-    <!-- font-awesome css-->
-    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css" />
-    <!-- swiper slider-->
-    <link rel="stylesheet" href="../../assets/css/swiper.min.css" />
-    <!-- Style .css-->
-    <link
-      id="color"
-      rel="stylesheet"
-      href="../../assets/css/color1.css"
-      media="screen"
-    />
-    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="shortcut icon" href="./src/assets/icons/favicon.ico" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-ZPQ76SP32X"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    <!-- * Alipne CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-      gtag("config", "G-ZPQ76SP32X");
-    </script>
-  </head>
-  <body data-spy="scroll" data-bs-target=".navbar" data-offset="75">
-    <!-- loader-->
-    <!-- <div class="loader-wrapper">
-      <div id="loader">
-        <div id="shadow"></div>
-        <div id="box"></div>
-      </div>
-    </div> -->
-    <!-- loader end-->
-    <!-- Nav start-->
-        <!-- Nav start-->
-    <nav class="navbar navbar-expand-lg theme-nav fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"
-            ><img src="../../assets/images/logo.png" alt="logo" class="logo-principal"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainmenu"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"
-              ><i class="fa fa-align-justify" aria-hidden="true"></i
-            ></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainmenu">
-            <ul class="navbar-nav ms-auto" id="mymenu">
-              <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">Beneficios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#feature">Características</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#screenshots">Aplicación</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
-              <!-- <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#news"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >Blog</a
-                >
-                <ul class="dropdown-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="blog.html">lista de blogs</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="blog-details.html">detalles del blog</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="blogs-leftside.html">leftsidebar</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="blogs-rightside.html"
-                      >rightsidebar</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="blog-details-with-leftsidebar.html"
-                      >details leftsidebar</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="blog-details-with-rightsidebar.html"
-                      >details rightsidebar</a
-                    >
-                  </li>
-                </ul>
-              </li> -->
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contáctenos</a>
-              </li>
-              <!-- <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >Otra página</a
-                >
-                <ul class="dropdown-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="sign-in.html">Iniciar sesión</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="sign-up.html">registrarse</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="forgot-pass.html"
-                      >Contraseña olvidada</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="thank-you.html">Gracias</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="review.html">reseña</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="faq.html">FAQ</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="coming-soon.html">Muy pronto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="download.html">Descargar</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="request.html">Solicitar demostración</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="404.html">404</a>
-                  </li>
-                </ul>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-      </nav>
-    <!-- Nav end-->
-    <!-- slider-section-->
-        <!-- slider-section-->
-    <section class="slide-bg" id="home">
-        <div class="animation-circle"><i></i><i></i><i></i></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="d-flex-1">
-                <div class="slide-text">
-                  <div>
-                    <h1>
-                      Publica tus anuncios en el portal más grande de avisos clasificados en Cusco y llega más lejos con<span
-                        class="main-title"
-                      >
-                        PublicAdis!</span
-                      >
-                    </h1>
-                    <h4>
-                      👀Consigue más interesados en lo que ofreces <br>
-                      💰Vende, alquila o da en anticresis tu inmueble <br>
-                      🚗Muestra tu vehiculos para que lo compren <br>
-                      👷🏻Contrata al personal ideal para tu negocio <br>
-                      📈Vende más y más con PublicAdis <br>
-                      🎯Logra tus objetivos más rápido
-                    </h4>
-                    <div class="slid-btn">
-                      <a href="https://play.google.com/store/apps/details?id=buscadis.publicadis"
-                        ><img
-                          class="img-fluid"
-                          src="../../assets/images/app1.png"
-                          alt="app1"
-                          data-tilt=""
-                          data-tilt-perspective="50"
-                          data-tilt-speed="350"
-                          data-tilt-max="1.8" /></a
-                      ><a href="https://BuscAdis.com"
-                        ><img
-                          class="img-fluid"
-                          src="../../assets/images/app2.png"
-                          alt="app2"
-                          data-tilt=""
-                          data-tilt-perspective="50"
-                          data-tilt-speed="350"
-                          data-tilt-max="1.8"
-                      /></a>
+    <!-- *Services icons -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    
+    <!-- Tailwind link: -->
+    <link rel="stylesheet" href="./src/tailwind/output.css">
+
+    <!-- * Fiz script: -->
+    <script defer src = "./src/JS/index.js"></script>
+    <script defer src = "./src/JS/carouselApp.js"></script>
+
+</head>
+<body>
+    
+
+    <!-- *Mother box: -->
+    <div class="motherBox">
+
+            <!-- * Nav bar -->
+            <nav class = "singleComponent shadow-2xl" id = navBar>
+
+                <a href="https://buscadis.com/" class = "logo" id = "logoContainer">
+
+                    <img src="./src/assets/images/i01_download-1.png" alt="" class = "accessIcon" id = "logoIcon">
+
+                    <h1 class = "mainTitle" id = "logoTitle">Public<span id = "pageLogoSpan" class = "mainTitle">Adis</span></h1>
+                </a>
+
+                <!-- * Options of nav bar -->
+                <div id = "navOptionsList">
+
+                    <a href="#mainSection" class = "navOption">INICIO</a>
+                    <a href="#servicesSection" class = "navOption">SERVICIOS</a>
+                    <a href="#benefitsSection" class = "navOption">BENEFICIOS</a>
+                    <a href="#applicationSection" class = "navOption">APLICACION</a>
+                    <a href="#featuresSection" class = "navOption">CARACTERISTICAS</a>
+                    <a href="#contactsSection" class = "navOption">CONTACTANOS</a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- * Main section: -->
+            <section id = "mainSection" class = "pageSection">
+
+                <!-- * Section 1 -->
+                <section id = "infoBoxSection">
+
+                    <!-- * Info box component: -->
+                    <div id = "infoBox">
+
+                        <h1 class = "mainTitle" id = "mainText">
+
+                            Publica tus anuncios en el portal más grande de avisos clasificados en Cusco y llega más lejos con PublicAdis!
+
+                        </h1>
+
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="home-right">
-                <div class="mobile-slid">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/images/top-mobile.png"
-                    alt="top1"
-                  />
-                </div>
-                <div class="profile-msg">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/images/top2.png"
-                    alt="top2"
-                  />
-                </div>
-                <div class="awesome">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/images/top3.png"
-                    alt="top3"
-                  />
-                </div>
-                <div class="profile-1">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/images/lupa.png"
-                    alt="top4"
-                  />
-                </div>
-                <div class="emoji">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/images/altavoz.png"
-                    alt="top5"
-                  />
-                </div>
-                <div class="profile-2">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/images/dar-dinero.png"
-                    alt="top1"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end slider section-->
-    <!-- about section-->
-        <!-- about section-->
-    <section class="pb-0 about" id="about">
-        <div class="about-chat">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <div class="section-title">
-                  <h2>Beneficios de Anunciarte con PublicAdis</h2>
-                  <div class="line"></div>
-                </div>
-              </div>
-              <div class="col-md-12 about-box">
-                <div class="row">
-                  <div class="col-lg-3 col-sm-6 about-border">
-                    <div class="chat-box">
-                      <img
-                        src="../../assets/images/stay-connected.png"
-                        alt="stay-connected"
-                      />
-                      <h3 class="sub-title">Consigue más interesados</h3>
+
+                    <!-- * Access buttons container: -->
+                    <div id = "buttonsContainer">
+
+                        <!-- * Web page button: -->
+                            <button type="submit" class = "appButton"> 
+                                    
+                                <a href="https://buscadis.com/" class = "appButtonLink">BuscAdis web</a> 
+
+                                <!-- *Buscadis Icon: -->
+                                <a href="https://buscadis.com/">
+                                    <svg version="1.1" viewBox="0 0 2048 2048" width="40" height="40" xmlns="http://www.w3.org/2000/svg" class = "accessIcon">
+                                    <path transform="translate(753)" d="m0 0h95l52 6 35 5 31 6 59 15 23 7 57 21 24 11 35 17 16 8 16 9 23 14 26 16 38 28 21 16 14 12 13 12 20 18 13 12 12 12 7 8 11 12 9 10 10 11 11 14 16 21 14 19 12 17 34 56 14 27 14 29 11 24 12 33 13 36 8 30 12 48 7 39 5 40 3 37v82l-1 22-5 46-5 32-7 36-11 44-9 29-12 35-12 29-14 32-21 41-11 19-13 21-9 15 1 4 531 531 9 11 10 12 9 16 8 17 7 22 4 25v24l-4 22-8 26-10 20-8 12-9 11-9 10-11 10-15 11-23 12-24 8-14 3-17 2h-18l-24-4-24-7-23-11-12-8-17-14-15-14-467-467v-2l-4-2v-2l-4-2v-2l-4-2v-2l-4-2v-2l-4-2v-2l-4-2v-2l-4-2-5-6-8-7-11-11-1-2-6 1-20 12-21 13-34 18-28 14-42 18-28 10-36 12-46 12-40 8-31 5-35 4-23 2-19 1-41 1-36-1-38-3-40-5-34-6-30-7-53-14-31-11-35-13-16-7-62-30-30-18-26-16-15-10-16-12-19-14-21-16-14-13-8-7-14-13-8-7-16-15-11-12-12-13-7-8-12-13-11-13-14-19-16-21-10-14-12-19-17-28-13-22-17-34-11-23-10-24-18-49-6-18-18-70-6-34-4-27-4-35-2-20v-95l8-68 8-45 16-63 7-23 17-46 8-20 14-30 8-16 8-17 16-27 17-28 12-19 10-13 9-12 14-19 10-13 9-10 7-8 12-13 11-12 12-13 13-13 8-7 14-13 8-7 13-12 17-13 19-14 21-16 15-10 25-15 28-17 23-12 25-12 30-14 63-23 20-6 54-14 36-7 40-6 36-4z" fill="#010101"/>
+                                    <path transform="translate(780,240)" d="m0 0h38l33 2 39 5 28 5 43 11 21 7 35 13 33 16 17 8 28 17 21 13 18 14 19 14 14 12 9 9 8 7 13 12 16 17 11 12 12 14 28 38 12 19 16 27 18 36 9 21 16 44 13 50 7 41 3 24 2 37v29l-2 40-5 35-4 25-11 43-11 33-12 31-19 39-8 15-17 28-10 15-14 19-13 17-9 10-7 8-9 10-7 7-7 8-16 15-13 12-11 9-15 12-19 14-15 10-28 17-16 9-24 12-22 10-29 11-31 10-40 10-36 6-22 3-50 3h-14l-43-2-25-3-38-6-44-11-19-6-25-9-25-10-41-20-27-16-18-11-18-13-13-10-12-9-10-9-8-7-12-11-16-15-9-10-14-15-9-10-30-40-11-17-19-32-20-40-11-27-13-37-10-38-5-24-7-49-2-36v-35l2-37 7-47 5-24 8-31 6-19 15-41 16-33 8-16 9-16 8-13 10-16 10-14 16-21 10-13 2-3h2l2-4 7-7 7-8 14-15 10-10 8-7 13-12 13-11 19-14 20-15 23-14 20-12 21-11 23-11 25-10 36-13 38-10 24-5 40-6 25-2z" fill="#BFE7F8"/>
+                                    <path transform="translate(787,80)" d="m0 0h24l56 3 33 4 44 7 56 14 26 8 41 15 22 9 43 21 16 8 26 16 23 14 13 9 48 36 15 14 14 12 17 16 20 20 7 8 9 10 7 8 9 10 9 12 14 19 10 13 12 17 13 22 14 23 9 16 18 37 11 25 13 35 11 33 13 50 4 19 8 52 2 18 3 55v28l-1 30-3 31-4 33-5 28-7 33-12 43-9 27-14 37-16 34-9 19-13 23-9 16-13 20-16 24-10 14-13 16-11 14-9 11-13 14-7 8-14 15-17 17-8 7-12 11-10 9-14 11-15 12-16 12-33 22-16 10-21 12-25 14-34 16-29 12-39 14-24 7-37 10-46 9-50 6-28 2-41 1-45-2-28-2-42-6-29-5-52-13-21-6-29-11-20-7-21-9-33-16-19-9-17-10-21-13-23-14-17-13-14-10-13-10-14-11-13-12-8-7-14-13-8-7-16-16-7-8-12-13-10-11-9-11-14-18-28-38-8-14-10-16-16-27-12-24-11-23-9-20-17-47-7-21-12-46-6-29-7-47-2-18-3-59v-17l2-43 2-26 7-47 5-28 9-35 8-29 18-50 8-19 13-28 8-16 10-19 9-15 24-39 16-21 11-15 12-16 12-14 16-17 9-10 7-8 15-15 8-7 24-22 14-12 19-14 21-16 21-14 50-30 34-17 28-13 40-15 36-12 60-15 50-8 26-3zm-7 160-34 2-37 5-28 5-46 12-31 11-28 11-22 11-21 10-25 15-24 15-18 14-15 11-10 8-13 12-10 9-12 11-11 11-7 8-14 15v2h-2l-29 38-16 24-10 17-9 15-8 15-11 23-7 16-16 43-10 37-6 26-7 45-2 23-1 22v35l2 36 7 49 5 24 10 38 10 29 11 28 14 29 8 17 17 28 12 19 14 19 16 21 12 14 8 8 7 8 15 16 10 9 16 15 22 18 11 8 19 14 13 8 28 17 27 14 30 14 30 11 20 7 41 11 25 5 40 6 30 2 24 1h14l50-3 42-6 25-5 41-11 26-9 31-12 41-20 16-9 23-14 15-10 19-14 13-10 11-9 13-12 8-7 17-16 11-12 14-15 7-8 14-18 13-18 10-14 12-20 13-22 16-32 9-20 16-44 9-32 7-29 5-33 3-22 2-40v-29l-2-37-4-30-6-35-13-50-14-39-8-20-23-46-17-28-12-18-14-19-13-17-12-14-16-17-11-12-17-16-8-7-14-13-19-14-21-16-21-13-20-12-16-9-25-12-22-10-44-16-50-13-35-6-32-4-33-2z" fill="#4ABAEB"/>
+                                    <path transform="translate(785,160)" d="m0 0h26l55 3 36 5 28 5 44 11 21 6 49 18 24 11 19 9 19 10 14 8 26 16 14 9 19 14 21 16 10 8 13 12 20 18 12 11 7 8 14 15 10 11 7 8 12 16 16 21 8 11 15 24 12 20 10 17 11 23 14 30 16 44 6 18 13 50 4 22 7 47 3 57v17l-3 56-6 41-4 24-14 54-7 21-16 43-16 34-10 21-10 17-26 42-8 10-24 32-12 14-15 16-7 8-11 12-15 14-8 7-20 18-20 15-21 16-18 12-28 17-19 11-26 13-28 13-49 18-23 7-48 12-43 7-25 3-53 3h-15l-52-3-32-4-36-6-22-5-41-11-50-18-20-9-41-20-16-9-42-26-18-14-14-10-14-11-14-12-16-15-12-11-16-16-7-8-15-16-9-11-14-18-14-19-11-15-13-22-15-25-8-15-11-23-10-22-16-43-7-22-11-42-4-19-7-46-3-43-1-22v-16l3-57 8-55 6-27 12-45 20-55 10-22 8-16 8-17 16-27 16-26 12-17 16-21 12-16 13-14 7-8 13-14 1-2h2l2-4 8-8 11-9 10-10 8-7 10-9 17-13 19-14 15-11 24-15 27-16 21-11 28-13 16-7 30-11 26-9 50-13 27-5 42-6 29-2zm-5 80-34 2-37 5-28 5-46 12-31 11-28 11-22 11-21 10-25 15-24 15-18 14-15 11-10 8-13 12-10 9-12 11-11 11-7 8-14 15v2h-2l-29 38-16 24-10 17-9 15-8 15-11 23-7 16-16 43-10 37-6 26-7 45-2 23-1 22v35l2 36 7 49 5 24 10 38 10 29 11 28 14 29 8 17 17 28 12 19 14 19 16 21 12 14 8 8 7 8 15 16 10 9 16 15 22 18 11 8 19 14 13 8 28 17 27 14 30 14 30 11 20 7 41 11 25 5 40 6 30 2 24 1h14l50-3 42-6 25-5 41-11 26-9 31-12 41-20 16-9 23-14 15-10 19-14 13-10 11-9 13-12 8-7 17-16 11-12 14-15 7-8 14-18 13-18 10-14 12-20 13-22 16-32 9-20 16-44 9-32 7-29 5-33 3-22 2-40v-29l-2-37-4-30-6-35-13-50-14-39-8-20-23-46-17-28-12-18-14-19-13-17-12-14-16-17-11-12-17-16-8-7-14-13-19-14-21-16-21-13-20-12-16-9-25-12-22-10-44-16-50-13-35-6-32-4-33-2z" fill="#010101"/>
+                                    <path transform="translate(1588,1477)" d="m0 0 4 1 356 356 9 13 6 12 4 14 1 6v17l-3 16-6 14-8 12-13 13-10 7-11 5-14 4-8 1h-14l-16-3-13-5-11-7-15-13-350-350 6-7 12-11 13-12 12-11 15-14 11-11 7-8 7-7 7-8 9-10z" fill="#4ABAEB"/>
+                                    <path transform="translate(796,320)" d="m0 0h23l27 2 25 3 28 5 25 6 24 7 30 11 30 13 23 12 19 11 27 18 21 16 11 9 11 10 8 7 7 6 7 8 17 17 9 11 11 13 20 28 12 19 12 21 14 28 10 24 3 11v13l-3 11-9 12-13 8-9 2h-10l-9-2-11-6-7-7-8-15-10-23-11-22-12-20-13-19-13-17-12-14-7-8-5-5v-2l-4-2v-2l-4-2v-2l-4-2v-2l-4-2-12-11-11-9-20-15-20-13-19-11-19-10-28-12-33-11-28-7-30-5-31-3-19-1-16-3-10-5-8-8-6-12-2-14 3-13 6-10 7-7 9-5z" fill="#010101"/>
+                                    <path transform="translate(1418,1306)" d="m0 0 5 3 109 109-1 4-14 15-7 8-9 9-7 8-15 16-10 10-8 7-16 15-24 22-4-1-110-110 1-5 8-7 12-11 8-7 10-9 12-11 10-9 9-10 10-11 7-8 12-13 9-10z" fill="#FCF5CF"/>
+                                    <path transform="translate(1239,760)" d="m0 0 16 3 10 6 8 9 5 10 1 5v14l-4 12-7 9-11 8-12 3h-11l-13-4-8-6-6-7-5-10-1-4v-16l4-11 6-8 8-7 9-4z" fill="#010101"/>
+                                    <path transform="translate(1355,732)" d="m0 0h1l2 16 2 37v29l-2 40-5 35-4 25-8 31-1-4 6-25 4-23 2-17 2-9 4-62v-11l-2-31z" fill="#4ABAEB"/>
+                                    <path transform="translate(917,418)" d="m0 0 9 2 11 4v1h-6l-6-3-8-3z" fill="#4ABAEB"/>
+                                    </svg>
+                                </a>
+                                
+                            </button>
+                        
+                        <!-- * Mobile app button: -->
+                        
+                        <button class = "appButton shadow-2xl">
+                                
+                            <a href="https://play.google.com/store/apps/details?id=buscadis.publicadis&pli=1" class = "appButtonLink">BuscAdis movil</a> 
+                                
+                            <!-- * Play Store Icon: -->
+                            <a href="https://play.google.com/store/apps/details?id=buscadis.publicadis&pli=1">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "accessIcon">
+                                    <linearGradient id="AraffhWwwEqZfgFEBZFoqa_L1ws9zn2uD01_gr1" x1="18.102" x2="25.297" y1="3.244" y2="34.74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#35ab4a"></stop><stop offset=".297" stop-color="#31a145"></stop><stop offset=".798" stop-color="#288739"></stop><stop offset="1" stop-color="#237a33"></stop></linearGradient><path fill="url(#AraffhWwwEqZfgFEBZFoqa_L1ws9zn2uD01_gr1)" d="M13.488,4.012C10.794,2.508,7.605,3.778,6.45,6.323L24.126,24l9.014-9.014L13.488,4.012z"></path><linearGradient id="AraffhWwwEqZfgFEBZFoqb_L1ws9zn2uD01_gr2" x1="19.158" x2="21.194" y1="23.862" y2="66.931" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f14e5d"></stop><stop offset=".499" stop-color="#ea3d4f"></stop><stop offset="1" stop-color="#e12138"></stop></linearGradient><path fill="url(#AraffhWwwEqZfgFEBZFoqb_L1ws9zn2uD01_gr2)" d="M33.14,33.014L24.126,24L6.45,41.677 c1.156,2.546,4.345,3.815,7.038,2.312L33.14,33.014z"></path><linearGradient id="AraffhWwwEqZfgFEBZFoqc_L1ws9zn2uD01_gr3" x1="32.943" x2="36.541" y1="14.899" y2="43.612" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffd844"></stop><stop offset=".519" stop-color="#ffc63f"></stop><stop offset="1" stop-color="#ffb03a"></stop></linearGradient><path fill="url(#AraffhWwwEqZfgFEBZFoqc_L1ws9zn2uD01_gr3)" d="M41.419,28.393 c1.72-0.96,2.58-2.676,2.581-4.393c-0.001-1.717-0.861-3.434-2.581-4.393l-8.279-4.621L24.126,24l9.014,9.014L41.419,28.393z"></path><linearGradient id="AraffhWwwEqZfgFEBZFoqd_L1ws9zn2uD01_gr4" x1="13.853" x2="15.572" y1="5.901" y2="42.811" gradientUnits="userSpaceOnUse"><stop offset=".003" stop-color="#0090e6"></stop><stop offset="1" stop-color="#0065a0"></stop></linearGradient><path fill="url(#AraffhWwwEqZfgFEBZFoqd_L1ws9zn2uD01_gr4)" d="M6.45,6.323C6.168,6.948,6,7.652,6,8.408 v31.179c0,0.761,0.164,1.463,0.45,2.09l17.674-17.68L6.45,6.323z"></path>
+                            </svg>
+
+                            </a>
+                            
+                        </button>
+
                     </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 about-border">
-                    <div class="chat-box">
-                      <img
-                        src="../../assets/images/get-notified.png"
-                        alt="get-notified"
-                      />
-                      <h3 class="sub-title">Aumenta tus ventas</h3>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 about-border">
-                    <div class="chat-box">
-                      <img
-                        src="../../assets/images/stay-updated.png"
-                        alt="stay-updated"
-                      />
-                      <h3 class="sub-title">Publica cuando quieras</h3>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                    <div class="chat-box">
-                      <img
-                        src="../../assets/images/mini-world.png"
-                        alt="mini-world"
-                      />
-                      <h3 class="sub-title">Escoge quienes te verán</h3>
-                    </div>
-                  </div>
+
+                </section>
+                
+
+                <!-- *Section 2 -->
+                <section id = "sliderSection">
+
+                    <!-- * Image slider component -->
+                    <main>
+
+                        <div x-data="imageSlider" class="relative" x-init="
+                    
+                            let setAnimation1, setAnimation2;
+    
+    
+                            /* * This functions works for call 'forward()' for iterate the images array index */
+                            function animation1(){
+    
+                            /* *We use a set inteval for constantly call the function every 4.5 seconds */
+                                setAnimation1 = setInterval(() => {
+    
+                                    currentIndex = currentIndex + 1;
+    
+                            /* *And once we reach the last index element we stop our interval and call our animation 2 */
+                                    if(currentIndex == images.length){
+    
+                                        clearInterval(setAnimation1);
+    
+                                        animation2();
+    
+                                    }
+    
+                                }, 4500);
+    
+                            }
+    
+                            /* * This functions works for call 'previous()' for substract the images array index */
+                            function animation2(){
+    
+                            /* *We use a set inteval for constantly call the function every 4.5 seconds */
+                                    setAnimation2 = setInterval(() => {
+                                            
+                                    currentIndex = 1;    
+    
+                            /* *And once we reach the first index element we stop our interval and call our animation 1 */
+                                        if(currentIndex == 1){
+    
+                                            clearInterval(setAnimation2);
+    
+                                            animation1();
+    
+                                        }
+    
+                                    }, 4500);
+                                    
+                            }
+    
+                                animation1();
+                    ">
+                    
+                            <div id = "proveSliderContainer2" class="relative overflow-hidden w-[58vw] h-[90vh]">
+    
+                            
+
+                                <template x-for="(image, index1) in images">
+    
+                                    <div x-show="currentIndex == index1 + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-400" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+    
+                                        <a :href="image.link">
+                                            
+                                            <img :src="image.src" :id = "image.id" alt="image" class="mainSliderImage absolute" />
+
+                                        </a>
+                                            
+    
+                                    </div>
+    
+                                </template>
+                            </div>
+                        </div>
+                    </main>
+
+                </section>
+
+            </section>
+
+
+            <!-- * Services Section: -->
+            <section id = "servicesSection" class = "pageSection">
+
+                <h2 class = "sectionMainTitle shadow-2xl" id = "serviceMainTitle">¡Descubre nuestros servicios!</h2>
+
+                <!-- * Services Container: -->
+                <div id = "servicesContainer">
+
+                    <section class = "sectionForServices" id = "sectionForServices1">
+
+                        <!-- * service for find more clients -->
+                        <div class="service shadow-2xl">
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/vfczflna.json"
+                                trigger="loop"
+                                delay="2000"
+                                stroke="bold"
+                                colors="primary:#1663c7,secondary:#16a9c7"
+                                class = "serviceIcon">
+                            </lord-icon>
+
+                            <h2 class = "serviceTitle">Consigue más <span class = "serviceTitleSpan">Interesados</span> en lo que ofreces</h2>
+
+                        </div>
+
+                        <!-- * service for rent or sell -->
+                        <div class="service shadow-2xl">
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/iawrhwdo.json"
+                                trigger="loop"
+                                delay="2000"
+                                stroke="bold"
+                                colors="primary:#c79816,secondary:#e8e230"
+                                class = "serviceIcon">
+                            </lord-icon>
+
+                            <h2 class = "serviceTitle">Vende, alquila o da en anticresis tu <span class = "serviceTitleSpan">Inmueble</span></h2>
+
+                        </div>
+
+                        <!-- * service for show vehicles for sell -->
+                        <div class="service shadow-2xl">
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/zzjjvkam.json"
+                                trigger="loop"
+                                delay="2000"
+                                stroke="bold"
+                                colors="primary:#121331,secondary:#30c9e8"
+                                class = "serviceIcon">
+                            </lord-icon>
+
+                            <h2 class = "serviceTitle">Muestra tus <span class = "serviceTitleSpan">Vehiculos</span> para que los compren</h2>
+
+                        </div>
+
+                    </section>
+                        
+                    <section class = "sectionForServices" id = "sectionForServices2">
+
+                        <!-- * service for contract people for company -->
+                        <div class="service shadow-2xl">
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/xzalkbkz.json"
+                                trigger="loop"
+                                delay="2000"
+                                stroke="bold"
+                                state="in-reveal"
+                                colors="primary:#121331,secondary:#30c9e8"
+                                class = "serviceIcon">
+                            </lord-icon>
+
+                            <h2 class = "serviceTitle">Contrata al <span class = "serviceTitleSpan">Personal</span> ideal para tu negocio</h2>
+
+                        </div>
+
+                        <!-- * service for grow your business -->
+                        <div class="service shadow-2xl">
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/abwrkdvl.json"
+                                trigger="loop"
+                                delay="2000"
+                                stroke="bold"
+                                state="in-growth"
+                                colors="primary:#3080e8,secondary:#08a88a"
+                                class = "serviceIcon">
+                            </lord-icon>
+
+                            <h2 class = "serviceTitle">Vende más y más con <span class = "serviceTitleSpan">PublicAdis</span>
+                            </h2>
+
+                        </div>
+
+                        <!-- * service for help to reach objectives -->
+                        <div class="service shadow-2xl">
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/nchegqgo.json"
+                                trigger="loop"
+                                delay="2000"
+                                stroke="bold"
+                                colors="primary:#1663c7,secondary:#30e8bd"
+                                class = "serviceIcon">
+                            </lord-icon>
+
+                            <h2 class = "serviceTitle">Logra tus <span class = "serviceTitleSpan">Objetivos</span> más rápido</h2>
+
+                        </div>
+
+                    </section>
+
                 </div>
-              </div>
-              <div class="col-md-12">
-                <div class="chat-slide">
-                  <h3>
-                    Qué vean tu aviso en cualquier momento desde su celular
-                  </h3>
-                  <br>
+
+            </section>
+
+
+            <!-- * Benefits Section -->
+            <section id = "benefitsSection" class = "pageSection mb-[2.2%]">
+
+                <h2 class = "sectionMainTitle shadow-2xl" id = "benefitsMainTitle">Beneficios de anunciarte con PublicAdis</h2>
+
+                <!-- * Benefits container: -->
+                <div class = "benfitsContainer">
+
+                        <!-- *Benefit card: -->
+                        <div class = "benefitComponent shadow-2xl">
+
+                            <!-- *Benefit Icon:  -->
+                            <lord-icon
+                                src="https://cdn.lordicon.com/wzrwaorf.json"
+                                trigger="loop"
+                                delay="1000"
+                                stroke="bold"
+                                state="in-reveal"
+                                colors="primary:#0a2e5c,secondary:#16a9c7"
+                                class = "benefitIcon">
+                            </lord-icon>
+
+                            <!-- * Benefit copywriting: -->
+                            <h2 class = "benefitTitle"><span class = "benefitTitleSpan">Consigue</span> mas interesados</h2>
+
+                        </div>
+
+                        <!-- *Benefit card: -->
+                        <div class = "benefitComponent shadow-2xl">
+
+                            <!-- *Benefit Icon:  -->
+                            <lord-icon
+                                src="https://cdn.lordicon.com/abwrkdvl.json"
+                                trigger="loop"
+                                stroke="bold"
+                                state="loop-all"
+                                colors="primary:#0a4e5c,secondary:#30e849"
+                                class = "benefitIcon">
+                            </lord-icon>
+
+                            <!-- * Benefit copywriting: -->
+                            <h2 class = "benefitTitle"><span class = "benefitTitleSpan">Aumenta</span> tus ventas</h2>
+
+                        </div>
+
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid text-center">
-          <img
-            class="img-fluid full-banner"
-            src="../../assets/images/banner.png"
-            alt="banner.png"
-          />
-        </div>
-      </section>
-    <!-- end about section-->
-    <!-- Feature section-->
-    <!-- Feature section-->
-<section class="theme-bg feature" id="feature">
-    <div class="container">
-      <div class="animation-circle-inverse"><i></i><i></i><i></i></div>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="section-title">
-            <h2 class="text-white">Funcionalidades de PublicAdis</h2>
-            <div class="line white"></div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="future-box">
-            <div class="future-timeline">
-              <ul>
-                <li class="timeline">
-                  <h4 class="sub-title">Amplitud de Audiencia:</h4>
-                  <p>Alcance a una amplia audiencia local y/o global, aumentando la visibilidad de tus anuncios.</p>
-                </li>
-                <li class="timeline">
-                  <h4 class="sub-title">Fácil de Usar:</h4>
-                  <p>Interfaz intuitiva y fácil de navegar que permite a los usuarios publicar y encontrar anuncios rápidamente.</p>
-                </li>
-                <li class="timeline">
-                  <h4 class="sub-title">Resultados Rápidos:</h4>
-                  <p>Alta tasa de respuesta gracias a una comunidad activa y comprometida.</p>
-                </li>
-                <li class="timeline">
-                  <h4 class="sub-title">Variedad de Categorías:</h4>
-                  <p>Encuentra y publica anuncios en múltiples categorías como empleos, inmuebles, vehículos, servicios, productos y más.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 future-mobile">
-          <img
-            class="img-fluid"
-            src="../../assets/images/feature-mob.png"
-            alt="feature-mob"
-          />
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="future-box">
-            <div class="future-timeline-right">
-              <ul class="text-start">
-                <li class="timeline-right">
-                  <h4>Búsqueda Avanzada:</h4>
-                  <p>Herramientas de búsqueda avanzadas y filtros detallados para encontrar exactamente lo que necesitas.</p>
-                </li>
-                <li class="timeline-right">
-                  <h4>Publicación Gratuita:</h4>
-                  <p>Opción de publicar anuncios de manera gratuita, con posibilidades de promoción pagada para mayor visibilidad.</p>
-                </li>
-                <li class="timeline-right">
-                  <h4>Geolocalización:</h4>
-                  <p>Funcionalidad de geolocalización para encontrar anuncios relevantes cerca de tu ubicación.</p>
-                </li>
-                <li class="timeline-right">
-                  <h4>Integración con Redes Sociales:</h4>
-                  <p>Comparte tus anuncios fácilmente en redes sociales para aumentar su alcance y visibilidad.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+
+                <!-- * Benefits container: -->
+                <div class = "benfitsContainer">
+
+                    <!-- *Benefit card: -->
+                    <div class = "benefitComponent shadow-2xl">
+
+                        <!-- *Benefit Icon:  -->
+                        <lord-icon
+                            src="https://cdn.lordicon.com/rqptwppx.json"
+                            trigger="loop"
+                            delay="1000"
+                            stroke="bold"
+                            colors="primary:#30c9e8,secondary:#3080e8"
+                            class = "benefitIcon">
+                        </lord-icon>
+
+                        <!-- * Benefit copywriting: -->
+                        <h2 class = "benefitTitle"><span class = "benefitTitleSpan">Pública</span> cuando quieras</h2>
+
+                    </div>
+
+                    <!-- *Benefit card: -->
+                    <div class = "benefitComponent shadow-2xl">
+
+                        <!-- *Benefit Icon:  -->
+                        <lord-icon
+                            src="https://cdn.lordicon.com/trkmlure.json"
+                            trigger="loop"
+                            delay="1000"
+                            stroke="bold"
+                            colors="primary:#121331,secondary:#16a9c7"
+                            class = "benefitIcon">
+                        </lord-icon>
+
+                        <!-- * Benefit copywriting: -->
+                        <h2 class = "benefitTitle"><span class = "benefitTitleSpan">Escoge</span> quienes te verán</h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- *Slider component section: -->
+            <section class = "pageSection" id = "appSliderSection">
+
+                <h2 class = "sectionMainTitle shadow-2xl mb-[2.2%] mt-[3%]" id = "sliderTitle">¡Anunciate en BuscaAdis!</h2>
+
+                <main>
+
+                    <!-- *Alpine component: -->
+                    <div x-data="imageSlider" class="relative" x-init="
+                
+                        let setAnimation1, setAnimation2;
+
+                        /* * This functions works for call 'forward()' for iterate the images array index */
+                        function animation1(){
+
+                        /* *We use a set inteval for constantly call the function every 4.5 seconds */
+                            setAnimation1 = setInterval(() => {
+
+                                currentIndex = currentIndex + 1;
+
+                        /* *And once we reach the last index element we stop our interval and call our animation 2 */
+                                if(currentIndex == sliderImages.length){
+
+                                    clearInterval(setAnimation1);
+
+                                    animation2();
+
+                                }
+
+                            }, 4500);
+
+                        }
+
+                        /* * This functions works for call 'previous()' for substract the images array index */
+                        function animation2(){
+
+                        /* *We use a set inteval for constantly call the function every 4.5 seconds */
+                                setAnimation2 = setInterval(() => {
+                                        
+                                currentIndex = 1;  
+                        
+
+                        /* *And once we reach the first index element we stop our interval and call our animation 1 */
+                                if(currentIndex == 1){
+
+                                    clearInterval(setAnimation2);
+
+                                    animation1();
+
+                                }
+
+                                }, 4500);
+                                
+                        }
+
+                            animation1();
+
+                        
+                ">
+                
+                        <div id = "proveSliderContainer1" class="relative overflow-hidden w-[52vw] h-[86.8vh] bg-white shadow-xl rounded-[1.2rem]">
+
+                            <template x-for="(sliderImage, index1) in sliderImages">
+
+                                <div x-show="currentIndex == index1 + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class = "flex flex-col items-center justify-center">
+
+                                    <p x-text="sliderImage.step" class = "stepMessage top-0 absolute text-center w-[100%] h-fit"></p>
+
+                                    <img :src="sliderImage.src" alt="image" class="appSliderImage " />
+
+                                </div>
+
+
+                            </template>
+                        </div>
+                    </div>
+                </main>
+
+            </section>
+
+
+            <!-- * Contacts Section: -->
+            <section id  = "contactsSection" class = "pageSection">
+
+                <h2 class = "sectionMainTitle shadow-2xl" id = "contactsMainTitle">!Contactanos y mira nuestro contenido en redes!</h2>
+
+                <div class="contactCard shadow-2xl">
+
+                    <!-- *Main text section -->
+                    <section class = "contactCardSection">
+
+                        <a href="https://buscadis.com/">
+
+                            <img src=".//src/assets/images/card_main_image.png" alt="" id = "cardMainIcon" class = "shadow-2xl">
+
+                        </a>
+
+                        <p id = "contactText"><span class = "contactSpan">Contactarnos</span> y hecharle un ojo a nuestras <span class = "contactSpan">redes sociales</span> esta a un <span class = "contactSpan">Click</span> de distancia.</p>
+                        
+
+                    </section>
+
+                    <!-- * Acess links section: -->
+                    <section class = "contactCardSection">
+
+                        <h3 class = "iconsTitle">!<i class="fa-solid fa-arrow-down contactTitleIcon"></i> Da <span class = "inconsTitleSpan">Click</span> para contactarnos <i class="fa-solid fa-arrow-down contactTitleIcon"></i>¡</h3>
+                        <div class = "iconsContainer">
+
+                                <!-- *Whatsapp icon -->
+                            <a href="https://wa.me/937054328">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIcon">
+                                    <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path><path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path><path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path><path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path><path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+
+                            <!-- *Gmail icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIcon" id ="gmailIcon">
+                                <path fill="#4caf50" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"></path><path fill="#1e88e5" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z"></path><polygon fill="#e53935" points="35,11.2 24,19.45 13,11.2 12,17 13,23.7 24,31.95 35,23.7 36,17"></polygon><path fill="#c62828" d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C9.132,8.301,8.228,8,7.298,8h0C4.924,8,3,9.924,3,12.298z"></path><path fill="#fbc02d" d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341C38.868,8.301,39.772,8,40.702,8h0 C43.076,8,45,9.924,45,12.298z"></path>
+                            </svg>
+
+                            <p id = "gmailIconMessage" class = "rounded-2xl">Click para copiar</p>
+
+                        </div>
+
+                        <h3 class = "iconsTitle">!<i class="fa-solid fa-arrow-down contactTitleIcon"></i> Da <span class = "inconsTitleSpan">Click</span> para ver nuestras redes <i class="fa-solid fa-arrow-down contactTitleIcon"></i>¡</h3>
+                        <div class = "iconsContainer">
+
+                                <!-- *Tiktok icon -->
+                            <a href="https://www.tiktok.com/@publicadis">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIcon">
+                                    <path fill="#212121" fill-rule="evenodd" d="M10.904,6h26.191C39.804,6,42,8.196,42,10.904v26.191 C42,39.804,39.804,42,37.096,42H10.904C8.196,42,6,39.804,6,37.096V10.904C6,8.196,8.196,6,10.904,6z" clip-rule="evenodd"></path><path fill="#ec407a" fill-rule="evenodd" d="M29.208,20.607c1.576,1.126,3.507,1.788,5.592,1.788v-4.011 c-0.395,0-0.788-0.041-1.174-0.123v3.157c-2.085,0-4.015-0.663-5.592-1.788v8.184c0,4.094-3.321,7.413-7.417,7.413 c-1.528,0-2.949-0.462-4.129-1.254c1.347,1.376,3.225,2.23,5.303,2.23c4.096,0,7.417-3.319,7.417-7.413L29.208,20.607L29.208,20.607 z M30.657,16.561c-0.805-0.879-1.334-2.016-1.449-3.273v-0.516h-1.113C28.375,14.369,29.331,15.734,30.657,16.561L30.657,16.561z M19.079,30.832c-0.45-0.59-0.693-1.311-0.692-2.053c0-1.873,1.519-3.391,3.393-3.391c0.349,0,0.696,0.053,1.029,0.159v-4.1 c-0.389-0.053-0.781-0.076-1.174-0.068v3.191c-0.333-0.106-0.68-0.159-1.03-0.159c-1.874,0-3.393,1.518-3.393,3.391 C17.213,29.127,17.972,30.274,19.079,30.832z" clip-rule="evenodd"></path><path fill="#fff" fill-rule="evenodd" d="M28.034,19.63c1.576,1.126,3.507,1.788,5.592,1.788v-3.157 c-1.164-0.248-2.194-0.856-2.969-1.701c-1.326-0.827-2.281-2.191-2.561-3.788h-2.923v16.018c-0.007,1.867-1.523,3.379-3.393,3.379 c-1.102,0-2.081-0.525-2.701-1.338c-1.107-0.558-1.866-1.705-1.866-3.029c0-1.873,1.519-3.391,3.393-3.391 c0.359,0,0.705,0.056,1.03,0.159V21.38c-4.024,0.083-7.26,3.369-7.26,7.411c0,2.018,0.806,3.847,2.114,5.183 c1.18,0.792,2.601,1.254,4.129,1.254c4.096,0,7.417-3.319,7.417-7.413L28.034,19.63L28.034,19.63z" clip-rule="evenodd"></path><path fill="#81d4fa" fill-rule="evenodd" d="M33.626,18.262v-0.854c-1.05,0.002-2.078-0.292-2.969-0.848 C31.445,17.423,32.483,18.018,33.626,18.262z M28.095,12.772c-0.027-0.153-0.047-0.306-0.061-0.461v-0.516h-4.036v16.019 c-0.006,1.867-1.523,3.379-3.393,3.379c-0.549,0-1.067-0.13-1.526-0.362c0.62,0.813,1.599,1.338,2.701,1.338 c1.87,0,3.386-1.512,3.393-3.379V12.772H28.095z M21.635,21.38v-0.909c-0.337-0.046-0.677-0.069-1.018-0.069 c-4.097,0-7.417,3.319-7.417,7.413c0,2.567,1.305,4.829,3.288,6.159c-1.308-1.336-2.114-3.165-2.114-5.183 C14.374,24.749,17.611,21.463,21.635,21.38z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+
+                            <!-- *Instagram icon -->
+                            <a href="https://www.instagram.com/publicadis">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIcon">
+                                    <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+                                </svg>
+                            </a>
+
+                            <!-- *Facebook icon -->
+                            <a href="https://www.facebook.com/publicadis">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIcon">
+                                    <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+
+            <!-- * Aplication Section -->
+            <section id = "applicationSection" class = "pageSection">
+
+                <h2 class = "sectionMainTitle shadow-2xl mb-[2%]" id = "contactsMainTitle">Nuestra app te hará destacar</h2>
+
+                <!-- * Carousel component: -->
+                    <div class="h-[80vh] w-[95%] overflow-hidden flex flex-nowrap text-center shadow-xl" id="appSlider">
+                        
+                        <div class = "space-y-4 appSlide pb-[4%] " id = "globalSlide">
+
+                            <h3 class = "slideTitle">Audiencia global</h3>
+
+                            <lord-icon
+
+                                id = "localIcon"
+                                src="https://cdn.lordicon.com/surcxhka.json"
+                                trigger="loop"
+                                delay = "1200"
+                                stroke="bold"
+                                colors="primary:#104891,secondary:#16a9c7"
+                                style="width:16%;height:16%">
+                            </lord-icon>    
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/trkmlure.json"
+                                trigger="loop"
+                                stroke="bold"
+                                delay = "1200"
+                                colors="primary:#104891,secondary:#16a9c7"
+                                style="width:46%;height:46%; top:-10%;"
+                                id = "globalIcon"
+                                >
+                                
+
+                            </lord-icon>
+
+                            <p class = "slideText">
+
+                                <span class = "slideTextSpan">Alcanza</span> a una amplia audiencia local y/o <span class = "slideTextSpan">global</span>, aumentando la <span class = "slideTextSpan">visibilidad</span> de tus anuncios
+
+                            </p>
+
+                        </div>
+
+                        <div class = "space-y-4 appSlide">
+
+                            <h3 class = "slideTitle">Fácil de usar</h3>
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/pagmnkiz.json"
+                                trigger="loop"
+                                delay="2500"
+                                stroke="bold"
+                                state="morph-check"
+                                colors="primary:#104891,secondary:#16a9c7"
+                                style="width:46%;height:46%">
+                            </lord-icon>
+
+                            <p class = "slideText">
+
+                                Interfaz intuitiva y <span class = "slideTextSpan">fácil</span> de navegar que permite a los usuarios <span class = "slideTextSpan">públicar</span> y encontrar <span class = "slideTextSpan">anuncios</span> rápidamente.
+
+                            </p>
+
+                        </div>
+
+                        <div class = "space-y-4 appSlide">
+
+                            <h3 class = "slideTitle">Resultados rápidos</h3>
+
+                            <lord-icon
+                                src="https://cdn.lordicon.com/mqwitsmv.json"
+                                trigger="loop"
+                                stroke="bold"
+                                state="loop-slide"
+                                colors="primary:#104891,secondary:#16a9c7"
+                                style="width:37%;height:37%">
+                            </lord-icon>
+
+                            <p class = "slideText">
+
+                                Alta taza de respuesta <span class = "slideTextSpan">gracias</span> a una <span class = "slideTextSpan">comunidad</span> activa y comprometida.
+
+                            </p>
+
+                        </div>
+
+                        <div class = "space-y-4 appSlide">
+
+                            <h3 class = "slideTitle">Variedad de categorias</h3>
+
+                            <lord-icon
+
+                                src="https://cdn.lordicon.com/uecgmesg.json"
+                                trigger="loop"
+                                delay="1950"
+                                stroke="bold"
+                                state="in-reveal"
+                                colors="primary:#104891,secondary:#16a9c7"
+                                style="width:46%;height:46%">
+
+                            </lord-icon>
+
+                            <p class = "slideText">
+
+                                <span class = "slideTextSpan">Encuentra</span> y pública <span class = "slideTextSpan">anuncios</span> en múltiples <span class = "slideTextSpan">categorías</span> como <span class = "slideTextSpan">empleos</span>, inmuebles, vehículos, <span class = "slideTextSpan">servicios</span>, productos <span class = "slideTextSpan">y mucho más.</span>
+
+                            </p>
+
+                        </div>
+
+                        
+                    </div>
+
+            </section>
+
+            <!-- * Footer -->
+            <footer class = "singleComponent shadow-2xl flex items-center justify-center m-0" id = "pageFooter">
+
+                <h2 class = "text-[100%] text-white w-fit h-fit">2024 PublicAdis - BuscAdis</h2>
+
+                <div class = "w-fit h-fit flex ml-[16%] ">
+
+                    <!-- *Whatsapp icon -->
+                    <a href="https://wa.me/937054328">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIconFooter">
+                            <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path><path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path><path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path><path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path><path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+
+                    <!-- *Tiktok icon -->
+                    <a href="https://www.tiktok.com/@publicadis">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIconFooter">
+                            <path fill="#212121" fill-rule="evenodd" d="M10.904,6h26.191C39.804,6,42,8.196,42,10.904v26.191 C42,39.804,39.804,42,37.096,42H10.904C8.196,42,6,39.804,6,37.096V10.904C6,8.196,8.196,6,10.904,6z" clip-rule="evenodd"></path><path fill="#ec407a" fill-rule="evenodd" d="M29.208,20.607c1.576,1.126,3.507,1.788,5.592,1.788v-4.011 c-0.395,0-0.788-0.041-1.174-0.123v3.157c-2.085,0-4.015-0.663-5.592-1.788v8.184c0,4.094-3.321,7.413-7.417,7.413 c-1.528,0-2.949-0.462-4.129-1.254c1.347,1.376,3.225,2.23,5.303,2.23c4.096,0,7.417-3.319,7.417-7.413L29.208,20.607L29.208,20.607 z M30.657,16.561c-0.805-0.879-1.334-2.016-1.449-3.273v-0.516h-1.113C28.375,14.369,29.331,15.734,30.657,16.561L30.657,16.561z M19.079,30.832c-0.45-0.59-0.693-1.311-0.692-2.053c0-1.873,1.519-3.391,3.393-3.391c0.349,0,0.696,0.053,1.029,0.159v-4.1 c-0.389-0.053-0.781-0.076-1.174-0.068v3.191c-0.333-0.106-0.68-0.159-1.03-0.159c-1.874,0-3.393,1.518-3.393,3.391 C17.213,29.127,17.972,30.274,19.079,30.832z" clip-rule="evenodd"></path><path fill="#fff" fill-rule="evenodd" d="M28.034,19.63c1.576,1.126,3.507,1.788,5.592,1.788v-3.157 c-1.164-0.248-2.194-0.856-2.969-1.701c-1.326-0.827-2.281-2.191-2.561-3.788h-2.923v16.018c-0.007,1.867-1.523,3.379-3.393,3.379 c-1.102,0-2.081-0.525-2.701-1.338c-1.107-0.558-1.866-1.705-1.866-3.029c0-1.873,1.519-3.391,3.393-3.391 c0.359,0,0.705,0.056,1.03,0.159V21.38c-4.024,0.083-7.26,3.369-7.26,7.411c0,2.018,0.806,3.847,2.114,5.183 c1.18,0.792,2.601,1.254,4.129,1.254c4.096,0,7.417-3.319,7.417-7.413L28.034,19.63L28.034,19.63z" clip-rule="evenodd"></path><path fill="#81d4fa" fill-rule="evenodd" d="M33.626,18.262v-0.854c-1.05,0.002-2.078-0.292-2.969-0.848 C31.445,17.423,32.483,18.018,33.626,18.262z M28.095,12.772c-0.027-0.153-0.047-0.306-0.061-0.461v-0.516h-4.036v16.019 c-0.006,1.867-1.523,3.379-3.393,3.379c-0.549,0-1.067-0.13-1.526-0.362c0.62,0.813,1.599,1.338,2.701,1.338 c1.87,0,3.386-1.512,3.393-3.379V12.772H28.095z M21.635,21.38v-0.909c-0.337-0.046-0.677-0.069-1.018-0.069 c-4.097,0-7.417,3.319-7.417,7.413c0,2.567,1.305,4.829,3.288,6.159c-1.308-1.336-2.114-3.165-2.114-5.183 C14.374,24.749,17.611,21.463,21.635,21.38z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+
+                    <!-- *Instagram icon -->
+                    <a href="https://www.instagram.com/publicadis">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIconFooter">
+                            <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+                        </svg>
+                    </a>
+
+                    <!-- *Facebook icon -->
+                    <a href="https://www.facebook.com/publicadis">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "contactIconFooter">
+                            <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+                        </svg>
+
+                    </a>
+
+
+                </div>
+
+            </footer>
+            
     </div>
-  </section>
-  <!-- end Feature section-->
-    <!-- end Feature section-->
-    <!-- screenshots section-->
-    <section class="theme-bg screenshots" id="screenshots">
-    <div class="animation-circle"><i></i><i></i><i></i></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="section-title">
-            <h2 class="text-white">Nuestra aplicación te hará destacar</h2>
-            <div class="line white"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="swiper-screenshots-container-1 swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="../../assets/images/ss/1.png" alt="1" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/images/ss/2.png" alt="2" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/images/ss/3.png" alt="3" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/images/ss/4.png" alt="4" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/images/ss/1.png" alt="5" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/images/ss/2.png" alt="5" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-    <!-- end screenshots section-->
-    <!-- work section-->
-        <!-- work section-->
-    <section class="work" id="work">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-              <div class="section-title">
-                <h2>¡Anunciarte es fácil!</h2>
-                <div class="line"></div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-                  autem voluptatem obcaecati! ipsum dolor sit Rem autem voluptatem
-                  obcaecati
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 text-center">
-              <div class="process-box">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  width="60px"
-                  height="60px"
-                >
-                  <g>
-                    <g>
-                      <path
-                        d="M373.399,56.93C371.54,55.07,368.96,54,366.33,54c-2.641,0-5.21,1.07-7.07,2.93c-1.87,1.86-2.93,4.44-2.93,7.07    s1.06,5.21,2.93,7.07c1.86,1.86,4.429,2.93,7.07,2.93c2.63,0,5.21-1.07,7.069-2.93c1.86-1.86,2.931-4.44,2.931-7.07    S375.26,58.79,373.399,56.93z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M348.369,102h-64c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10h64c5.522,0,10-4.477,10-10v-64    C358.369,106.477,353.891,102,348.369,102z M338.369,166h-44v-44h44V166z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M348.369,214h-64c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10h64c5.523,0,10-4.477,10-10v-64    C358.369,218.477,353.891,214,348.369,214z M338.369,278h-44v-44h44V278z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M316.369,326h-32c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10v-54h22    c5.522,0,10-4.477,10-10S321.891,326,316.369,326z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M236.333,102c-5.522,0-10,4.477-10,10v54h-54c-5.522,0-10,4.477-10,10s4.478,10,10,10h64c5.522,0,10-4.477,10-10v-64    C246.333,106.477,241.855,102,236.333,102z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M236.333,214h-64c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10h64c5.522,0,10-4.477,10-10v-64    C246.333,218.477,241.855,214,236.333,214z M226.333,278h-44v-44h44V278z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M236.333,326h-64c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10h64c5.522,0,10-4.477,10-10v-64    C246.333,330.477,241.855,326,236.333,326z M226.333,390h-44v-44h44V390z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M262.799,469.2c-1.86-1.87-4.44-2.93-7.07-2.93s-5.209,1.06-7.069,2.93c-1.86,1.86-2.931,4.43-2.931,7.07    c0,2.63,1.07,5.2,2.931,7.07c1.859,1.86,4.439,2.93,7.069,2.93s5.21-1.07,7.07-2.93c1.86-1.87,2.93-4.44,2.93-7.07    C265.729,473.63,264.66,471.06,262.799,469.2z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M391.994,0H120.006c-16.542,0-30,13.458-30,30v3.987H30c-16.542,0-30,13.458-30,30v92c0,16.542,13.458,30,30,30h92    c16.542,0,30-13.458,30-30V74h168c5.522,0,10-4.477,10-10s-4.478-10-10-10H150.284C146.16,42.354,135.041,33.987,122,33.987    h-11.994V30c0-5.514,4.486-10,10-10h271.988c5.514,0,10,4.486,10,10v226c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10V30    C421.994,13.458,408.536,0,391.994,0z M132,155.987c0,5.514-4.486,10-10,10H30c-5.514,0-10-4.486-10-10v-3.633    c0.555-0.366,1.082-0.794,1.571-1.283l31.679-31.679l22.179,22.179c3.906,3.905,10.236,3.905,14.143,0L132,99.143V155.987z     M122,53.987c5.514,0,10,4.486,10,10v6.871l-49.5,49.5L60.321,98.179c-3.906-3.905-10.236-3.905-14.143,0L20,124.357v-60.37    c0-5.514,4.486-10,10-10H122z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M482,290H374c-16.542,0-30,13.458-30,30v108c0,16.542,13.458,30,30,30h27.994v24c0,5.514-4.486,10-10,10H120.006    c-5.514,0-10-4.486-10-10v-24h211.343c5.522,0,10-4.477,10-10s-4.478-10-10-10H110.006V224c0-5.523-4.478-10-10-10    c-5.522,0-10,4.477-10,10v258c0,16.542,13.458,30,30,30h271.988c16.542,0,30-13.458,30-30v-24H482c16.542,0,30-13.458,30-30V320    C512,303.458,498.542,290,482,290z M492,428c0,5.514-4.486,10-10,10H374c-5.514,0-10-4.486-10-10V320c0-5.514,4.486-10,10-10h108    c5.514,0,10,4.486,10,10V428z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M458.063,102c-5.522,0-10,4.477-10,10v79.647c0,5.523,4.477,10,10,10c5.522,0,10-4.477,10-10V112    C468.063,106.477,463.585,102,458.063,102z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M465.13,222.64c-1.86-1.86-4.44-2.93-7.07-2.93s-5.21,1.07-7.069,2.93c-1.86,1.86-2.931,4.44-2.931,7.07    s1.07,5.21,2.931,7.07c1.859,1.86,4.439,2.93,7.069,2.93s5.21-1.07,7.07-2.93c1.87-1.86,2.93-4.44,2.93-7.07    S467,224.5,465.13,222.64z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M54,230.982c-5.522,0-10,4.477-10,10v68.866c0,5.523,4.478,10,10,10s10-4.477,10-10v-68.866    C64,235.459,59.522,230.982,54,230.982z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M459.181,355.173l-35.104-20.248c-6.808-3.926-14.934-3.923-21.737,0.007c-6.804,3.931-10.866,10.968-10.866,18.826    v40.482c0,7.856,4.062,14.894,10.864,18.825c3.405,1.967,7.141,2.951,10.877,2.951c3.729,0,7.458-0.98,10.857-2.94l35.104-20.235    c6.814-3.928,10.883-10.969,10.884-18.834C470.061,366.143,465.993,359.102,459.181,355.173z M449.188,375.515l-35.104,20.235    c-0.577,0.332-1.163,0.331-1.74-0.001c-0.577-0.334-0.87-0.841-0.87-1.508v-40.482c0-0.667,0.293-1.174,0.87-1.508    c0.289-0.167,0.58-0.25,0.871-0.25s0.581,0.083,0.87,0.25l35.104,20.248c0.578,0.333,0.871,0.841,0.871,1.508    C450.06,374.673,449.767,375.181,449.188,375.515z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-                <h3>Descarga nuestra app</h3>
-                <p>
-                  Haz click aquí para ir a Play Store a descargar la aplicación. Si usas Iphone entra a Buscadis.com en tu navegador, da click en compartir y instalar en el dispositivo.
-                </p>
-                <svg
-                  class="bg-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  width="50px"
-                  height="50px"
-                >
-                  <g>
-                    <g>
-                      <path
-                        d="M373.399,56.93C371.54,55.07,368.96,54,366.33,54c-2.641,0-5.21,1.07-7.07,2.93c-1.87,1.86-2.93,4.44-2.93,7.07    s1.06,5.21,2.93,7.07c1.86,1.86,4.429,2.93,7.07,2.93c2.63,0,5.21-1.07,7.069-2.93c1.86-1.86,2.931-4.44,2.931-7.07    S375.26,58.79,373.399,56.93z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M348.369,102h-64c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10h64c5.522,0,10-4.477,10-10v-64    C358.369,106.477,353.891,102,348.369,102z M338.369,166h-44v-44h44V166z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M348.369,214h-64c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10h64c5.523,0,10-4.477,10-10v-64    C358.369,218.477,353.891,214,348.369,214z M338.369,278h-44v-44h44V278z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M316.369,326h-32c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10v-54h22    c5.522,0,10-4.477,10-10S321.891,326,316.369,326z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M236.333,102c-5.522,0-10,4.477-10,10v54h-54c-5.522,0-10,4.477-10,10s4.478,10,10,10h64c5.522,0,10-4.477,10-10v-64    C246.333,106.477,241.855,102,236.333,102z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M236.333,214h-64c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10h64c5.522,0,10-4.477,10-10v-64    C246.333,218.477,241.855,214,236.333,214z M226.333,278h-44v-44h44V278z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M236.333,326h-64c-5.522,0-10,4.477-10,10v64c0,5.523,4.478,10,10,10h64c5.522,0,10-4.477,10-10v-64    C246.333,330.477,241.855,326,236.333,326z M226.333,390h-44v-44h44V390z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M262.799,469.2c-1.86-1.87-4.44-2.93-7.07-2.93s-5.209,1.06-7.069,2.93c-1.86,1.86-2.931,4.43-2.931,7.07    c0,2.63,1.07,5.2,2.931,7.07c1.859,1.86,4.439,2.93,7.069,2.93s5.21-1.07,7.07-2.93c1.86-1.87,2.93-4.44,2.93-7.07    C265.729,473.63,264.66,471.06,262.799,469.2z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M391.994,0H120.006c-16.542,0-30,13.458-30,30v3.987H30c-16.542,0-30,13.458-30,30v92c0,16.542,13.458,30,30,30h92    c16.542,0,30-13.458,30-30V74h168c5.522,0,10-4.477,10-10s-4.478-10-10-10H150.284C146.16,42.354,135.041,33.987,122,33.987    h-11.994V30c0-5.514,4.486-10,10-10h271.988c5.514,0,10,4.486,10,10v226c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10V30    C421.994,13.458,408.536,0,391.994,0z M132,155.987c0,5.514-4.486,10-10,10H30c-5.514,0-10-4.486-10-10v-3.633    c0.555-0.366,1.082-0.794,1.571-1.283l31.679-31.679l22.179,22.179c3.906,3.905,10.236,3.905,14.143,0L132,99.143V155.987z     M122,53.987c5.514,0,10,4.486,10,10v6.871l-49.5,49.5L60.321,98.179c-3.906-3.905-10.236-3.905-14.143,0L20,124.357v-60.37    c0-5.514,4.486-10,10-10H122z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M482,290H374c-16.542,0-30,13.458-30,30v108c0,16.542,13.458,30,30,30h27.994v24c0,5.514-4.486,10-10,10H120.006    c-5.514,0-10-4.486-10-10v-24h211.343c5.522,0,10-4.477,10-10s-4.478-10-10-10H110.006V224c0-5.523-4.478-10-10-10    c-5.522,0-10,4.477-10,10v258c0,16.542,13.458,30,30,30h271.988c16.542,0,30-13.458,30-30v-24H482c16.542,0,30-13.458,30-30V320    C512,303.458,498.542,290,482,290z M492,428c0,5.514-4.486,10-10,10H374c-5.514,0-10-4.486-10-10V320c0-5.514,4.486-10,10-10h108    c5.514,0,10,4.486,10,10V428z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M458.063,102c-5.522,0-10,4.477-10,10v79.647c0,5.523,4.477,10,10,10c5.522,0,10-4.477,10-10V112    C468.063,106.477,463.585,102,458.063,102z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M465.13,222.64c-1.86-1.86-4.44-2.93-7.07-2.93s-5.21,1.07-7.069,2.93c-1.86,1.86-2.931,4.44-2.931,7.07    s1.07,5.21,2.931,7.07c1.859,1.86,4.439,2.93,7.069,2.93s5.21-1.07,7.07-2.93c1.87-1.86,2.93-4.44,2.93-7.07    S467,224.5,465.13,222.64z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M54,230.982c-5.522,0-10,4.477-10,10v68.866c0,5.523,4.478,10,10,10s10-4.477,10-10v-68.866    C64,235.459,59.522,230.982,54,230.982z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M459.181,355.173l-35.104-20.248c-6.808-3.926-14.934-3.923-21.737,0.007c-6.804,3.931-10.866,10.968-10.866,18.826    v40.482c0,7.856,4.062,14.894,10.864,18.825c3.405,1.967,7.141,2.951,10.877,2.951c3.729,0,7.458-0.98,10.857-2.94l35.104-20.235    c6.814-3.928,10.883-10.969,10.884-18.834C470.061,366.143,465.993,359.102,459.181,355.173z M449.188,375.515l-35.104,20.235    c-0.577,0.332-1.163,0.331-1.74-0.001c-0.577-0.334-0.87-0.841-0.87-1.508v-40.482c0-0.667,0.293-1.174,0.87-1.508    c0.289-0.167,0.58-0.25,0.871-0.25s0.581,0.083,0.87,0.25l35.104,20.248c0.578,0.333,0.871,0.841,0.871,1.508    C450.06,374.673,449.767,375.181,449.188,375.515z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
-            <div class="col-lg-4 text-center">
-              <div class="process-box">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  width="60px"
-                  height="60px"
-                >
-                  <g>
-                    <g>
-                      <path
-                        d="M319.008,281.931c-1.861-1.86-4.44-2.93-7.07-2.93c-2.64,0-5.21,1.069-7.069,2.93c-1.87,1.86-2.931,4.44-2.931,7.07    s1.061,5.21,2.931,7.069c1.859,1.86,4.439,2.931,7.069,2.931s5.21-1.07,7.07-2.931c1.86-1.859,2.93-4.439,2.93-7.069    S320.869,283.791,319.008,281.931z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M180.469,312.617c-5.522,0-10,4.478-10,10v28.837h-19v-28.837c0-5.522-4.478-10-10-10c-5.522,0-10,4.478-10,10v34.125    c0,8.112,6.601,14.712,14.713,14.712h29.575c8.112,0,14.712-6.6,14.712-14.712v-34.125    C190.469,317.095,185.992,312.617,180.469,312.617z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M226.679,260.472c-36.232-36.233-95.185-36.233-131.418,0c-3.905,3.905-3.905,10.237,0,14.143    c3.906,3.904,10.236,3.904,14.143,0c28.434-28.434,74.699-28.434,103.133,0c1.953,1.952,4.512,2.929,7.071,2.929    c2.559,0,5.118-0.977,7.071-2.929C230.583,270.71,230.583,264.378,226.679,260.472z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M80.311,230.86c-3.905-3.904-10.235-3.904-14.142,0l-0.261,0.26c-3.905,3.905-3.905,10.237,0,14.143    c1.953,1.952,4.512,2.929,7.071,2.929s5.118-0.977,7.071-2.929l0.261-0.26C84.216,241.098,84.216,234.766,80.311,230.86z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M256.029,231.119c-21.007-21.007-47.634-34.203-77.004-38.163c-28.42-3.833-57.833,1.632-82.827,15.384    c-4.839,2.663-6.604,8.743-3.941,13.582c2.663,4.84,8.746,6.603,13.582,3.941c44.306-24.378,100.249-16.399,136.048,19.398    c1.953,1.954,4.512,2.93,7.071,2.93c2.56,0,5.118-0.977,7.071-2.929C259.935,241.357,259.935,235.025,256.029,231.119z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M449.523,160.24l-18.37-18.369c-5.757-5.757-13.411-8.928-21.553-8.928c-7.636,0-14.843,2.789-20.458,7.886    l-17.973-17.974c10.829-11.948,10.482-30.484-1.042-42.01l-18.371-18.371c-8.818-8.816-23.166-8.816-31.988,0    c-23.854,23.855-23.854,62.67,0,86.524l43.231,43.23c11.556,11.556,26.92,17.92,43.262,17.92s31.706-6.364,43.261-17.92    c4.273-4.271,6.626-9.952,6.626-15.994C456.148,170.193,453.794,164.512,449.523,160.24z M435.38,178.087    c-7.778,7.778-18.119,12.063-29.119,12.063s-21.341-4.284-29.119-12.063l-43.231-43.23c-16.057-16.056-16.057-42.183-0.001-58.239    c0.511-0.511,1.182-0.766,1.853-0.766c0.671,0,1.342,0.255,1.852,0.766l18.371,18.371c4.086,4.085,4.086,10.733,0,14.819    l-3.944,3.944c-2.439,2.438-3.783,5.681-3.783,9.13c0,3.447,1.343,6.688,3.78,9.127l27.955,27.955    c5.031,5.025,13.216,5.026,18.251-0.003l3.947-3.948c1.979-1.979,4.61-3.069,7.409-3.069s5.431,1.091,7.41,3.07l18.37,18.37    c0.635,0.634,0.768,1.357,0.768,1.852C436.148,176.73,436.015,177.453,435.38,178.087z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M378.998,0c-37.171,0-70.823,15.334-94.98,40.001H30.003c-16.542,0-30,13.458-30,30v412c0,16.542,13.458,30,30,30h41.981    c5.522,0,10-4.478,10-10c0-5.522-4.478-10-10-10H30.003c-5.514,0-10-4.486-10-10v-24h86.231c0.248,0,0.491-0.019,0.734-0.037    v44.037c0,5.522,4.478,10,10,10c5.522,0,10-4.478,10-10V328.386c0-18.748,15.252-34,34-34s34,15.252,34,34v173.615    c0,5.522,4.478,10,10,10c5.522,0,10-4.478,10-10v-44h86.966v24c0,5.514-4.486,10-10,10h-45.938c-5.522,0-10,4.478-10,10    c0,5.522,4.478,10,10,10h45.938c16.542,0,30-13.458,30-30V329.119c0-5.522-4.478-10-10-10c-5.522,0-10,4.478-10,10v108.882    h-86.966V328.386c0-29.775-24.225-54-54-54c-29.775,0-54,24.225-54,54v109.652c-0.243-0.018-0.486-0.037-0.734-0.037H20.003v-324    h203.981c5.522,0,10-4.478,10-10c0-5.522-4.478-10-10-10H20.003v-24c0-5.514,4.486-10,10-10h237.875    c-13.823,20.97-21.881,46.059-21.881,72.999c0,73.337,59.663,133,133,133s133-59.663,133-133S452.335,0,378.998,0z M378.998,246    c-62.309,0-113-50.691-113-113s50.691-113,113-113s113,50.691,113,113S441.307,246,378.998,246z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-                <h3>Escribe tu aviso</h3>
-                <p>
-                  Rellena el formulario con los datos de tu aviso , selecciona el tipo de anuncio, la categoría, industria, sector, contacto y ubicación. Tmbién puedes subir imágenes
-                </p>
-                <svg
-                  class="bg-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  width="50px"
-                  height="50px"
-                >
-                  <g>
-                    <g>
-                      <path
-                        d="M319.008,281.931c-1.861-1.86-4.44-2.93-7.07-2.93c-2.64,0-5.21,1.069-7.069,2.93c-1.87,1.86-2.931,4.44-2.931,7.07    s1.061,5.21,2.931,7.069c1.859,1.86,4.439,2.931,7.069,2.931s5.21-1.07,7.07-2.931c1.86-1.859,2.93-4.439,2.93-7.069    S320.869,283.791,319.008,281.931z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M180.469,312.617c-5.522,0-10,4.478-10,10v28.837h-19v-28.837c0-5.522-4.478-10-10-10c-5.522,0-10,4.478-10,10v34.125    c0,8.112,6.601,14.712,14.713,14.712h29.575c8.112,0,14.712-6.6,14.712-14.712v-34.125    C190.469,317.095,185.992,312.617,180.469,312.617z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M226.679,260.472c-36.232-36.233-95.185-36.233-131.418,0c-3.905,3.905-3.905,10.237,0,14.143    c3.906,3.904,10.236,3.904,14.143,0c28.434-28.434,74.699-28.434,103.133,0c1.953,1.952,4.512,2.929,7.071,2.929    c2.559,0,5.118-0.977,7.071-2.929C230.583,270.71,230.583,264.378,226.679,260.472z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M80.311,230.86c-3.905-3.904-10.235-3.904-14.142,0l-0.261,0.26c-3.905,3.905-3.905,10.237,0,14.143    c1.953,1.952,4.512,2.929,7.071,2.929s5.118-0.977,7.071-2.929l0.261-0.26C84.216,241.098,84.216,234.766,80.311,230.86z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M256.029,231.119c-21.007-21.007-47.634-34.203-77.004-38.163c-28.42-3.833-57.833,1.632-82.827,15.384    c-4.839,2.663-6.604,8.743-3.941,13.582c2.663,4.84,8.746,6.603,13.582,3.941c44.306-24.378,100.249-16.399,136.048,19.398    c1.953,1.954,4.512,2.93,7.071,2.93c2.56,0,5.118-0.977,7.071-2.929C259.935,241.357,259.935,235.025,256.029,231.119z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M449.523,160.24l-18.37-18.369c-5.757-5.757-13.411-8.928-21.553-8.928c-7.636,0-14.843,2.789-20.458,7.886    l-17.973-17.974c10.829-11.948,10.482-30.484-1.042-42.01l-18.371-18.371c-8.818-8.816-23.166-8.816-31.988,0    c-23.854,23.855-23.854,62.67,0,86.524l43.231,43.23c11.556,11.556,26.92,17.92,43.262,17.92s31.706-6.364,43.261-17.92    c4.273-4.271,6.626-9.952,6.626-15.994C456.148,170.193,453.794,164.512,449.523,160.24z M435.38,178.087    c-7.778,7.778-18.119,12.063-29.119,12.063s-21.341-4.284-29.119-12.063l-43.231-43.23c-16.057-16.056-16.057-42.183-0.001-58.239    c0.511-0.511,1.182-0.766,1.853-0.766c0.671,0,1.342,0.255,1.852,0.766l18.371,18.371c4.086,4.085,4.086,10.733,0,14.819    l-3.944,3.944c-2.439,2.438-3.783,5.681-3.783,9.13c0,3.447,1.343,6.688,3.78,9.127l27.955,27.955    c5.031,5.025,13.216,5.026,18.251-0.003l3.947-3.948c1.979-1.979,4.61-3.069,7.409-3.069s5.431,1.091,7.41,3.07l18.37,18.37    c0.635,0.634,0.768,1.357,0.768,1.852C436.148,176.73,436.015,177.453,435.38,178.087z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M378.998,0c-37.171,0-70.823,15.334-94.98,40.001H30.003c-16.542,0-30,13.458-30,30v412c0,16.542,13.458,30,30,30h41.981    c5.522,0,10-4.478,10-10c0-5.522-4.478-10-10-10H30.003c-5.514,0-10-4.486-10-10v-24h86.231c0.248,0,0.491-0.019,0.734-0.037    v44.037c0,5.522,4.478,10,10,10c5.522,0,10-4.478,10-10V328.386c0-18.748,15.252-34,34-34s34,15.252,34,34v173.615    c0,5.522,4.478,10,10,10c5.522,0,10-4.478,10-10v-44h86.966v24c0,5.514-4.486,10-10,10h-45.938c-5.522,0-10,4.478-10,10    c0,5.522,4.478,10,10,10h45.938c16.542,0,30-13.458,30-30V329.119c0-5.522-4.478-10-10-10c-5.522,0-10,4.478-10,10v108.882    h-86.966V328.386c0-29.775-24.225-54-54-54c-29.775,0-54,24.225-54,54v109.652c-0.243-0.018-0.486-0.037-0.734-0.037H20.003v-324    h203.981c5.522,0,10-4.478,10-10c0-5.522-4.478-10-10-10H20.003v-24c0-5.514,4.486-10,10-10h237.875    c-13.823,20.97-21.881,46.059-21.881,72.999c0,73.337,59.663,133,133,133s133-59.663,133-133S452.335,0,378.998,0z M378.998,246    c-62.309,0-113-50.691-113-113s50.691-113,113-113s113,50.691,113,113S441.307,246,378.998,246z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
-            <div class="col-lg-4 text-center">
-              <div class="process-box">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  width="60px"
-                  height="60px"
-                >
-                  <g>
-                    <g>
-                      <path
-                        d="M390.088,270.897c-1.86-1.86-4.442-2.93-7.071-2.93c-2.63,0-5.211,1.07-7.071,2.93c-1.86,1.86-2.93,4.441-2.93,7.071    s1.07,5.211,2.93,7.071c1.86,1.86,4.441,2.93,7.071,2.93s5.211-1.07,7.071-2.93c1.86-1.86,2.93-4.441,2.93-7.071    S391.948,272.757,390.088,270.897z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M447.293,267.966h-27.605c-5.524,0-10.001,4.478-10.001,10.001c0,5.524,4.478,10.001,10.001,10.001h27.605    c9.779,0,17.734,7.956,17.734,17.734v0.535c0,9.779-7.956,17.734-17.734,17.734H318.442c-5.524,0-10.001,4.478-10.001,10.001    c0,5.524,4.478,10.001,10.001,10.001h74.435c9.778,0,17.734,7.956,17.734,17.734v0.535c0,9.779-7.956,17.734-17.734,17.734    h-74.435c-5.524,0-10.001,4.478-10.001,10.001s4.478,10.001,10.001,10.001h74.435c9.778,0,17.734,7.956,17.734,17.734v0.535    c0,9.779-7.956,17.734-17.734,17.734h-74.435c-5.524,0-10.001,4.478-10.001,10.001c0,5.524,4.478,10.001,10.001,10.001h40.506    c9.778,0,17.734,7.956,17.734,17.734v0.535c0,9.779-7.956,17.734-17.734,17.734H214.21c-13.483,0-26.685-2.496-39.238-7.419    l-13.987-5.486V307.46c41.546-31.104,76.237-69.387,103.156-113.857l21.959-36.275c19.586,20.298,25.266,51.234,13.14,77.44    l-18.045,39c-1.433,3.096-1.188,6.711,0.65,9.586c1.837,2.875,5.015,4.615,8.427,4.615h52.072c5.524,0,10.001-4.478,10.001-10.001    c0-5.524-4.478-10.001-10.001-10.001h-36.425l11.476-24.8c8.588-18.563,10.55-39.703,5.524-59.529s-16.824-37.478-33.22-49.706    c-2.26-1.686-5.127-2.34-7.896-1.798c-2.767,0.54-5.179,2.224-6.639,4.637l-28.133,46.474    c-22.947,37.907-51.842,71.076-86.044,98.842v-0.118c0-5.524-4.478-10.001-10.001-10.001H36.97    c-5.524,0-10.001,4.478-10.001,10.001v220.031c0,5.524,4.478,10.001,10.001,10.001h114.016c5.524,0,10.001-4.478,10.001-10.001    v-1.42l6.684,2.621c14.89,5.84,30.548,8.8,46.541,8.8h144.737c20.809,0,37.737-16.929,37.737-37.737v-0.535    c0-6.406-1.604-12.445-4.433-17.734h0.625c20.809,0,37.737-16.929,37.737-37.737v-0.535c0-10.956-4.693-20.836-12.174-27.736    c7.48-6.9,12.174-16.78,12.174-27.736v-0.535c0-6.406-1.604-12.445-4.433-17.734h21.111c20.809,0,37.737-16.929,37.737-37.737    v-0.535C485.031,284.896,468.102,267.966,447.293,267.966z M140.983,491.997H46.97V291.97h94.013V491.997z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M90.976,452.931c-5.524,0-10.001,4.478-10.001,10.001v0.14c0,5.524,4.478,10.001,10.001,10.001    c5.524,0,10.001-4.478,10.001-10.001v-0.14C100.978,457.409,96.5,452.931,90.976,452.931z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M90.976,322.141c-5.524,0-10.001,4.478-10.001,10.001v93.013c0,5.524,4.478,10.001,10.001,10.001    c5.524,0,10.001-4.478,10.001-10.001v-93.013C100.978,326.619,96.5,322.141,90.976,322.141z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M328.428,105.947c-25.048-25.047-65.803-25.047-90.851,0c-3.906,3.906-3.906,10.238,0,14.145    c3.906,3.906,10.238,3.906,14.145,0c17.247-17.248,45.314-17.248,62.562,0c1.953,1.953,4.513,2.929,7.072,2.929    s5.12-0.976,7.072-2.929C332.334,116.186,332.334,109.853,328.428,105.947z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M358.097,76.276c-20.059-20.058-46.727-31.105-75.094-31.105c-28.367,0-55.037,11.047-75.094,31.105    c-3.906,3.906-3.906,10.238,0,14.145c3.906,3.906,10.238,3.906,14.145,0c16.28-16.28,37.926-25.247,60.95-25.247    c23.024,0,44.67,8.966,60.95,25.247c1.951,1.953,4.512,2.929,7.071,2.929c2.559,0,5.12-0.976,7.072-2.929    C362.003,86.515,362.003,80.182,358.097,76.276z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M390.088,44.285c-59.048-59.047-155.125-59.047-214.173,0c-3.906,3.906-3.906,10.238,0,14.145    c3.908,3.906,10.24,3.906,14.146,0c51.247-51.248,134.636-51.248,185.883,0c1.953,1.953,4.513,2.929,7.072,2.929    s5.12-0.976,7.072-2.929C393.993,54.525,393.993,48.192,390.088,44.285z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-                <h3>Publica inmediatamente</h3>
-                <p>
-                  No tienes que esperar a que salga una nueva edición, publica tu aviso en el momento y empieza a captar personas interesadas en lo que ofreces.
-                </p>
-                <svg
-                  class="bg-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  width="50px"
-                  height="50px"
-                >
-                  <g>
-                    <g>
-                      <path
-                        d="M390.088,270.897c-1.86-1.86-4.442-2.93-7.071-2.93c-2.63,0-5.211,1.07-7.071,2.93c-1.86,1.86-2.93,4.441-2.93,7.071    s1.07,5.211,2.93,7.071c1.86,1.86,4.441,2.93,7.071,2.93s5.211-1.07,7.071-2.93c1.86-1.86,2.93-4.441,2.93-7.071    S391.948,272.757,390.088,270.897z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M447.293,267.966h-27.605c-5.524,0-10.001,4.478-10.001,10.001c0,5.524,4.478,10.001,10.001,10.001h27.605    c9.779,0,17.734,7.956,17.734,17.734v0.535c0,9.779-7.956,17.734-17.734,17.734H318.442c-5.524,0-10.001,4.478-10.001,10.001    c0,5.524,4.478,10.001,10.001,10.001h74.435c9.778,0,17.734,7.956,17.734,17.734v0.535c0,9.779-7.956,17.734-17.734,17.734    h-74.435c-5.524,0-10.001,4.478-10.001,10.001s4.478,10.001,10.001,10.001h74.435c9.778,0,17.734,7.956,17.734,17.734v0.535    c0,9.779-7.956,17.734-17.734,17.734h-74.435c-5.524,0-10.001,4.478-10.001,10.001c0,5.524,4.478,10.001,10.001,10.001h40.506    c9.778,0,17.734,7.956,17.734,17.734v0.535c0,9.779-7.956,17.734-17.734,17.734H214.21c-13.483,0-26.685-2.496-39.238-7.419    l-13.987-5.486V307.46c41.546-31.104,76.237-69.387,103.156-113.857l21.959-36.275c19.586,20.298,25.266,51.234,13.14,77.44    l-18.045,39c-1.433,3.096-1.188,6.711,0.65,9.586c1.837,2.875,5.015,4.615,8.427,4.615h52.072c5.524,0,10.001-4.478,10.001-10.001    c0-5.524-4.478-10.001-10.001-10.001h-36.425l11.476-24.8c8.588-18.563,10.55-39.703,5.524-59.529s-16.824-37.478-33.22-49.706    c-2.26-1.686-5.127-2.34-7.896-1.798c-2.767,0.54-5.179,2.224-6.639,4.637l-28.133,46.474    c-22.947,37.907-51.842,71.076-86.044,98.842v-0.118c0-5.524-4.478-10.001-10.001-10.001H36.97    c-5.524,0-10.001,4.478-10.001,10.001v220.031c0,5.524,4.478,10.001,10.001,10.001h114.016c5.524,0,10.001-4.478,10.001-10.001    v-1.42l6.684,2.621c14.89,5.84,30.548,8.8,46.541,8.8h144.737c20.809,0,37.737-16.929,37.737-37.737v-0.535    c0-6.406-1.604-12.445-4.433-17.734h0.625c20.809,0,37.737-16.929,37.737-37.737v-0.535c0-10.956-4.693-20.836-12.174-27.736    c7.48-6.9,12.174-16.78,12.174-27.736v-0.535c0-6.406-1.604-12.445-4.433-17.734h21.111c20.809,0,37.737-16.929,37.737-37.737    v-0.535C485.031,284.896,468.102,267.966,447.293,267.966z M140.983,491.997H46.97V291.97h94.013V491.997z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M90.976,452.931c-5.524,0-10.001,4.478-10.001,10.001v0.14c0,5.524,4.478,10.001,10.001,10.001    c5.524,0,10.001-4.478,10.001-10.001v-0.14C100.978,457.409,96.5,452.931,90.976,452.931z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M90.976,322.141c-5.524,0-10.001,4.478-10.001,10.001v93.013c0,5.524,4.478,10.001,10.001,10.001    c5.524,0,10.001-4.478,10.001-10.001v-93.013C100.978,326.619,96.5,322.141,90.976,322.141z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M328.428,105.947c-25.048-25.047-65.803-25.047-90.851,0c-3.906,3.906-3.906,10.238,0,14.145    c3.906,3.906,10.238,3.906,14.145,0c17.247-17.248,45.314-17.248,62.562,0c1.953,1.953,4.513,2.929,7.072,2.929    s5.12-0.976,7.072-2.929C332.334,116.186,332.334,109.853,328.428,105.947z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M358.097,76.276c-20.059-20.058-46.727-31.105-75.094-31.105c-28.367,0-55.037,11.047-75.094,31.105    c-3.906,3.906-3.906,10.238,0,14.145c3.906,3.906,10.238,3.906,14.145,0c16.28-16.28,37.926-25.247,60.95-25.247    c23.024,0,44.67,8.966,60.95,25.247c1.951,1.953,4.512,2.929,7.071,2.929c2.559,0,5.12-0.976,7.072-2.929    C362.003,86.515,362.003,80.182,358.097,76.276z"
-                      ></path>
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path
-                        d="M390.088,44.285c-59.048-59.047-155.125-59.047-214.173,0c-3.906,3.906-3.906,10.238,0,14.145    c3.908,3.906,10.24,3.906,14.146,0c51.247-51.248,134.636-51.248,185.883,0c1.953,1.953,4.513,2.929,7.072,2.929    s5.12-0.976,7.072-2.929C393.993,54.525,393.993,48.192,390.088,44.285z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end work section-->
-    <!-- team section-->
-        <!-- team section-->
-    <section class="team-bg" id="team">
-        <div class="animation-circle-inverse"><i></i><i></i><i></i></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="section-title">
-                <h2>📈Estamos en constante evolución🚀</h2>
-                <div class="line"></div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="team-slider owl-carousel owl-theme">
-                <div class="item">
-                  <div class="team-box">
-                    <div class="team-under-box">
-                      <div class="team-under-box-button text-white">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
-                      <img
-                        class="img-fluid"
-                        src="../../assets/images/1.jpg"
-                        alt="1"
-                      />
-                      <div class="team-overlay">
-                        <div class="social-icon">
-                          <ul>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-facebook" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i
-                                  class="fa fa-google-plus"
-                                  aria-hidden="true"
-                                ></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-twitter" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-instagram" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-rss" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="team-box">
-                    <div class="team-under-box">
-                      <div class="team-under-box-button text-white">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
-                      <img
-                        class="img-fluid"
-                        src="../../assets/images/2.jpg"
-                        alt="2"
-                      />
-                      <div class="team-overlay">
-                        <div class="social-icon">
-                          <ul>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-facebook" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i
-                                  class="fa fa-google-plus"
-                                  aria-hidden="true"
-                                ></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-twitter" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-instagram" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-rss" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="team-box">
-                    <div class="team-under-box">
-                      <div class="team-under-box-button text-white">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
-                      <img
-                        class="img-fluid"
-                        src="../../assets/images/3.jpg"
-                        alt="3"
-                      />
-                      <div class="team-overlay">
-                        <div class="social-icon">
-                          <ul>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-facebook" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i
-                                  class="fa fa-google-plus"
-                                  aria-hidden="true"
-                                ></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-twitter" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-instagram" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-rss" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="team-box">
-                    <div class="team-under-box">
-                      <div class="team-under-box-button text-white">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
-                      <img
-                        class="img-fluid"
-                        src="../../assets/images/2.jpg"
-                        alt="2"
-                      />
-                      <div class="team-overlay">
-                        <div class="social-icon">
-                          <ul>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-facebook" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i
-                                  class="fa fa-google-plus"
-                                  aria-hidden="true"
-                                ></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-twitter" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-instagram" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-rss" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="team-box">
-                    <div class="team-under-box">
-                      <div class="team-under-box-button text-white">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
-                      <img
-                        class="img-fluid"
-                        src="../../assets/images/1.jpg"
-                        alt="1"
-                      />
-                      <div class="team-overlay">
-                        <div class="social-icon">
-                          <ul>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-facebook" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i
-                                  class="fa fa-google-plus"
-                                  aria-hidden="true"
-                                ></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-twitter" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-instagram" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-rss" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="team-box">
-                    <div class="team-under-box">
-                      <div class="team-under-box-button text-white">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
-                      <img
-                        class="img-fluid"
-                        src="../../assets/images/2.jpg"
-                        alt="2"
-                      />
-                      <div class="team-overlay">
-                        <div class="social-icon">
-                          <ul>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-facebook" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i
-                                  class="fa fa-google-plus"
-                                  aria-hidden="true"
-                                ></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-twitter" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-instagram" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><i class="fa fa-rss" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="team-hover">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="team-profile">
-                      <img
-                        class="img-fluid"
-                        src="../../assets/images/1.jpg"
-                        alt="1"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="d-flex-1">
-                      <div class="hover-text">
-                        <div class="team-close-btn">
-                          <a><i class="fa fa-times" aria-hidden="true"></i></a>
-                        </div>
-                        <h3>Mark Jecno</h3>
-                        <h4 class="m-0 text-muted">Devloper & Designer</h4>
-                        <h5>PHP, Laravel, Cake , Wordpress, HTML5</h5>
-                        <p>
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout. The point of using Lorem Ipsum is
-                          that it has a more-or-less normal distribution of
-                          letters, as opposed to using 'Content here, content
-                          here', making it look like readable English. Many
-                          desktop publishing packages and web page editors now use
-                          Lorem Ipsum as their default model text,
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end team section-->
-    <!-- package section-->
-        <!-- package section-->
-    <section class="theme-bg" id="package">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="section-title">
-                <h2 class="text-white">Nuestros planes</h2>
-                <div class="line white"></div>
-              </div>
-            </div>
-            <div class="col-md-12 text-center">
-              <div class="plan-slider owl-carousel owl-theme">
-                <div class="item">
-                  <div class="package-box">
-                    <h3>Miniatura</h3>
-                    <p>Como las del periodico</p>
-                    <div class="price-box">
-                      <span>s/</span>
-                      <h2>15</h2>
-                      <h5 class="plan-clr"><span class="d-block">x 1 día</span></h5>
-                    </div>
-                    <div class="price-plan text-center">
-                      <ul>
-                        <li>En blanco y negro</li>
-                        <li>3 líneas de texto</li>
-                        <li>link de contacto</li>
-                        <li>columna lateral</li>
-                      </ul>
-                      <div class="price-plan-btn">Seleccionar Plan</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="package-box">
-                    <h3>Normal</h3>
-                    <p>El más popular</p>
-                    <div class="price-box">
-                      <span>s/</span>
-                      <h2>30</h2>
-                      <h5 class="plan-clr"><span class="d-block">x 3 días</span></h5>
-                    </div>
-                    <div class="price-plan text-center">
-                      <ul>
-                        <li>A color</li>
-                        <li>5 líneas de texto</li>
-                        <li>links a llamadas y whatsapp</li>
-                        <li>página principal</li>
-                      </ul>
-                      <div class="price-plan-btn">Seleccionar Plan</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="package-box">
-                    <h3>Mediano</h3>
-                    <div class="price-box">
-                      <span>s/</span>
-                      <h2>50</h2>
-                      <h5 class="plan-clr"><span class="d-block">x 7 días</span></h5>
-                    </div>
-                    <div class="price-plan text-center">
-                      <ul>
-                        <li>todo lo del normal</li>
-                        <li>+ 1 días extra de regalo</li>
-                        <li>incluye imágenes</li>
-                        <li>+ redes sociales y prioridad</li>
-                      </ul>
-                      <div class="price-plan-btn">Seleccionar Plan</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="package-box">
-                    <h3>Grande</h3>
-                    <div class="price-box">
-                      <span>s/</span>
-                      <h2>100</h2>
-                      <h5 class="plan-clr"><span class="d-block">x 15 días</span></h5>
-                    </div>
-                    <div class="price-plan text-center">
-                      <ul>
-                        <li>todo lo del mediano y normal</li>
-                        <li>Ahorras 50 soles</li>
-                        <li>página entera propia para el aviso</li>
-                        <li>Texto ilimitado</li>
-                      </ul>
-                      <div class="price-plan-btn">Seleccionar Plan</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="package-box">
-                    <h3>Extreme</h3>
-                    <div class="price-box">
-                      <span>s/</span>
-                      <h2>150</h2>
-                      <h5 class="plan-clr"><span class="d-block">x 31 días</span></h5>
-                    </div>
-                    <div class="price-plan text-center">
-                      <ul>
-                        <li>24/7 On-site Support</li>
-                        <li>real time sync</li>
-                        <li>customize theme</li>
-                        <li>priority email support</li>
-                      </ul>
-                      <div class="price-plan-btn">Seleccionar Plan</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end package section-->
-    <!-- testimonail page-->
-        <!-- testimonail page-->
-    <section class="testimonial" id="testimonial">
-        <div class="animation-circle-inverse"><i></i><i></i><i></i></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="testimonil-box">
-                <div class="testimonial-slider owl-carousel owl-theme">
-                  <div class="item testi-profile">
-                    <div class="media">
-                      <div class="animated-circle">
-                        <img
-                          class="img-fluid align-self-center"
-                          src="../../assets/images/1.png"
-                          alt="1"
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h3 class="mt-0 sub-title">
-                          Mark Jecno (Designer & Devloper)
-                        </h3>
-                        <p>
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin. Cras purus odio,
-                          vestibulum in vulputate at, tempus viverra turpis. Fusce
-                          condimentum nunc ac nisi vulputate fringilla. Donec
-                          lacinia congue felis in faucibus.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item testi-profile">
-                    <div class="media">
-                      <div class="animated-circle">
-                        <img
-                          class="img-fluid align-self-center"
-                          src="../../assets/images/1.png"
-                          alt="1"
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h3 class="mt-0 sub-title">
-                          Mark Jecno (Designer & Devloper)
-                        </h3>
-                        <p>
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin. Cras purus odio,
-                          vestibulum in vulputate at, tempus viverra turpis. Fusce
-                          condimentum nunc ac nisi vulputate fringilla. Donec
-                          lacinia congue felis in faucibus.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item testi-profile">
-                    <div class="media">
-                      <div class="animated-circle">
-                        <img
-                          class="img-fluid align-self-center"
-                          src="../../assets/images/1.png"
-                          alt="1"
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h3 class="mt-0 sub-title">
-                          Mark Jecno (Designer & Devloper)
-                        </h3>
-                        <p>
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin. Cras purus odio,
-                          vestibulum in vulputate at, tempus viverra turpis. Fusce
-                          condimentum nunc ac nisi vulputate fringilla. Donec
-                          lacinia congue felis in faucibus.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end testimonial section-->
-    <!-- FAQ section-->
-        <!-- FAQ section-->
-    <section class="theme-bg faq" id="faq">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="section-title">
-                <h2 class="text-white">Preguntas frecuentes.</h2>
-                <div class="line white"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row faq-row">
-            <div class="col-lg-6">
-              <div class="accordion" id="accordionExample">
-                <div class="card mb-3">
-                  <div class="card-header" id="headingzero">
-                    <h5 class="mb-0">
-                      <button
-                        class="faq-link"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapsezero"
-                        aria-expanded="false"
-                        aria-controls="collapsezero"
-                      >
-                        01 ¿Se sincronizan los datos entre diferentes dispositivos en los que uso la aplicación?<i
-                          class="fa fa-angle-down pull-right"
-                        ></i>
-                      </button>
-                    </h5>
-                  </div>
-                  <div
-                    class="collapse"
-                    id="collapsezero"
-                    aria-labelledby="headingzero"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      Sí, la aplicación sincroniza los datos entre diferentes dispositivos que uses.
-                    </div>
-                  </div>
-                </div>
-                <div class="card mb-3">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button
-                        class="faq-link"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                      >
-                        02  ¿Cuáles son los requisitos mínimos del sistema para ejecutar la aplicación en diferentes plataformas?<i
-                          class="fa fa-angle-down pull-right"
-                        ></i>
-                      </button>
-                    </h5>
-                  </div>
-                  <div
-                    class="collapse show"
-                    id="collapseOne"
-                    aria-labelledby="headingOne"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      Los requisitos mínimos del sistema varían según la plataforma, pero la aplicación funciona en la mayoría de los dispositivos modernos.
-                    </div>
-                  </div>
-                </div>
-                <div class="card mb-3">
-                  <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                      <button
-                        class="faq-link"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="collapseTwo"
-                      >
-                        03 ¿Con qué frecuencia se lanzan actualizaciones para la aplicación en diferentes plataformas?<i
-                          class="fa fa-angle-down pull-right"
-                        ></i>
-                      </button>
-                    </h5>
-                  </div>
-                  <div
-                    class="collapse"
-                    id="collapseTwo"
-                    aria-labelledby="headingTwo"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      La aplicación recibe actualizaciones periódicas, el intervalo puede variar según el desarrollador, pero generalmente se lanzan cada cierto tiempo para mejorar la experiencia del usuario y corregir errores.
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                      <button
-                        class="faq-link"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                      >
-                        04 ¿En qué dispositivos puedo utilizar esta aplicación?<i
-                          class="fa fa-angle-down pull-right"
-                        ></i>
-                      </button>
-                    </h5>
-                  </div>
-                  <div
-                    class="collapse"
-                    id="collapseThree"
-                    aria-labelledby="headingThree"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      Puedes utilizar la aplicación en diferentes dispositivos como teléfonos inteligentes, tabletas y computadoras, independientemente de su sistema operativo.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 text-center">
-              <img class="img-fluid" src="../../assets/images/faq.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end FAQ section-->
-    <!-- news section-->
-        <!-- news section-->
-    <section class="team-bg" id="news">
-        <div class="animation-circle-inverse"><i></i><i></i><i></i></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-              <div class="section-title">
-                <h2>Nuestro blog reciente</h2>
-                <div class="line"></div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-                  autem voluptatem obcaecati! ipsum dolor sit Rem autem voluptatem
-                  obcaecati
-                </p>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="news-slider owl-carousel owl-theme">
-                <div class="item news-slid">
-                  <div class="news-box">
-                    <a href="blog-details.html"
-                      ><img
-                        class="img-fluid"
-                        src="../../assets/images/blog/1.jpg"
-                        alt="news-1"
-                    /></a>
-                    <div class="blog-hover">
-                      <h4>lorem ipsum dolor sit amet</h4>
-                      <ul class="list-inline blog-details-list">
-                        <li><a href="#">John Doe</a></li>
-                        <li><a href="#">1 Oct</a></li>
-                        <li><a href="#">25 comments</a></li>
-                        <li><a href="#">3 View</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="news-text">
-                    <p>
-                      lorem ipsum dolor sit amet, consecteturamet adipisicing
-                      elit, tempor incididunt ut labore. lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <a class="btn-theme" href="blog-details.html">View more</a>
-                  </div>
-                </div>
-                <div class="item news-slid">
-                  <div class="news-box">
-                    <a href="blog-details.html"
-                      ><img
-                        class="img-fluid"
-                        src="../../assets/images/blog/2.jpg"
-                        alt="news-1"
-                    /></a>
-                    <div class="blog-hover">
-                      <h4>lorem ipsum dolor sit amet</h4>
-                      <ul class="list-inline blog-details-list">
-                        <li><a href="#">John Doe</a></li>
-                        <li><a href="#">2 Oct</a></li>
-                        <li><a href="#">25 comments</a></li>
-                        <li><a href="#">3 View</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="news-text">
-                    <p>
-                      lorem ipsum dolor sit amet, consecteturamet adipisicing
-                      elit, tempor incididunt ut labore. lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <a class="btn-theme" href="blog-details.html">View more</a>
-                  </div>
-                </div>
-                <div class="item news-slid">
-                  <div class="news-box">
-                    <a href="blog-details.html"
-                      ><img
-                        class="img-fluid"
-                        src="../../assets/images/blog/3.jpg"
-                        alt="news-1"
-                    /></a>
-                    <div class="blog-hover">
-                      <h4>lorem ipsum dolor sit amet</h4>
-                      <ul class="list-inline blog-details-list">
-                        <li><a href="#">John Doe</a></li>
-                        <li><a href="#">3 Oct</a></li>
-                        <li><a href="#">25 comments</a></li>
-                        <li><a href="#">3 View</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="news-text">
-                    <p>
-                      lorem ipsum dolor sit amet, consecteturamet adipisicing
-                      elit, tempor incididunt ut labore. lorem ipsum dolor sit
-                      amet.
-                    </p>
-                    <a class="btn-theme" href="blog-details.html">View more</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end news section-->
-    <!-- download section-->
-        <!-- download section-->
-    <section class="download-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-3 display-flex">
-              <div class="footer-logo">
-                <img
-                  class="img-fluid"
-                  src="../../assets/images/footer-logo.png"
-                  alt="footer-logo"
-                />
-              </div>
-            </div>
-            <div class="col-xl-5 display-flex">
-              <div class="download-text">
-                <h3>Descarga la aplicación y haz que tus anuncios lleguen más lejos</h3>
-              </div>
-            </div>
-            <div class="col-xl-4 display-flex">
-              <div class="download-img">
-                <ul>
-                  <li>
-                    <img
-                      class="img-fluid"
-                      src="../../assets/images/app1.png"
-                      alt="foot-app"
-                      data-tilt=""
-                      data-tilt-perspective="50"
-                      data-tilt-speed="350"
-                      data-tilt-max="1.8"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      class="img-fluid"
-                      src="../../assets/images/app2.png"
-                      alt="foot-app1"
-                      data-tilt=""
-                      data-tilt-perspective="50"
-                      data-tilt-speed="350"
-                      data-tilt-max="1.8"
-                    />
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end download section-->
-    <!-- footer-section-->
-        <!-- footer-section-->
-    <section class="contact" id="contact">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="section-title">
-                <h2>Ponerse en contacto</h2>
-              </div>
-              <form class="auth-form">
-                <div class="form-group">
-                  <label for="exampleInputName1">Nombre</label
-                  ><i class="fa fa-user"></i>
-                  <input
-                    class="form-control"
-                    id="exampleInputName1"
-                    required=""
-                    name="login[username]"
-                    type="email"
-                    placeholder="User name"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail12">Email</label
-                  ><i class="fa fa-envelope-o"></i>
-                  <input
-                    class="form-control"
-                    id="exampleInputEmail12"
-                    required=""
-                    name="login[email]"
-                    type="email"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="form-group">
-                  <label>tu mensaje</label><i class="fa fa-commenting-o"></i>
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    name="message"
-                    cols="30"
-                    rows="10"
-                    placeholder="Your Message"
-                  ></textarea>
-                </div>
-                <div class="form-group mb-0">
-                  <button class="btn-theme" type="submit">Enviar mensaje</button>
-                </div>
-              </form>
-            </div>
-            <div class="col-md-6">
-              <div class="section-title">
-                <h2>Información de contacto</h2>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consecte adipisicing elit sed do
-                eiusmod tempor incididunt.
-              </p>
-              <ul class="contact-box">
-                <li>
-                  <div class="contact-circle">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-text">
-                    <h3>Ubicación</h3>
-                    <p>123 Business Avenue, Hoston, USA</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="contact-circle">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-text">
-                    <h3>Llámanos</h3>
-                    <p>+91 123-456-7890</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="contact-circle">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-text">
-                    <h3>Envíanos un correo electrónico</h3>
-                    <p>support@gmail.com</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- end footer section-->
-    <!-- subscribe section-->
-        <!-- subscribe section-->
-    <section class="subscribe-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-lg-4">
-              <div class="subscribe">
-                <h3>Suscríbete al boletín</h3>
-              </div>
-            </div>
-            <div class="col-sm-12 col-lg-8">
-              <div class="email-box">
-                <form
-                  class="auth-form needs-validation"
-                  id="mc-embedded-subscribe-form"
-                  action="https://JairoSaul.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
-                  method="post"
-                  name="mc-embedded-subscribe-form"
-                  target="_blank"
-                >
-                  <input
-                    class="form-control"
-                    id="mce-EMAIL"
-                    name="EMAIL"
-                    placeholder="Your email address:"
-                    type="email"
-                    required="required"
-                  />
-                  <button class="btn btn-email" id="mc-submit" type="submit">
-                    Subscribe
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end subscribe section-->
-    <!-- end subscribe section-->
-    <!-- copy-right-section-->
-        <!-- copy-right-section-->
-    <footer class="cpoy-right-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="social-footer">
-                <ul>
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-facebook" aria-hidden="true"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-google-plus" aria-hidden="true"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-twitter" aria-hidden="true"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-instagram" aria-hidden="true"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-12 text-center">
-              <p class="copyright">
-                2024 PublicAdis - BuscAdis
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- end copy right section-->
-    <!-- end copy right section-->
-    <!-- Tap to top-->
-        <!-- Tap to top-->
-    <div class="tap-top">
-        <div><i class="fa fa-angle-up" aria-hidden="true"></i></div>
-      </div>
-      <!-- Tap to top end-->
-    <!-- Tap to top end-->
-    <!-- facebook chat section start-->
-    <div id="fb-root"></div>
-    <script>
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src =
-          "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
-    <!-- Your customer chat code-->
-    <div
-      class="fb-customerchat"
-      attribution="setup_tool"
-      page_id="2123438804574660"
-      theme_color="#5f57ea"
-      logged_in_greeting="Hi! Welcome to JairoSaul Themes  How can we help you?"
-      logged_out_greeting="Hi! Welcome to JairoSaul Themes  How can we help you?"
-    ></div>
-    <!-- facebook chat section end--><!--[if lt IE 9]>
-      <div class="ie-warning">
-        <h1>Warning!!</h1>
-        <p>
-          You are using an outdated version of Internet Explorer, please upgrade
-          <br />to any of the following web browsers to access this website.
-        </p>
-        <div class="iew-container">
-          <ul class="iew-download">
-            <li>
-              <a href="http://www.google.com/chrome/">
-                <img src="../../assets/images/browsers/chrome.png" alt="" />
-                <div>Chrome</div>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.mozilla.org/en-US/firefox/new/">
-                <img src="../../assets/images/browsers/firefox.png" alt="" />
-                <div>Firefox</div>
-              </a>
-            </li>
-            <li>
-              <a href="http://www.opera.com">
-                <img src="../../assets/images/browsers/opera.png" alt="" />
-                <div>Opera</div>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.apple.com/safari/">
-                <img src="../../assets/images/browsers/safari.png" alt="" />
-                <div>Safari</div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"
-              >
-                <img src="../../assets/images/browsers/ie.png" alt="" />
-                <div>IE (9 & above)</div>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <p>Sorry for the inconvenience!</p>
-      </div>
-    <![endif]-->
-    <!-- js file-->
-    <script src="../../assets/js/jquery-3.3.1.min.js"></script>
-    <!-- bootstrap js file-->
-    <script src="../../assets/js/bootstrap.min.js"></script>
-    <!-- popper js file-->
-    <script src="../../assets/js/popper.min.js"></script>
-    <!-- Owl carousel js file-->
-    <script src="../../assets/js/owl.carousel.min.js"></script>
-    <!-- tilt js file-->
-    <script src="../../assets/js/tilt.jquery.js"></script>
-    <!-- script js file-->
-    <script src="../../assets/js/script.js"></script>
-    <!-- swiper js-->
-    <script src="../../assets/js/swiper.min.js"></script>
-    <!--home page-->
-    <script src="../../assets/js/scroll.js"></script>
-    <script src="../../assets/js/slider.js"></script>
-  </body>
+</body>
+
+<script>
+
+document.addEventListener("alpine:init", () => {
+
+Alpine.data("imageSlider", () => (
+        
+    {
+
+        currentIndex:1,
+
+            images: [
+
+                {src:"./src/assets/images/PublicAdis_web_app.png",
+                id:"webAppImage",
+                link:"https://buscadis.com/"},
+
+                {src:"./src/assets/images/phone_application.png",
+                id:"phoneAppImage",
+                link:"https://play.google.com/store/apps/details?id=buscadis.publicadis&pli=1"}
+            ],
+
+            sliderImages: [
+
+                {   
+                    src:"./src/assets/images/images_for_slider/1.png",
+                    step:"Primero busca el anuncio que quieres publicar."
+                },
+
+                {
+                    src:"./src/assets/images/images_for_slider/2.png",
+                    step:"Luego selecciona el tipo de empleo que quieres publicar."
+                },
+
+                {
+                    src:"./src/assets/images/images_for_slider/3.png",
+                    step:"Añade los datos de tu anuncio."
+                },
+
+                {
+                    src:"./src/assets/images/images_for_slider/4.png",
+                    step:"Pública tu anuncio."
+                },
+
+                {
+                    src:"./src/assets/images/images_for_slider/5.png",
+                    step:"Mira tu nuevo anuncio en nuestra plataforma."
+                }
+
+            ]
+
+    }
+
+    )
+);
+
+}
+);
+
+
+</script>
+
 </html>
