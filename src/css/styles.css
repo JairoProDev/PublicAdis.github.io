@@ -6,11 +6,13 @@
     --global-font: "Poppins", sans-serif;
     /* * Radius size: */
     --app-button-radius: 1rem;
+
     /* *Carousel radius: */
     --carousel-border-radius: 1.6rem; 
     --slide-border-size: 0.5rem;    
     --slide-text-size: 1.8rem;    
     --slide-text-span-size: 1.9rem;
+
     /* *Contact card border radius: */
     --contact-card-border-radius: 1.6rem;    
     --main-image-card-width: 200px;    
@@ -19,32 +21,49 @@
     --contact-span-font-size: 1.7rem;    
     --icons-title-span-font-size: 1.5rem;    
     --icons-title-font-size: 1.4rem;
+
     /* *Titles size */
     --main-titles-size:2.57rem;    
     --sub-titles-size:1.5rem;    
     --title-size:1.2rem;    
-    --section-main-title-span: 2.4rem;;
+    --section-main-title-span: 2.4rem;
+
     /* *Service titles size: */
     --service-title-span-size: 1.45rem;    
     --service-title-font-size: 1.35rem;    
     --service-title-radius-value: 1.2rem;
     /* *Benefits titles size */
-    --benefit-title-font-size: 1.4rem;    
-    --benefit-title-span-font-size: 1.5rem;
+    --benefit-title-font-size: 1.3rem;    
+    --benefit-title-span-font-size: 1.4rem;
+
     /* * Font size */
     --normal-font-size:1rem;
+
     /* * Links size: */
     --link-font-size:1.3rem;
+
     /* * App button link font size: */
     --app-button-font-size: 1.3rem;
+
     /* *Step message font size */
     --step-message-font-size: 2rem;
+
     /* *Font size slider title: */
     --slider-title-font-size: 2.3rem;
+
     /* *Slide title font size: */
     --slide-title-font-size: 2.3rem;
+
     /* *Footer main text: */
     --footer-main-text-size: 2rem;
+
+    /* *Hero feature font size: */
+    --hero-feature-font-size: 1.4rem;
+    --hero-feature-span-font-size: 1.5rem;
+    --main-title-span-font-size: 5rem;
+    --main-title-font-size: 4.8rem;
+    --main-section-text-font-size: 1.8rem;
+
     /* *Icons size */
     --access-icon-width: 2.5rem;    
     --access-icon-height: 2.5rem;
@@ -52,9 +71,11 @@
     --main-icon-heigth: 3.2rem;
     --contact-icon-width: 6rem;    
     --contact-icon-height: 6rem;
+
     /* *Service icon dimensions: */
     --service-icon-width: 62%;    
     --service-icon-height: 62%;
+
     /* *Benefit icon dimensions: */
     --benefit-icon-width: 104%;    
     --benefit-icon-height: 104%;
@@ -81,6 +102,7 @@
 
     /* *cards value: */
     --card-radius-value: 1.3rem;
+
     /* * Colors of the page */
     --font-color:#212529;
     --component-color: #205372;
@@ -95,8 +117,9 @@
     --app-button-color-text:whitesmoke;    
     --app-button-hover-color: #0b7afa;
     --slide-border-color: #00c3ff;    
-
     --contact-text-color: #0beeaa;
+    --main-title-span-color: #233cad;
+
     /* * General transition time: */
     --general-transition-time: 400ms;
 
@@ -287,6 +310,8 @@ body{
     display: none;
 }
 
+/* *Main section components: */
+
 /* * MAIN SLIDER COMPONENT: */
 .sliderImageContainer{
     width: fit-content;    
@@ -332,8 +357,6 @@ body{
 }
 
 
-
-
 /* *INFO BOX COMPONENT CLASSES: */
 
 #mainText{
@@ -362,6 +385,44 @@ body{
     gap: 5%;
 }
 
+#mainTextSpan{
+    color: var(--main-title-span-color);
+    font-size: var(--main-title-span-font-size);
+}
+
+/* *Page features bar: */
+.heroFeature{
+    text-align: center;
+    font-size: var(--hero-feature-font-size);
+    background-color: var(--component-color);
+    width: fit-content;
+    height: 7vh;
+    padding: 0.5% 2% 0.5% 2%;
+    border-radius: 1rem;
+    color: white;
+}
+
+.heroFeatureSpan{
+    font-size: var(--hero-feature-span-font-size);
+    color: white;
+}
+
+.heroContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    height: fit-content;
+}
+
+#mainText{
+    font-size: var(--main-title-font-size);
+}
+
+#mainSectionText{
+    font-size: var(--main-section-text-font-size);
+}
 
 /* * Services components: */
 
@@ -401,7 +462,6 @@ body{
     margin: 0;    
     padding: 0;
 }
-
 
 .serviceTitleSpan{
     color: var(--service-title-span-color);    
@@ -706,15 +766,15 @@ body{
 
 #mainSection{
     height: 119.4vh;
-    display: flex;    
-    flex-direction: column;
+    display: flex;
+    flex-direction: column;    
 }
 
 #infoBoxSection{
     box-sizing: border-box;
     width: 51%;    
     height: 100%;
-    padding: 11% 0 0 2%;
+    padding: 4.5% 0 0 2%;
     display: flex;    
     align-items: center;    
     flex-direction: column;    
@@ -844,9 +904,9 @@ body{
         --section-main-title-span: 2.2rem;;    
 
         /* *Service titles size: */
-        --service-title-span-size: 0.8rem;    
+        --service-title-span-size: 1.2rem;    
 
-        --service-title-font-size: 0.7rem;    
+        --service-title-font-size: 1.1rem;    
 
         --service-title-radius-value: 1.2rem;    
 
@@ -859,7 +919,7 @@ body{
         --normal-font-size:1rem;    
 
         /* * Links size: */
-        --link-font-size:0.5rem;    
+        --link-font-size:0.44rem;    
 
         /* * App button link font size: */
         --app-button-font-size: 0.8rem;    
@@ -896,6 +956,8 @@ body{
 
         --benefit-icon-height: 74%;    
 
+        /* *Footer main text: */
+        --footer-main-text-size: 0.8rem;
     
         /*Animation move value*/
         --slider-animation-translate-size: 0.6rem;    
@@ -905,33 +967,48 @@ body{
     
         --web-app-image-width: 112vw;    
 
-        --web-app-image-height: 32vh; 
+        --web-app-image-height: 28vh; 
     
-        --phone-app-image-width: 68vw;    
+        --phone-app-image-width: 70vw;    
 
-        --phone-app-image-height: 57vh;    
+        --phone-app-image-height: 58vh;    
 
-        --app-slider-image-width: 62vw;    
+        --app-slider-image-width: 68vw;    
 
         --app-slider-image-height: 54.3vh;    
 
     
         /* * Buttons size: */
-        --app-button-width: 38%;    
+        --app-button-width: 44%;    
 
         --app-button-height: 2.2rem;    
 
-    
-        /* * General transition time: */
-        --general-transition-time: 400ms;
+        /* *Hero feature font size: */
+        --hero-feature-font-size: 0.4rem;
+        --hero-feature-span-font-size: 0.5rem;
+        --main-title-span-font-size: 3rem;
+        --main-title-font-size: 2.8rem;
+        --main-section-text-font-size: 0.7rem;
+
     }
 
     #mainSection{
         flex-direction: column-reverse;    
+        height: 107vh;
     }
 
     .service{
-        height: 62%;    
+        width: 82vw;
+        height: 49vh; 
+
+        margin: 5% 0 5% 0;
+    }
+
+    #servicesSection{
+
+        overflow: visible;
+        height: fit-content;
+
     }
 
     #sectionForServices1{
@@ -939,7 +1016,23 @@ body{
     }
 
     .benefitComponent{
-        height: 88%;    
+        height: 58%;    
+    }
+
+    #benfitsContainer1{
+        align-items: center;
+    }
+
+    #benefitComponent1{
+        margin-top: 17%;
+    }
+
+    #benfitsContainer{
+        align-items: start;
+    }
+
+    #benefitsMainTitle{
+        margin-top: 27%;
     }
 
     .benefitTitle{
@@ -1016,7 +1109,7 @@ body{
 
     #proveSliderContainer2{
         width: 100vw;
-        height: 44vh;    
+        height: 51vh;    
     }
 
     #navBar{
@@ -1031,12 +1124,9 @@ body{
     #navOptionsList{
         background-color: #205372;
         justify-content: center;    
-
         align-items: center;
         width: 100%;    
-
         height: 1.3rem;
-        margin: 0%;
         gap: 0.5rem;    
     }
 
@@ -1056,4 +1146,79 @@ body{
     .motherBox{
         width: 100vw;    
     }
+
+    #mainComponentsContainer{
+        flex-direction: column-reverse;
+    }
+
+    #mainText{
+        margin: 0 0 7% 0;
+        padding: 0;
+    }
+
+    #infoBox{
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #mainSection{
+        height: 100vh;
+    }
+
+    #mainSectionText{
+        margin: 0 0 3% 0;
+        padding-left: 5%;
+    }
+
+    .appButton{
+        gap: 1.8%;
+    }
+
+    #buttonsContainer{
+        padding-left: 4%;
+        gap: 2%;
+    }
+
+    #localIcon{
+        top: 8.6%;
+    }
+
+    .sectionForServices{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: fit-content;
+        padding: 0;
+        margin: 0;
+    }
+
+    #servicesContainer{
+        padding: 0;
+        margin: 2% 0 0 0 ;
+        height: fit-content;
+    }
+
+    #sectionForServices2{
+        align-items: center;
+    }
+
+    #pageFooter{
+        gap: 2%;
+    }
+
+    #footerIcons{
+        gap: 2%;
+    }
+
+    .contactIconFooter{
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
+    #heroMainContainer{
+        display: none;
+    }
+
 }
