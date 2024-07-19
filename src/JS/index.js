@@ -10,17 +10,6 @@ document.getElementById('phoneAppImage').style.marginRight = '34%';
 
 document.getElementById('phoneAppImage').style.marginLeft = '16%';
 
-if(document.getElementById('mainSection').style.flexDirection == 'column-reverse'){
-
-        //* *This is for adjust the slider images
-    document.getElementById('webAppImage').style.marginTop = '29.5%';
-
-    document.getElementById('phoneAppImage').style.marginTop = '-13%';
-
-
-}
-
-
 //* *This is for adjust the page logo hover: 
 document.getElementById('logoContainer').onmouseover = () => {
 
@@ -157,6 +146,12 @@ function onScroll() {
 
 
 );
+
+/* *Code for fix steps slider: */
+document.getElementById('step3').style.top = '4%';
+document.getElementById('step4').style.top = '4%';
+
+/* *Responsive nav bar */
 
 // /* *Intervals for our animation: */
 // let interval1, interval2 ,interval3;

@@ -42,10 +42,19 @@
 
             <!-- Navigation Bar -->
         <nav class="singleComponent shadow-2xl" id="navBar" role="navigation" aria-label="Main Navigation">
+            
             <a href="https://buscadis.com/" class="logo" id="logoContainer">
                 <img src="./src/assets/images/i01_download-1.png" alt="PublicAdis Logo" class="accessIcon" id="logoIcon">
                 <h1 class="mainTitle" id="logoTitle">Public<span id="pageLogoSpan" class="mainTitle">Adis</span></h1>
             </a>
+
+            <!-- *Responsive hamburger icon for access menu options: 
+            <input type="checkbox" name="responsiveAcess" id="navbarResponsiveInput" class = "responsiveMenuAccess bg-none">
+
+            <label for="responsiveAcess" id = "navbarResponsiveInputLabel">
+                <i class="fa-solid fa-bars responsiveMenuAccess" role="menuitem"></i>
+            </label>
+            -->
 
             <!-- Navigation Options -->
             <div id="navOptionsList" role="menu">
@@ -56,17 +65,6 @@
                 <a href="#featuresSection" class="navOption" role="menuitem">CARACTERISTICAS</a>
                 <a href="#contactsSection" class="navOption" role="menuitem">CONTACTANOS</a>
             </div>
-
-            <!-- *Responsive hamburger icon for access menu options: 
-            <input type="checkbox" name="responsiveAcess" id="navbarResponsiveInput" class = "responsiveMenuAccess">
-
-            <label for="responsiveAcess">
-
-                <i class="fa-solid fa-bars responsiveMenuAccess" role="menuitem"></i>
-
-            </label>
-            -->
-
         </nav>
 
             <!-- * Main section: -->
@@ -490,29 +488,24 @@
 
                         /* *And once we reach the first index element we stop our interval and call our animation 1 */
                                 if(currentIndex == 1){
-
                                     clearInterval(setAnimation2);
-
                                     animation1();
-
                                 }
-
                                 }, 4500);
                                 
                         }
 
                             animation1();
 
-                        
                 ">
                 
-                        <div id = "proveSliderContainer1" class="relative overflow-hidden w-[52vw] h-[86.8vh] bg-white shadow-xl rounded-[1.2rem]">
+                        <div id = "proveSliderContainer1" class="relative overflow-hidden w-[50vw] h-[86.8vh] bg-white shadow-xl rounded-[1.2rem]">
 
                             <template x-for="(sliderImage, index1) in sliderImages">
 
                                 <div x-show="currentIndex == index1 + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class = "flex flex-col items-center justify-center">
 
-                                    <p x-text="sliderImage.step" class = "stepMessage top-0 absolute text-center w-[100%] h-fit"></p>
+                                    <p x-text="sliderImage.step" class = "stepMessage top-0 absolute text-center w-[100%] h-fit" :id = "sliderImage.id"></p>
 
                                     <img :src="sliderImage.src" :alt="sliderImage.alt" class="appSliderImage " />
 
@@ -634,7 +627,7 @@
                                 stroke="bold"
                                 delay = "1200"
                                 colors="primary:#104891,secondary:#16a9c7"
-                                style="width:46%;height:46%; top:-10%;"
+                                style="width:56%;height:56%; top:-10%;"
                                 id = "globalIcon"
                                 >
                                 
@@ -660,7 +653,7 @@
                                 stroke="bold"
                                 state="morph-check"
                                 colors="primary:#104891,secondary:#16a9c7"
-                                style="width:46%;height:46%">
+                                style="width:56%;height:56%">
                             </lord-icon>
 
                             <p class = "slideText">
@@ -681,7 +674,7 @@
                                 stroke="bold"
                                 state="loop-slide"
                                 colors="primary:#104891,secondary:#16a9c7"
-                                style="width:37%;height:37%">
+                                style="width:47%;height:47%">
                             </lord-icon>
 
                             <p class = "slideText">
@@ -704,7 +697,7 @@
                                 stroke="bold"
                                 state="in-reveal"
                                 colors="primary:#104891,secondary:#16a9c7"
-                                style="width:46%;height:46%">
+                                style="width:56%;height:56%">
 
                             </lord-icon>
 
@@ -797,31 +790,37 @@ Alpine.data("imageSlider", () => (
                 {   
                     src:"./src/assets/images/images_for_slider/1.png",
                     step:"Primero busca el anuncio que quieres publicar.",
-                    alt: "Paso 1 para publicar tu anuncio"
+                    alt: "Paso 1 para publicar tu anuncio",
+                    id: "step1"
+
                 },
 
                 {
                     src:"./src/assets/images/images_for_slider/2.png",
                     step:"Luego selecciona el tipo de empleo que quieres publicar.",
-                    alt: "Paso 2 para publicar tu anuncio"
+                    alt: "Paso 2 para publicar tu anuncio",
+                    id: "step2"
                 },
 
                 {
                     src:"./src/assets/images/images_for_slider/3.png",
                     step:"Añade los datos de tu anuncio.",
-                    alt: "Paso 3 para publicar tu anuncio"
+                    alt: "Paso 3 para publicar tu anuncio",
+                    id: "step3"
                 },
 
                 {
                     src:"./src/assets/images/images_for_slider/4.png",
                     step:"Pública tu anuncio.",
-                    alt: "Paso 4 para publicar tu anuncio"
+                    alt: "Paso 4 para publicar tu anuncio",
+                    id: "step4"
                 },
 
                 {
                     src:"./src/assets/images/images_for_slider/5.png",
                     step:"Mira tu nuevo anuncio en nuestra plataforma.",
-                    alt: "Paso 5 para publicar tu anuncio"
+                    alt: "Paso 5 para publicar tu anuncio",
+                    id: "step5"
                 }
 
             ]
