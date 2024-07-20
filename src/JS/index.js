@@ -10,6 +10,7 @@ document.getElementById('phoneAppImage').style.marginRight = '34%';
 
 document.getElementById('phoneAppImage').style.marginLeft = '16%';
 
+
 //* *This is for adjust the page logo hover: 
 document.getElementById('logoContainer').onmouseover = () => {
 
@@ -22,6 +23,7 @@ document.getElementById('logoContainer').onmouseout = () => {
     document.getElementById('pageLogoSpan').style.color = '#ffffff';
 
 }
+
 
 
 /* *Code for copy the email element: */
@@ -150,6 +152,13 @@ function onScroll() {
 /* *Code for fix steps slider: */
 document.getElementById('step3').style.top = '4%';
 document.getElementById('step4').style.top = '4%';
+
+/* *This is for responsive main slider fixes: */
+
+if(document.getElementById('navBar').style.padding = "0%"){
+    document.getElementById('webAppImage').style.marginTop = '25%';
+}
+
 
 /* *Responsive nav bar */
 

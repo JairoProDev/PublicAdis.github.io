@@ -14,9 +14,7 @@
     <meta property="og:image" content="./src/assets/icons/favicon.ico">
     <meta property="og:url" content="https://www.publicadis.com">
 
-    <!-- *Font awsome -->
-    <script src="https://kit.fontawesome.com/09fe3c9c5c.js" crossorigin="anonymous"></script>
-
+    <!-- * Css styles -->
     <link rel="stylesheet" href="./src/css/styles.css">
     <link rel="shortcut icon" href="./src/assets/icons/favicon.ico" />
 
@@ -47,14 +45,6 @@
                 <img src="./src/assets/images/i01_download-1.png" alt="PublicAdis Logo" class="accessIcon" id="logoIcon">
                 <h1 class="mainTitle" id="logoTitle">Public<span id="pageLogoSpan" class="mainTitle">Adis</span></h1>
             </a>
-
-            <!-- *Responsive hamburger icon for access menu options: 
-            <input type="checkbox" name="responsiveAcess" id="navbarResponsiveInput" class = "responsiveMenuAccess bg-none">
-
-            <label for="responsiveAcess" id = "navbarResponsiveInputLabel">
-                <i class="fa-solid fa-bars responsiveMenuAccess" role="menuitem"></i>
-            </label>
-            -->
 
             <!-- Navigation Options -->
             <div id="navOptionsList" role="menu">
@@ -189,7 +179,7 @@
                                         animation1();
                             ">
                             
-                                    <div id = "proveSliderContainer2" class="relative overflow-hidden w-[58vw] h-[90vh]">
+                                    <div id = "proveSliderContainer2" class="relative overflow-hidden">
             
                                     
 
@@ -544,7 +534,7 @@
                     <!-- * Acess links section: -->
                     <section class = "contactCardSection">
 
-                        <h3 class = "iconsTitle">!<i class="fa-solid fa-arrow-down contactTitleIcon"></i> Da <span class = "inconsTitleSpan">Click</span> para contactarnos <i class="fa-solid fa-arrow-down contactTitleIcon"></i>¡</h3>
+                        <h3 class = "iconsTitle">!Da <span class = "inconsTitleSpan">Click</span> para contactarnos¡</h3>
                         <div class = "iconsContainer">
 
                                 <!-- *Whatsapp icon -->
@@ -563,7 +553,7 @@
 
                         </div>
 
-                        <h3 class = "iconsTitle">!<i class="fa-solid fa-arrow-down contactTitleIcon"></i> Da <span class = "inconsTitleSpan">Click</span> para ver nuestras redes <i class="fa-solid fa-arrow-down contactTitleIcon"></i>¡</h3>
+                        <h3 class = "iconsTitle">!Da <span class = "inconsTitleSpan">Click</span> para ver nuestras redes¡</h3>
                         <div class = "iconsContainer">
 
                                 <!-- *Tiktok icon -->
@@ -701,7 +691,7 @@
 
                             </lord-icon>
 
-                            <p class = "slideText">
+                            <p class = "slideText" id = "slideText4">
 
                                 <span class = "slideTextSpan">Encuentra</span> y pública <span class = "slideTextSpan">anuncios</span> en múltiples categorías como empleos, inmuebles, vehículos, servicios, productos <span class = "slideTextSpan">y mucho más.</span>
 
@@ -762,76 +752,76 @@
 
 <script>
 
-document.addEventListener("alpine:init", () => {
+    document.addEventListener("alpine:init", () => {
 
-Alpine.data("imageSlider", () => (
-        
-    {
+    Alpine.data("imageSlider", () => (
+            
+        {
 
-        currentIndex:1,
+            currentIndex:1,
 
-            images: [
+                images: [
 
-                {src:"./src/assets/images/PublicAdis_web_app.png",
-                id:"webAppImage",
-                link:"https://buscadis.com/",
-                alt:"PublicAdis Web app"
-                },
+                    {src:"./src/assets/images/PublicAdis_web_app.png",
+                    id:"webAppImage",
+                    link:"https://buscadis.com/",
+                    alt:"PublicAdis Web app"
+                    },
 
-                {src:"./src/assets/images/phone_application.png",
-                id:"phoneAppImage",
-                link:"https://play.google.com/store/apps/details?id=buscadis.publicadis&pli=1",
-                alt: "PublicAdis Mobile app"
-            }
-            ],
-
-            sliderImages: [
-
-                {   
-                    src:"./src/assets/images/images_for_slider/1.png",
-                    step:"Primero busca el anuncio que quieres publicar.",
-                    alt: "Paso 1 para publicar tu anuncio",
-                    id: "step1"
-
-                },
-
-                {
-                    src:"./src/assets/images/images_for_slider/2.png",
-                    step:"Luego selecciona el tipo de empleo que quieres publicar.",
-                    alt: "Paso 2 para publicar tu anuncio",
-                    id: "step2"
-                },
-
-                {
-                    src:"./src/assets/images/images_for_slider/3.png",
-                    step:"Añade los datos de tu anuncio.",
-                    alt: "Paso 3 para publicar tu anuncio",
-                    id: "step3"
-                },
-
-                {
-                    src:"./src/assets/images/images_for_slider/4.png",
-                    step:"Pública tu anuncio.",
-                    alt: "Paso 4 para publicar tu anuncio",
-                    id: "step4"
-                },
-
-                {
-                    src:"./src/assets/images/images_for_slider/5.png",
-                    step:"Mira tu nuevo anuncio en nuestra plataforma.",
-                    alt: "Paso 5 para publicar tu anuncio",
-                    id: "step5"
+                    {src:"./src/assets/images/phone_application.png",
+                    id:"phoneAppImage",
+                    link:"https://play.google.com/store/apps/details?id=buscadis.publicadis&pli=1",
+                    alt: "PublicAdis Mobile app"
                 }
+                ],
 
-            ]
+                sliderImages: [
+
+                    {   
+                        src:"./src/assets/images/images_for_slider/1.png",
+                        step:"Primero busca el anuncio que quieres publicar.",
+                        alt: "Paso 1 para publicar tu anuncio",
+                        id: "step1"
+
+                    },
+
+                    {
+                        src:"./src/assets/images/images_for_slider/2.png",
+                        step:"Luego selecciona el tipo de empleo que quieres publicar.",
+                        alt: "Paso 2 para publicar tu anuncio",
+                        id: "step2"
+                    },
+
+                    {
+                        src:"./src/assets/images/images_for_slider/3.png",
+                        step:"Añade los datos de tu anuncio.",
+                        alt: "Paso 3 para publicar tu anuncio",
+                        id: "step3"
+                    },
+
+                    {
+                        src:"./src/assets/images/images_for_slider/4.png",
+                        step:"Pública tu anuncio.",
+                        alt: "Paso 4 para publicar tu anuncio",
+                        id: "step4"
+                    },
+
+                    {
+                        src:"./src/assets/images/images_for_slider/5.png",
+                        step:"Mira tu nuevo anuncio en nuestra plataforma.",
+                        alt: "Paso 5 para publicar tu anuncio",
+                        id: "step5"
+                    }
+
+                ]
+
+        }
+
+        )
+    );
 
     }
-
-    )
-);
-
-}
-);
+    );
 
 
 </script>

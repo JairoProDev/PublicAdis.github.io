@@ -25,7 +25,9 @@
     /* *Main section components: */
     --main-section-height: 119.4vh;
     --main-title-color: #ffffff;    
-    --main-span-color: #ffffff;   
+    --main-span-color: #ffffff;
+    --prove-slider-container-2-width: 58vw;
+    --prove-slider-container-2-height: 90vh;
 
     /* *InfoBox: */
     --access-icon-width: 2.5rem;    
@@ -395,6 +397,11 @@ body{
     font-size: var(--main-section-text-font-size);
     width: var(--main-section-text-width);
     height: fit-content;
+}
+
+#proveSliderContainer2{
+    width: var(--prove-slider-container-2-width);
+    height: var(--prove-slider-container-2-height);
 }
 
 /* *Page features bar: */
@@ -842,98 +849,101 @@ body{
 
     :root{
     
-    /* *Navbar: */
-    --link-font-size:0.5rem;
-    --nav-option-list-width: 100%;
-    --nav-option-list-height: fit-content;
+        /* *Navbar: */
+        --nav-option-list-width: 100%;
+        --nav-option-list-height: fit-content;
 
-    /* *Main section components: */
-    --main-section-height: 100vh;
+        /* *Main section components: */
+        --main-section-height: 100vh;
+        --prove-slider-container-2-width: 100vw;
+        --prove-slider-container-2-height: 88vh;
 
-    /* *InfoBox: */
-    --access-icon-width: 1.7rem;    
-    --access-icon-height: 1.7rem;
-    --main-icon-width: 4rem;    
-    --main-icon-heigth: 4rem;
-    --app-button-width: 44%;    
-    --app-button-height: 2.2rem;
-    --main-titles-size:1.4rem;    
-    --sub-titles-size:1.5rem;    
-    --title-size:1.2rem;    
-    --section-main-title-span: 2.4rem;
-    --app-button-radius: 1rem;
-    --app-button-font-size: 0.8rem;
-    --info-box-main-section-width: 100%;
-    --info-box-main-section-height: 51%;
-    --main-title-font-size: 2.4rem;
-    --main-title-span-font-size: 3.3rem;
-    --main-section-text-font-size: 1rem;
-    --main-section-text-width: 97%;
+        /* *InfoBox: */
+        --main-icon-width: 4rem;    
+        --main-icon-heigth: 4rem;
+        --app-button-width: 47%;    
+        --app-button-height: 2.2rem;
+        --main-titles-size:1.4rem;    
+        --sub-titles-size:1.5rem;    
+        --title-size:1.2rem;    
+        --section-main-title-span: 2.4rem;
+        --app-button-radius: 1rem;
+        --app-button-font-size: 0.8rem;
+        --info-box-main-section-width: 100%;
+        --info-box-main-section-height: 50%;
+        --main-title-font-size: 2.4rem;
+        --main-title-span-font-size: 3.3rem;
+        --main-section-text-font-size: 1rem;
+        --main-section-text-width: 97%;
+        --info-box-width: 100%;
+        --info-box-height: 100%;
+        
 
-    /* *Main slider: */
-    --slider-main-section-width: 100%;
-    --slider-main-section-height: 41%;
-    --web-app-image-width: 125vw;    
-    --web-app-image-height: 29vh; 
-    --phone-app-image-width: 70vw;    
-    --phone-app-image-height: 58vh;
-    --slider-animation-translate-size: 0.6rem;
+        /* *Main slider: */
+        --slider-animation-translate-size: 0.6rem;
 
-    /* *Hero: */
-    --hero-feature-font-size: 1.3rem;
+        /* *Hero: */
+        --hero-feature-font-size: 1.3rem;
 
-    /* *Service section components: */
+        /* *Service section components: */
 
-     /* *Service card: */
-    --service-title-span-size: 1.2rem;    
-    --service-title-font-size: 1.1rem;    
-    --service-component-width: 82vw;
-    --service-component-height: 49vh;
+        /* *Service card: */
+        --service-title-span-size: 1.2rem;    
+        --service-title-font-size: 1.1rem;    
+        --service-component-width: 82vw;
+        --service-component-height: 49vh;
+        --service-icon-width: 62%;    
+        --service-icon-height: 62%;    
 
-    /* *Benefits section components: */
+        /* *Benefits section components: */
 
-    /* *Benefit card: */
-    --benefit-title-font-size: 0.8rem;    
-    --benefit-title-span-font-size: 0.9rem;
-    --benefit-icon-width: 74%;    
-    --benefit-icon-height: 74%;
-    --benefit-component-height: 58%;
+        /* *Benefit card: */
+        --benefit-title-font-size: 0.8rem;    
+        --benefit-title-span-font-size: 0.9rem;
+        --benefit-icon-width: 74%;    
+        --benefit-icon-height: 74%;
+        --benefit-component-height: 58%;
 
-    /* *AppSlider section components: */
-    --step-message-font-size: 1.1rem;
-    --app-slider-image-width: 75vw;    
-    --app-slider-image-height: 54.3vh;
+        /* *AppSlider section components: */
+        --step-message-font-size: 1.1rem;
+        --app-slider-image-width: 75vw;    
+        --app-slider-image-height: 54.3vh;
 
-    /* *Contact section components: */
+        /* *Contact section components: */
 
-    /* *Contact card */  
-    --main-image-card-width: 100px;    
-    --main-image-card-height: 100px;    
-    --contact-text-font-size: 0.8rem;    
-    --contact-span-font-size: 0.9rem;    
-    --icons-title-span-font-size: 0.9rem;    
-    --icons-title-font-size: 0.8;
-    --contact-icon-width: 3.6rem;    
-    --contact-icon-height: 3.6rem;
-    --contact-title-font-size: 1.2rem;
-    --contact-card-section-width: 100%;
-    --contact-card-section-heigh: 50%;
+        /* *Contact card */  
+        --main-image-card-width: 100px;    
+        --main-image-card-height: 100px;    
+        --contact-text-font-size: 0.8rem;    
+        --contact-span-font-size: 0.9rem;    
+        --icons-title-span-font-size: 0.9rem;    
+        --icons-title-font-size: 0.8;
+        --contact-icon-width: 3.6rem;    
+        --contact-icon-height: 3.6rem;
+        --contact-title-font-size: 1.2rem;
+        --contact-card-section-width: 100%;
+        --contact-card-section-height: 50%;
 
-    /* *Carousel section components: */
-    
-    /* *Carousel*/  
-    --slide-text-size: 1rem;    
-    --slide-text-span-size: 1.1rem;
-    --slide-text-width: 83%;
-    --app-slider-section-height: 80vh;
-    --slide-title-font-size: 1.3rem;
-    --slider-title-font-size: 1.5rem;    
+        /* *Carousel section components: */
+        
+        /* *Carousel*/  
+        --slide-text-size: 1rem;    
+        --slide-text-span-size: 1.1rem;
+        --slide-text-width: 83%;
+        --app-slider-section-height: 80vh;
+        --slide-title-font-size: 1.3rem;
+        --slider-title-font-size: 1.5rem;    
 
-    /* *Footer: */
-    --footer-main-text-size: 0.8rem;
-    --contact-footer-icon-width: 1.7rem;
-    --contact-footer-icon-height: 1.7rem;
+        /* *Footer: */
+        --footer-main-text-size: 0.8rem;
+        --contact-footer-icon-width: 1.7rem;
+        --contact-footer-icon-height: 1.7rem;
 
+    }
+
+    .navOption{
+        font-size: 0.49rem;
+        margin:0;
     }
 
     #logoTitle{
@@ -950,10 +960,13 @@ body{
 
     #mainSection{
         flex-direction: column-reverse;    
+        padding: 0%;
     }
 
     .service{
         margin: 5% 0 5% 0;
+        width: 82vw;
+        height: 49vh;
     }
 
     #servicesSection{
@@ -962,15 +975,11 @@ body{
     }
 
     #sectionForServices1{
-        align-items: center;    
+        align-items: center; 
     }
 
     #benfitsContainer1{
         align-items: center;
-    }
-
-    #benefitComponent1{
-        margin-top: 17%;
     }
 
     #benfitsContainer{
@@ -978,11 +987,17 @@ body{
     }
 
     #benefitsMainTitle{
-        margin-top: 27%;
+        margin: 7% 4.5% 0 0;
+        font-size: 1.35rem;
+        padding: 2% 0 0 0;
     }
 
     .benefitTitle{
         text-align: center;    
+    }
+
+    .benfitsContainer{
+        padding: 3% 0 0 0;
     }
 
     .iconTitle{
@@ -991,16 +1006,22 @@ body{
 
     .contactCard{
         flex-direction: column;
-        margin-top: 10%;    
+        margin-top: 10% 0 0 0;  
     }
 
     .appSliderImage{
-        margin-top: 24%;    
+        margin-top: 24%;  
+        width: 85vw;  
+        height: 63vh;
+    }
+
+    #appSliderSection{
+        padding-top: 32%;
     }
 
     #proveSliderContainer1{
         width: 89vw;    
-        height: 65.5vh;    
+        height: 74vh;
     }
 
     #globalSlide{
@@ -1013,7 +1034,9 @@ body{
 
     #proveSliderContainer2{
         width: 100vw;
-        height: 51vh;    
+        height: 68.1vh;    
+        overflow: visible;
+        margin-top: 61%;
     }
 
     #navBar{
@@ -1026,22 +1049,32 @@ body{
     #navOptionsList{
         background-color: #205372;
         justify-content: center;    
-        align-items: center;
+        align-items: start;
         gap: 0.5rem;
-        padding-right: 3%;
+        margin: 0;
+        padding: 0;
+        padding-right: 9.5%;
+        width: 100vw;
+        height: fit-content;
     }
 
     #logoContainer{
         margin: 0;
-        width: fit-content;    
+        width: fit-content;   
     }
 
     #contactsMainTitle{
-        margin-bottom: 17%;    
+        margin-bottom: 7%;   
+        font-size: 1.1rem;
+    }
+
+    .contactCardSection{
+        width: 100%;
     }
 
     #mainComponentsContainer{
         flex-direction: column-reverse;
+        height: 100%;
     }
 
     #mainText{
@@ -1050,13 +1083,12 @@ body{
     }
 
     #infoBox{
-        margin: 0;
         justify-content: center;
         align-items: center;
     }
 
     #mainSectionText{
-        margin: 0 0 3% 0;
+        margin: 2% 0 3% 0%;
     }
 
     .appButton{
@@ -1066,6 +1098,7 @@ body{
     #buttonsContainer{
         padding-left: 4%;
         gap: 2%;
+        margin-bottom: 7%;
     }
 
     #localIcon{
@@ -1081,10 +1114,31 @@ body{
         margin: 0;
     }
 
+    .serviceTitle{
+        font-size: 1.4rem;
+    }
+
+    .serviceTitleSpan{
+        font-size: 1.5rem;
+    }
+
     #servicesContainer{
         padding: 0;
         margin: 2% 0 0 0 ;
         height: fit-content;
+    }
+
+    .benefitTitle{
+        font-size: 1.1rem;
+    }
+
+    .benefitTitleSpan{
+        font-size: 1.2rem;
+    }
+
+    .benefitComponent{
+        height: 36vh;
+        margin:1% 0 0 0;
     }
 
     #sectionForServices2{
@@ -1093,20 +1147,73 @@ body{
 
     #pageFooter{
         gap: 2%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     #footerIcons{
         gap: 2%;
+        width: fit-content;
+        height: fit-content;
     }
 
     #heroMainContainer{
         display: none;
     }
 
+    #sliderSection{
+        width: 100%;
+        height: 49%;   
+    }
+
+    #sliderTitle{
+        padding: 4% 0 0 0;
+        font-size: 1.3rem;
+    }
+
+    #infoBoxSection{
+        width: 100%;
+        height: 51%;
+    }
+
+    #webAppImage{
+        width: 125vw;
+        height: 29vh;
+    }
+
+    #phoneAppImage{
+        width: 70vw;
+        height: 58vh;
+    }
+
+    .accessIcon{
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
+    #slideText4{
+        margin-bottom: 8%;
+    }
+
+    .slideText{
+        font-size: 1.2rem;
+        width: 85%;
+    }
+
+    .slideTextSpan{
+        font-size: 1.3rem;
+    }
+
+    .footerMainText{
+        width: fit-content;
+        height: fit-content;
+    }
+
 }
 
 /* *Horizontal responsive: */
-@media(max-width: 811px){
+@media(max-width: 910px){
 
     :root{
         /* *Navbar: */
@@ -1222,18 +1329,10 @@ body{
         visibility: hidden;
     }
 
-    #mainText{
-        margin: 10% 10% 0% 0;
-    }
-
     #appSliderSection{
         height: 120vh;
     }
 
-    #benefitsMainTitle{
-        margin-top: 2%;
-    }
-    
     #benefitsSection{
         height: 110vh;
     }
