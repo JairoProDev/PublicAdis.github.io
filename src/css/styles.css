@@ -309,10 +309,6 @@ body{
     height: var(--main-icon-heigth);
 }
 
-.responsiveMenuAccess{
-    display: none;
-}
-
 /* *Main section components: */
 
 /* * MAIN SLIDER COMPONENT: */
@@ -598,7 +594,8 @@ body{
     font-size: var(--contact-span-font-size);
 }
 
-.contactCardSection{    display: flex;    
+.contactCardSection{    
+    display: flex;    
     flex-direction: column;    
     align-items: center;    
     justify-content: center;    
