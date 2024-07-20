@@ -1006,7 +1006,7 @@ body{
 
     .contactCard{
         flex-direction: column;
-        margin-top: 10% 0 0 0;  
+        margin-top: 10%;  
     }
 
     .appSliderImage{
@@ -1321,6 +1321,10 @@ body{
         
     }
 
+    .navOption{
+        font-size: 0.6rem;
+    }
+
     #navOptionsList{
         margin-left: 9%;
     }
@@ -1335,6 +1339,10 @@ body{
 
     #benefitsSection{
         height: 110vh;
+    }
+
+    #mainText{
+        margin-top: 5%;
     }
 
     #contactsMainTitle{

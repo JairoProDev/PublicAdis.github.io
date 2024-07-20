@@ -153,11 +153,6 @@ function onScroll() {
 document.getElementById('step3').style.top = '4%';
 document.getElementById('step4').style.top = '4%';
 
-/* *This is for responsive main slider fixes: */
-
-if(document.getElementById('navBar').style.padding = "0%"){
-    document.getElementById('webAppImage').style.marginTop = '25%';
-}
 
 
 /* *Responsive nav bar */
