@@ -1,8 +1,75 @@
 /* *Here we import our global font for our page: */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* *Here we set our global vars value: */
+/* *Root variables */
 :root {
+  /* Colors */
+  --primary-blue: #104891;
+  --primary-blue-light: #2a6bc2;
+  --primary-blue-dark: #003b7a;
+  --primary-orange: #ff7a00;
+  --primary-orange-light: #ff9a3f;
+  --primary-orange-dark: #e56e00;
+  --accent-light: #00a8e8;
+  --accent-dark: #0077b6;
+
+  --dark-text: #333333;
+  --light-text: #ffffff;
+  --gray-light: #f8f9fa;
+  --gray-medium: #dee2e6;
+  --gray-dark: #6c757d;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    90deg,
+    var(--primary-orange) 0%,
+    var(--primary-orange-light) 100%
+  );
+  --gradient-secondary: linear-gradient(
+    90deg,
+    var(--primary-blue) 0%,
+    var(--primary-blue-light) 100%
+  );
+  --gradient-accent: linear-gradient(
+    90deg,
+    var(--accent-light) 0%,
+    var(--accent-dark) 100%
+  );
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.2);
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+
+  /* Transitions */
+  --transition-fast: all 0.3s ease;
+  --transition-medium: all 0.5s ease;
+  --transition-slow: all 0.8s ease;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3rem;
+
   /* * global font style: */
   --global-font: "Poppins", sans-serif;
 
@@ -170,6 +237,303 @@
   --transition-slow: 0.5s ease;
 }
 
+/* * Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: var(--dark-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* * Global Element Styles */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-blue);
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-orange);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+/* * Page Section */
+.pageSection {
+  width: 100%;
+  position: relative;
+}
+
+/* * Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* * Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.rounded {
+  border-radius: var(--border-radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--border-radius-lg);
+}
+
+.shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.m-8 {
+  margin: 2rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+/* * Responsive Media Queries */
+@media (max-width: 1200px) {
+  :root {
+    --font-size-4xl: 2.75rem;
+    --font-size-3xl: 2.25rem;
+    --font-size-2xl: 1.75rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --font-size-4xl: 2.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-xl: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-4xl: 2.25rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-xl: 1.2rem;
+    --font-size-lg: 1.1rem;
+
+    --spacing-lg: 3rem;
+    --spacing-xl: 6rem;
+  }
+
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.5rem;
+    --font-size-2xl: 1.25rem;
+    --font-size-xl: 1.1rem;
+    --font-size-lg: 1rem;
+
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 5rem;
+  }
+
+  html {
+    font-size: 14px;
+  }
+}
+
 /* * We set our universal settings */
 * {
   font-size: var(--normal-font-size);
@@ -197,17 +561,6 @@ body {
 .motherBox {
   width: 98.85vw;
   height: fit-content;
-}
-
-.pageSection {
-  width: 100%;
-  height: 100vh;
-
-  display: flex;
-
-  align-items: center;
-
-  overflow: hidden;
 }
 
 .title {
@@ -2435,5 +2788,136 @@ body {
   .cta-text {
     font-size: 1.3rem;
     text-align: center;
+  }
+}
+
+/* Alert System Styles */
+.alert-container {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  border-radius: var(--border-radius-md);
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow-lg);
+  min-width: 250px;
+  max-width: 350px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.alert-show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.alert-hide {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.alert-success {
+  border-left: 4px solid #10b981;
+}
+
+.alert-error {
+  border-left: 4px solid #ef4444;
+}
+
+.alert-warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.alert-info {
+  border-left: 4px solid #3b82f6;
+}
+
+.alert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.alert-success .alert-icon i {
+  color: #10b981;
+}
+
+.alert-error .alert-icon i {
+  color: #ef4444;
+}
+
+.alert-warning .alert-icon i {
+  color: #f59e0b;
+}
+
+.alert-info .alert-icon i {
+  color: #3b82f6;
+}
+
+.alert-message {
+  font-size: 0.9rem;
+  color: var(--dark-text);
+  flex: 1;
+}
+
+.alert-close {
+  background: transparent;
+  border: none;
+  color: var(--gray-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transition: var(--transition-fast);
+}
+
+.alert-close:hover {
+  color: var(--dark-text);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .alert-container {
+    top: unset;
+    right: unset;
+    bottom: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .alert {
+    min-width: unset;
+    width: 100%;
+    max-width: 100%;
+    transform: translateY(100%);
+  }
+
+  .alert-show {
+    transform: translateY(0);
+  }
+
+  .alert-hide {
+    transform: translateY(100%);
   }
 }
