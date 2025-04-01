@@ -1,104 +1,93 @@
 // Hero Component
 function loadHero() {
   const hero = `
-    <section id="mainSection" class="pageSection hero-section">
+    <section id="heroSection" class="pageSection hero-section">
       <div class="hero-container">
         <div class="hero-content">
-          <h1 class="hero-title animated-text">
-            Haz Crecer Tu Negocio con
-            <span class="hero-title-highlight">PublicAdis</span>
+          <h1 class="hero-title fade-in-up">
+            Haz Crecer<br>
+            Tu Negocio<br>
+            con <span class="hero-title-highlight">PublicAdis</span>
           </h1>
-          <p class="hero-subtitle fade-in-up">
-            La plataforma publicitaria más completa de Cusco que impulsa tus
-            ventas en 7 canales diferentes
+          
+          <p class="hero-subtitle fade-in-up delay-1">
+            La plataforma publicitaria más completa de Cusco que impulsa tus ventas en 7 canales diferentes
           </p>
-
-          <div class="hero-features fade-in-up delay-1">
+          
+          <div class="hero-features fade-in-up delay-2">
             <div class="hero-feature">
-              <i class="fa-solid fa-check-circle"></i>
+              <i class="fa-solid fa-users-viewfinder"></i>
               <span>Multiplica tus clientes potenciales</span>
             </div>
             <div class="hero-feature">
-              <i class="fa-solid fa-check-circle"></i>
+              <i class="fa-solid fa-bullseye"></i>
               <span>Llega a más personas interesadas</span>
             </div>
             <div class="hero-feature">
-              <i class="fa-solid fa-check-circle"></i>
+              <i class="fa-solid fa-chart-line"></i>
               <span>Aumenta tus ventas rápidamente</span>
             </div>
           </div>
-
+          
           <div id="buttonsContainer" class="fade-in-up delay-2">
-            <button type="submit" class="appButton primary-btn pulse-animation">
-              <a href="https://wa.me/937054328" class="appButtonLink">
-                Publicar Anuncio
-              </a>
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-
-            <button class="appButton secondary-btn">
-              <a
-                href="https://play.google.com/store/apps/details?id=buscadis.publicadis&pli=1"
-                class="appButtonLink"
-              >
-                Descargar App
-              </a>
-              <i class="fa-brands fa-google-play"></i>
-            </button>
+            <a href="#servicesSection" class="primary-btn pulse-animation">
+              Explorar Servicios <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#businessToolsSection" class="secondary-btn">
+              Herramientas Gratuitas <i class="fa-solid fa-tools"></i>
+            </a>
           </div>
         </div>
-
+        
         <div class="hero-image fade-in-right">
           <div class="floating-elements">
-            <span class="floating-element" style="--delay: 0s; --x: -20px; --y: -10px">
-              <i class="fa-solid fa-bullhorn"></i>
-            </span>
-            <span class="floating-element" style="--delay: 2s; --x: 25px; --y: 15px">
-              <i class="fa-solid fa-chart-line"></i>
-            </span>
-            <span class="floating-element" style="--delay: 4s; --x: -15px; --y: 20px">
-              <i class="fa-solid fa-mobile-screen"></i>
-            </span>
-            <span class="floating-element" style="--delay: 1s; --x: 20px; --y: -15px">
-              <i class="fa-solid fa-users"></i>
-            </span>
+            <div class="floating-element">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <div class="floating-element">
+              <i class="fa-solid fa-car"></i>
+            </div>
+            <div class="floating-element">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="floating-element">
+              <i class="fa-solid fa-store"></i>
+            </div>
           </div>
           
           <div class="device-mockup">
-            <img
-              src="./src/assets/images/PublicAdis_web_app.png"
-              alt="PublicAdis Web Platform"
+            <img 
+              src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" 
+              alt="PublicAdis Desktop Application" 
               class="device-screen main-device"
             />
-            <img
-              src="./src/assets/images/phone_application.png"
-              alt="PublicAdis Mobile App"
+            <img 
+              src="https://images.unsplash.com/photo-1601972599720-36938d4ecd31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
+              alt="PublicAdis Mobile Application" 
               class="device-screen mobile-device"
             />
           </div>
           
           <div class="hero-platforms">
-            <span class="platform-badge" data-tooltip="Publicación en nuestra página web">Web</span>
-            <span class="platform-badge" data-tooltip="Disponible en Google Play">Android</span>
-            <span class="platform-badge" data-tooltip="Exposición en local físico">Local</span>
-            <span class="platform-badge" data-tooltip="Publicación en Facebook">Facebook</span>
-            <span class="platform-badge" data-tooltip="Videos promocionales en TikTok">TikTok</span>
-            <span class="platform-badge" data-tooltip="Difusión en grupos de WhatsApp">WhatsApp</span>
-            <span class="platform-badge" data-tooltip="Aparición en revista digital">Revista</span>
-          </div>
-          
-          <div class="scroll-indicator">
-            <div class="mouse">
-              <div class="wheel"></div>
-            </div>
-            <p>Desliza para ver más</p>
+            <div class="platform-badge">Web</div>
+            <div class="platform-badge">Android</div>
+            <div class="platform-badge">iOS</div>
+            <div class="platform-badge">Redes Sociales</div>
+            <div class="platform-badge">Local Físico</div>
           </div>
         </div>
       </div>
       
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <p>Desplaza para ver más</p>
+      </div>
+      
       <div class="hero-wave">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#ffffff" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,224C672,235,768,245,864,240C960,235,1056,213,1152,192C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          <path fill="#f8f9fa" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,149.3C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
       </div>
     </section>
@@ -106,11 +95,11 @@ function loadHero() {
 
   document.getElementById("heroContainer").innerHTML = hero;
 
-  initHeroAnimations();
+  initHeroInteractions();
 }
 
-function initHeroAnimations() {
-  // Add scroll-triggered animations
+function initHeroInteractions() {
+  // Animate elements when they enter the viewport
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -122,36 +111,92 @@ function initHeroAnimations() {
     { threshold: 0.1 }
   );
 
+  // Observe all fade-in elements
   document.querySelectorAll(".fade-in-up, .fade-in-right").forEach((el) => {
     observer.observe(el);
   });
 
   // Platform badges tooltip functionality
   const platformBadges = document.querySelectorAll(".platform-badge");
+
   platformBadges.forEach((badge) => {
-    badge.addEventListener("mouseover", () => {
+    badge.addEventListener("mouseenter", () => {
+      const tooltipText = getTooltipText(badge.textContent.trim());
+
+      // Remove any existing tooltips
+      const existingTooltip = document.querySelector(".tooltip");
+      if (existingTooltip) {
+        existingTooltip.remove();
+      }
+
+      // Create new tooltip
       const tooltip = document.createElement("div");
-      tooltip.classList.add("tooltip");
-      tooltip.textContent = badge.getAttribute("data-tooltip");
+      tooltip.className = "tooltip";
+      tooltip.textContent = tooltipText;
+
+      // Append tooltip to badge
       badge.appendChild(tooltip);
     });
 
-    badge.addEventListener("mouseout", () => {
+    badge.addEventListener("mouseleave", () => {
       const tooltip = badge.querySelector(".tooltip");
       if (tooltip) {
-        badge.removeChild(tooltip);
+        tooltip.remove();
       }
     });
   });
 
-  // Scroll indicator click event
+  // Smooth scroll for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80, // Adjust for header height
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // Scroll indicator functionality
   const scrollIndicator = document.querySelector(".scroll-indicator");
   if (scrollIndicator) {
     scrollIndicator.addEventListener("click", () => {
-      const servicesSection = document.getElementById("servicesSection");
-      if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth",
+      });
+    });
+
+    // Hide scroll indicator when scrolling down
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        scrollIndicator.style.opacity = "0";
+      } else {
+        scrollIndicator.style.opacity = "0.8";
       }
     });
+  }
+}
+
+function getTooltipText(platform) {
+  switch (platform) {
+    case "Web":
+      return "Publicación en nuestra plataforma web";
+    case "Android":
+      return "Disponible en app para Android";
+    case "iOS":
+      return "Disponible en app para iPhone";
+    case "Redes Sociales":
+      return "Promoción en Facebook, Instagram y TikTok";
+    case "Local Físico":
+      return "Anuncios en nuestro local físico en Cusco";
+    default:
+      return "Plataforma publicitaria integral";
   }
 }

@@ -170,7 +170,8 @@
   /* * Colors of the page */
   --font-color: #212529;
 
-  --background-color: color-mix(in srgb-linear, white 33%, #0ceee3 67%);
+  /* Changed from aqua background to white with slight gray tint */
+  --background-color: #f9f9f9;
 
   --component-color: #205372;
 
@@ -251,10 +252,12 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: white;
-  color: var(--dark-text);
-  line-height: 1.5;
+  font-family: var(--global-font);
+  color: var(--font-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -267,8 +270,10 @@ body {
 }
 
 .main-content {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  background-color: var(--background-color);
 }
 
 /* * Global Element Styles */
@@ -305,8 +310,12 @@ ol {
 
 /* * Page Section */
 .pageSection {
-  width: 100%;
   position: relative;
+  padding: 4rem 0;
+  width: 100%;
+  overflow: hidden;
+  min-height: auto;
+  margin-bottom: 0;
 }
 
 /* * Animation Classes */
@@ -543,16 +552,6 @@ ol {
   color: var(--font-color);
 
   font-weight: 600;
-}
-
-/* *We set our boy display for center our motherbox */
-body {
-  display: flex;
-  margin: 0;
-  padding: 0%;
-  box-sizing: border-box;
-
-  background-color: var(--background-color);
 }
 
 /* * GLOBAL CLASSES: */
@@ -1245,10 +1244,10 @@ body {
 
 .services-tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
 }
 
 .service-tab {
@@ -1587,34 +1586,16 @@ body {
 @media (max-width: 768px) {
   .services-tabs {
     gap: 0.5rem;
+    padding: 0 0.5rem;
   }
-
+  
   .service-tab {
-    padding: 0.8rem 1rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
   }
-
-  .service-tab i {
-    font-size: 1.5rem;
-  }
-
-  .service-tab span {
-    font-size: 0.9rem;
-  }
-
-  .service-content {
-    padding: 1.5rem;
-  }
-
-  .service-content-title {
-    font-size: 1.5rem;
-  }
-
-  .service-content-description {
-    font-size: 1rem;
-  }
-
-  .service-features li {
-    font-size: 0.9rem;
+  
+  .pageSection {
+    padding: 3rem 0;
   }
 }
 
@@ -2919,5 +2900,105 @@ body {
 
   .alert-hide {
     transform: translateY(100%);
+  }
+}
+
+/* Fix page sections to prevent overlap and empty spaces */
+.pageSection {
+  position: relative;
+  padding: 4rem 0;
+  width: 100%;
+  overflow: hidden;
+  min-height: auto;
+  margin-bottom: 0;
+}
+
+/* Main content fixes */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--background-color);
+}
+
+/* Body background fix */
+body {
+  font-family: var(--global-font);
+  color: var(--font-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Hero section fixes */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+  padding: 6rem 0 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Services section fixes */
+.services-section {
+  background-color: var(--gray-light);
+  padding: 5rem 0 0;
+  position: relative;
+  z-index: 2;
+  margin-top: -1px;
+}
+
+/* Benefits section fixes */
+.benefits-section {
+  background-color: white;
+  padding: 5rem 0;
+  position: relative;
+  z-index: 3;
+}
+
+/* Business tools section fixes */
+#businessToolsSection {
+  background-color: var(--gray-light);
+  padding: 5rem 0;
+  position: relative;
+  z-index: 4;
+}
+
+/* Fix for section waves to properly connect sections */
+.hero-wave, .services-wave, .benefits-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 5;
+}
+
+/* Fix services tabs overflow on mobile */
+.services-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Fix service tabs spacing on mobile */
+@media (max-width: 768px) {
+  .services-tabs {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .service-tab {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pageSection {
+    padding: 3rem 0;
   }
 }

@@ -2,19 +2,31 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="PublicAdis - Portal digital de anuncios para Cusco. Publica tus avisos clasificados, inmuebles, vehículos, servicios y más."
+      content="PublicAdis - La plataforma publicitaria más completa de Cusco para impulsar tu negocio y aumentar tus ventas en múltiples canales."
     />
+    <meta
+      name="keywords"
+      content="publicidad, anuncios, Cusco, inmuebles, vehículos, servicios, productos, negocios, PublicAdis"
+    />
+    <meta name="author" content="PublicAdis" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="PublicAdis - Haz Crecer Tu Negocio"
+    />
+    <meta
+      property="og:description"
+      content="La plataforma publicitaria más completa de Cusco para impulsar tu negocio y aumentar tus ventas en múltiples canales."
+    />
+    <meta property="og:image" content="./src/assets/images/og-image.jpg" />
+    <meta property="og:url" content="https://publicadis.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#104891" />
-    <title>
-      PublicAdis | Portal digital de anuncios | Avisos clasificados | Negocios y
-      Oportunidades
-    </title>
+    <title>PublicAdis - Haz Crecer Tu Negocio</title>
 
     <!-- Font Awesome -->
     <script
@@ -35,6 +47,7 @@
     <link rel="stylesheet" href="./src/css/components/contact.css" />
     <link rel="stylesheet" href="./src/css/components/footer.css" />
     <link rel="stylesheet" href="./src/css/components/tools.css" />
+    <link rel="stylesheet" href="./src/css/components/business-tools.css" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./src/assets/icons/favicon.ico" />
@@ -62,12 +75,41 @@
     <script defer src="./src/components/Contact.js"></script>
     <script defer src="./src/components/Footer.js"></script>
     <script defer src="./src/components/Tools.js"></script>
+    <script defer src="./src/components/BusinessTools.js"></script>
 
     <!-- Main Script -->
     <script defer src="./src/js/main.js"></script>
 
     <!-- Utility Scripts -->
     <script defer src="./src/js/carouselApp.js"></script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PublicAdis",
+        "url": "https://publicadis.com",
+        "logo": "https://publicadis.com/src/assets/images/i01_download-1.png",
+        "description": "Portal digital líder de anuncios clasificados en Cusco.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cusco",
+          "addressRegion": "Cusco",
+          "addressCountry": "PE"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+51937054328",
+          "contactType": "customer service"
+        },
+        "sameAs": [
+          "https://www.facebook.com/publicadis",
+          "https://www.instagram.com/publicadis",
+          "https://www.tiktok.com/@publicadis"
+        ]
+      }
+    </script>
   </head>
   <body>
     <!-- Page Container -->
@@ -236,7 +278,12 @@
             </div>
 
             <div class="tools-cta">
-              <a href="https://wa.me/937054328" class="tools-cta-button">
+              <a
+                href="https://wa.me/937054328"
+                target="_blank"
+                rel="noopener"
+                class="tools-cta-button"
+              >
                 ¿Necesitas ayuda con tu negocio? Contáctanos
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -263,10 +310,20 @@
           href="https://wa.me/937054328"
           class="action-button"
           aria-label="Contactar por WhatsApp"
+          target="_blank"
+          rel="noopener"
         >
           <i class="fa-brands fa-whatsapp"></i>
         </a>
       </div>
     </div>
+
+    <!-- JavaScript Files -->
+    <script src="./src/components/Navbar.js"></script>
+    <script src="./src/components/Hero.js"></script>
+    <script src="./src/components/Services.js"></script>
+    <script src="./src/components/Benefits.js"></script>
+    <script src="./src/components/BusinessTools.js"></script>
+    <script src="./src/components/Footer.js"></script>
   </body>
 </html>
