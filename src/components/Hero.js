@@ -5,27 +5,25 @@ function loadHero() {
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title fade-in-up">
-            Haz Crecer<br>
-            Tu Negocio<br>
-            con <span class="hero-title-highlight">PublicAdis</span>
+            Haz Crecer Tu Negocio con <span class="hero-title-highlight">PublicAdis</span>
           </h1>
           
           <p class="hero-subtitle fade-in-up delay-1">
             La plataforma publicitaria más completa de Cusco que impulsa tus ventas en 7 canales diferentes
           </p>
           
-          <div class="hero-features fade-in-up delay-2">
-            <div class="hero-feature">
-              <i class="fa-solid fa-users-viewfinder"></i>
-              <span>Multiplica tus clientes potenciales</span>
+          <div class="hero-metrics fade-in-up delay-2">
+            <div class="hero-metric">
+              <span class="metric-number">+380%</span>
+              <span class="metric-text">Multiplica tus clientes potenciales</span>
             </div>
-            <div class="hero-feature">
-              <i class="fa-solid fa-bullseye"></i>
-              <span>Llega a más personas interesadas</span>
+            <div class="hero-metric">
+              <span class="metric-number">+25k</span>
+              <span class="metric-text">Personas interesadas al mes</span>
             </div>
-            <div class="hero-feature">
-              <i class="fa-solid fa-chart-line"></i>
-              <span>Aumenta tus ventas rápidamente</span>
+            <div class="hero-metric">
+              <span class="metric-number">+200%</span>
+              <span class="metric-text">Incremento en ventas promedio</span>
             </div>
           </div>
           
@@ -69,11 +67,51 @@ function loadHero() {
           </div>
           
           <div class="hero-platforms">
-            <div class="platform-badge">Web</div>
-            <div class="platform-badge">Android</div>
-            <div class="platform-badge">iOS</div>
-            <div class="platform-badge">Redes Sociales</div>
-            <div class="platform-badge">Local Físico</div>
+            <div class="platform-badge">
+              <i class="fa-solid fa-globe"></i>
+              <span>Web</span>
+            </div>
+            <div class="platform-badge">
+              <i class="fa-brands fa-android"></i>
+              <span>Android</span>
+            </div>
+            <div class="platform-badge">
+              <i class="fa-brands fa-apple"></i>
+              <span>iOS</span>
+            </div>
+            <div class="platform-badge">
+              <i class="fa-solid fa-share-nodes"></i>
+              <span>Redes Sociales</span>
+            </div>
+            <div class="platform-badge">
+              <i class="fa-solid fa-store"></i>
+              <span>Local Físico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stats-container">
+          <div class="stat-item fade-in-up">
+            <div class="stat-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="stat-value">5,893+</div>
+            <div class="stat-label">Anuncios publicados</div>
+          </div>
+          <div class="stat-item fade-in-up delay-1">
+            <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="stat-value">93%</div>
+            <div class="stat-label">Tasa de satisfacción</div>
+          </div>
+          <div class="stat-item fade-in-up delay-2">
+            <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
+            <div class="stat-value">245%</div>
+            <div class="stat-label">ROI promedio</div>
+          </div>
+          <div class="stat-item fade-in-up delay-3">
+            <div class="stat-icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="stat-value">42k+</div>
+            <div class="stat-label">Visualizaciones diarias</div>
           </div>
         </div>
       </div>
@@ -90,6 +128,10 @@ function loadHero() {
           <path fill="#f8f9fa" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,149.3C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
       </div>
+      
+      <a href="https://wa.me/937054328" class="whatsapp-button" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
     </section>
   `;
 
@@ -121,7 +163,9 @@ function initHeroInteractions() {
 
   platformBadges.forEach((badge) => {
     badge.addEventListener("mouseenter", () => {
-      const tooltipText = getTooltipText(badge.textContent.trim());
+      const tooltipText = getTooltipText(
+        badge.querySelector("span").textContent.trim()
+      );
 
       // Remove any existing tooltips
       const existingTooltip = document.querySelector(".tooltip");

@@ -13,26 +13,25 @@
     />
     <meta name="author" content="PublicAdis" />
     <meta name="robots" content="index, follow" />
-    <meta
-      property="og:title"
-      content="PublicAdis - Haz Crecer Tu Negocio"
-    />
+    <meta property="og:title" content="PublicAdis - Haz Crecer Tu Negocio" />
     <meta
       property="og:description"
       content="La plataforma publicitaria más completa de Cusco para impulsar tu negocio y aumentar tus ventas en múltiples canales."
     />
     <meta property="og:image" content="./src/assets/images/og-image.jpg" />
-    <meta property="og:url" content="https://publicadis.com" />
+    <meta property="og:url" content="https://publicadis.com/" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:site_name" content="PublicAdis" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#104891" />
     <title>PublicAdis - Haz Crecer Tu Negocio</title>
 
     <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/09fe3c9c5c.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./src/css/styles.css" />
@@ -48,12 +47,19 @@
     <link rel="stylesheet" href="./src/css/components/footer.css" />
     <link rel="stylesheet" href="./src/css/components/tools.css" />
     <link rel="stylesheet" href="./src/css/components/business-tools.css" />
+    <link rel="stylesheet" href="./src/css/components/sectors.css" />
+    <link rel="stylesheet" href="./src/css/components/testimonials.css" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./src/assets/icons/favicon.ico" />
     <link
-      rel="apple-touch-icon"
-      href="./src/assets/icons/apple-touch-icon.png"
+      rel="icon"
+      href="./src/assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/icons/favicon.ico"
+      type="image/x-icon"
     />
 
     <!-- Alpine.js -->
@@ -76,6 +82,8 @@
     <script defer src="./src/components/Footer.js"></script>
     <script defer src="./src/components/Tools.js"></script>
     <script defer src="./src/components/BusinessTools.js"></script>
+    <script defer src="./src/components/Sectors.js"></script>
+    <script defer src="./src/components/Testimonials.js"></script>
 
     <!-- Main Script -->
     <script defer src="./src/js/main.js"></script>
@@ -112,6 +120,10 @@
     </script>
   </head>
   <body>
+    <div id="loader" class="loader">
+      <div class="loader-spinner"></div>
+    </div>
+
     <!-- Page Container -->
     <div class="app-container">
       <!-- Header -->
@@ -125,8 +137,14 @@
         <!-- Services Section -->
         <div id="servicesContainer"></div>
 
+        <!-- Sectors Section -->
+        <div id="sectorsContainer"></div>
+
         <!-- Benefits Section -->
         <div id="benefitsContainer"></div>
+
+        <!-- Testimonials Section -->
+        <div id="testimonialsContainer"></div>
 
         <!-- Business Tools Section -->
         <section id="businessToolsSection" class="pageSection">
@@ -325,5 +343,20 @@
     <script src="./src/components/Benefits.js"></script>
     <script src="./src/components/BusinessTools.js"></script>
     <script src="./src/components/Footer.js"></script>
+
+    <script>
+      // Fix loader issue - hide after page loads
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        if (loader) {
+          setTimeout(() => {
+            loader.style.opacity = "0";
+            setTimeout(() => {
+              loader.style.display = "none";
+            }, 300);
+          }, 500);
+        }
+      });
+    </script>
   </body>
 </html>
