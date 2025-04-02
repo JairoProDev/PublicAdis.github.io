@@ -9,7 +9,7 @@
     />
     <meta
       name="keywords"
-      content="publicidad, anuncios, Cusco, inmuebles, vehículos, servicios, productos, negocios, PublicAdis"
+      content="publicidad, anuncios, Cusco, inmuebles, vehículos, servicios, productos, negocios, PublicAdis, marketing"
     />
     <meta name="author" content="PublicAdis" />
     <meta name="robots" content="index, follow" />
@@ -31,13 +31,14 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      media="print" onload="this.media='all'"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- Preload Critical CSS -->
-    <link rel="preload" href="./src/css/styles.css" as="style">
-    <link rel="preload" href="./src/css/components/header.css" as="style">
-    <link rel="preload" href="./src/css/components/hero.css" as="style">
+    <link rel="preload" href="./src/css/styles.css" as="style" />
+    <link rel="preload" href="./src/css/components/header.css" as="style" />
+    <link rel="preload" href="./src/css/components/hero.css" as="style" />
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./src/css/styles.css" />
@@ -49,7 +50,6 @@
     <link rel="stylesheet" href="./src/css/components/benefits.css" />
     <link rel="stylesheet" href="./src/css/components/features.css" />
     <link rel="stylesheet" href="./src/css/components/application.css" />
-    <link rel="stylesheet" href="./src/css/components/contact.css" />
     <link rel="stylesheet" href="./src/css/components/footer.css" />
     <link rel="stylesheet" href="./src/css/components/tools.css" />
     <link rel="stylesheet" href="./src/css/components/business-tools.css" />
@@ -208,23 +208,68 @@
       </main>
     </div>
 
-    <!-- JavaScript Files -->
-    <script src="./src/components/Navbar.js"></script>
-    <script src="./src/components/Hero.js"></script>
-    <script src="./src/components/Services.js"></script>
-    <script src="./src/components/Benefits.js"></script>
-    <script src="./src/components/BusinessTools.js"></script>
-    <script src="./src/components/Footer.js"></script>
-
+    <!-- Diagnóstico de Componentes -->
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.group('Diagnóstico de Componentes');
+        
+        // Verificar si los contenedores existen
+        const containers = [
+          'headerContainer', 'heroContainer', 'servicesContainer', 
+          'sectorsContainer', 'benefitsContainer', 'testimonialsContainer',
+          'businessToolsContainer', 'applicationContainer', 'featuresContainer',
+          'footerContainer'
+        ];
+        
+        console.log('Verificando contenedores...');
+        containers.forEach(id => {
+          const element = document.getElementById(id);
+          console.log(`${id}: ${element ? 'Existe' : 'NO EXISTE'}`);
+        });
+        
+        // Verificar si las funciones de carga están disponibles
+        console.log('\nVerificando funciones de carga...');
+        const loaders = [
+          'loadHeader', 'loadHero', 'loadServices', 
+          'loadSectors', 'loadBenefits', 'loadTestimonials',
+          'loadBusinessTools', 'loadFeatures', 'loadFooter'
+        ];
+        
+        loaders.forEach(func => {
+          console.log(`${func}: ${typeof window[func] === 'function' ? 'Disponible' : 'NO DISPONIBLE'}`);
+        });
+        
+        // Verificar si los scripts están cargados
+        console.log('\nVerificando scripts...');
+        const scripts = document.querySelectorAll('script');
+        const scriptUrls = Array.from(scripts).map(s => s.src).filter(src => src);
+        
+        [
+          'Header.js', 'Hero.js', 'Services.js', 
+          'Benefits.js', 'Features.js', 'Footer.js', 
+          'Sectors.js', 'Testimonials.js', 'BusinessTools.js',
+          'main.js'
+        ].forEach(scriptName => {
+          const found = scriptUrls.some(url => url.includes(scriptName));
+          console.log(`${scriptName}: ${found ? 'Cargado' : 'NO CARGADO'}`);
+        });
+        
+        console.groupEnd();
+      });
+      
+      // Debug information for loader
+      console.log("Page loading...");
+      
       // Fix loader issue - hide after page loads
       window.addEventListener("load", function () {
+        console.log("Window loaded, hiding loader...");
         const loader = document.getElementById("loader");
         if (loader) {
           setTimeout(() => {
             loader.style.opacity = "0";
             setTimeout(() => {
               loader.style.display = "none";
+              console.log("Loader hidden");
             }, 300);
           }, 500);
         }

@@ -1,9 +1,9 @@
 /* Business Tools Section Styles */
 .business-tools-section {
-  background-color: var(--gray-lightest);
+  background-color: var(--gray-lightest, #f8f9fa);
   position: relative;
   overflow: hidden;
-  padding: 5rem 0;
+  padding: 5rem 2rem;
 }
 
 /* Section Header Styles */
@@ -12,21 +12,34 @@
   margin-bottom: 3rem;
 }
 
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary, #104891);
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--dark-text, #444);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 /* Tools Container */
 .tools-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: white;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
 /* Tool Tabs */
-.tools-tabs {
+.tool-tabs {
   display: flex;
   flex-wrap: wrap;
-  background-color: var(--gray-light);
+  background-color: #f0f2f5;
   padding: 0.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -38,12 +51,12 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--gray-dark);
+  color: #555;
   font-weight: 600;
   font-size: 0.9rem;
-  border-radius: var(--border-radius-md);
+  border-radius: 8px;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: all 0.3s ease;
   flex: 1;
   min-width: 150px;
   justify-content: center;
@@ -51,21 +64,17 @@
 
 .tool-tab:hover {
   background-color: rgba(255, 255, 255, 0.5);
-  color: var(--primary-blue);
+  color: var(--primary, #104891);
 }
 
 .tool-tab.active {
   background-color: white;
-  color: var(--primary-blue);
-  box-shadow: var(--shadow-sm);
-}
-
-.tool-tab i {
-  font-size: 1.1rem;
+  color: var(--primary, #104891);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Tool Content */
-.tools-content {
+.tool-content-container {
   position: relative;
 }
 
@@ -78,25 +87,18 @@
   display: block;
 }
 
-/* Tool Header */
-.tool-header {
-  margin-bottom: 2rem;
+.tool-content h3 {
+  font-size: 1.5rem;
+  color: var(--primary, #104891);
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
-.tool-header h3 {
-  font-size: 1.5rem;
-  color: var(--primary-blue);
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.tool-header p {
-  color: var(--gray-dark);
+.tool-content p {
+  color: #555;
   font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 /* Tool Form */
@@ -106,589 +108,398 @@
   gap: 1.2rem;
   max-width: 800px;
   margin: 0 auto 2rem;
+  position: relative;
 }
 
-.tool-form-row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.tool-form-group {
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  flex: 1;
-  min-width: 200px;
 }
 
-.tool-form-group label {
+.form-group label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--dark-text);
+  color: #333;
 }
 
-.tool-input {
+.form-group input,
+.form-group select {
   padding: 0.85rem 1rem;
-  border: 1px solid var(--gray-light);
-  border-radius: var(--border-radius-md);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   font-size: 1rem;
-  color: var(--dark-text);
+  color: #333;
   background-color: white;
-  transition: var(--transition-fast);
+  transition: all 0.3s ease;
 }
 
-.tool-input:focus {
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(0, 114, 245, 0.2);
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary, #104891);
+  box-shadow: 0 0 0 3px rgba(16, 72, 145, 0.2);
   outline: none;
 }
 
-.tool-input::placeholder {
-  color: var(--gray);
+.form-group input::placeholder {
+  color: #aaa;
 }
 
-.tool-checkbox-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.checkbox-group {
+  margin-top: 0.5rem;
 }
 
-.tool-checkbox-group {
+.checkbox-wrapper {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 0.5rem;
   cursor: pointer;
 }
 
-.tool-checkbox-group input[type="checkbox"] {
+.checkbox-wrapper input[type="checkbox"] {
   width: 18px;
   height: 18px;
   cursor: pointer;
 }
 
-.tool-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.tool-button {
-  background: var(--gradient-primary);
+.calculate-button {
+  background: linear-gradient(135deg, #104891, #0a2e5c);
   color: white;
   border: none;
   padding: 0.9rem 1.8rem;
-  border-radius: var(--border-radius-md);
+  border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
-  transition: var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem auto 0;
+  min-width: 200px;
 }
 
-.tool-button:hover {
+.calculate-button:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Tool Results */
-.tool-result {
+.tool-results {
   display: none;
-  background-color: var(--gray-lightest);
-  border-radius: var(--border-radius-lg);
+  background-color: #f8f9fa;
+  border-radius: 12px;
   padding: 2rem;
   margin-top: 2rem;
-  border: 1px solid var(--gray-light);
+  border: 1px solid #e0e0e0;
 }
 
-.result-header {
+.result-summary {
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
-.result-header h4 {
+.result-summary h4 {
   font-size: 1.3rem;
-  color: var(--primary-blue);
-  margin-bottom: 0.3rem;
-}
-
-.result-header p {
-  color: var(--gray-dark);
-  font-size: 0.9rem;
-}
-
-.result-value {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.result-value span:first-child {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-}
-
-.result-range {
-  font-size: 0.9rem;
-  color: var(--gray-dark);
-  margin-top: 0.3rem;
-}
-
-.result-advice {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: var(--border-radius-md);
-  margin-bottom: 1.5rem;
-}
-
-.result-advice h5 {
-  font-size: 1.1rem;
-  color: var(--dark-text);
+  color: var(--primary, #104891);
   margin-bottom: 1rem;
 }
 
-.result-advice ul {
-  padding-left: 1.5rem;
-}
-
-.result-advice li {
-  margin-bottom: 0.5rem;
-  color: var(--gray-dark);
-}
-
-.tool-disclaimer {
-  font-size: 0.85rem;
-  color: var(--gray);
-  font-style: italic;
-  margin-bottom: 1.5rem;
-}
-
-.tool-disclaimer i {
-  margin-right: 0.3rem;
-}
-
-.tool-cta {
-  display: flex;
-  justify-content: center;
-}
-
-.tool-cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: var(--primary-blue);
-  color: white;
-  padding: 0.85rem 1.5rem;
-  border-radius: var(--border-radius-md);
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.tool-cta-button:hover {
-  background: var(--primary-blue-dark);
-  transform: translateY(-2px);
-}
-
-.tool-cta-button i {
-  transition: var(--transition-fast);
-}
-
-.tool-cta-button:hover i {
-  transform: translateX(3px);
-}
-
-/* Result Metrics for ROI Calculator */
-.result-metrics {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.metric-card {
-  flex: 1;
-  min-width: 150px;
-  background-color: white;
-  border-radius: var(--border-radius-md);
-  padding: 1.2rem;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-}
-
-.metric-card h4 {
-  font-size: 1rem;
-  color: var(--gray-dark);
-  margin-bottom: 0.5rem;
-}
-
-.metric-value {
-  font-size: 1.8rem;
+.value-amount {
+  font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 0.5rem;
+  color: var(--primary, #104891);
 }
 
-.metric-label {
-  font-size: 0.85rem;
-  color: var(--gray);
-}
-
-/* Chart Styles */
-.result-chart {
-  margin-bottom: 2rem;
-}
-
-.chart-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2rem;
-  height: 200px;
-  margin: 0 auto;
-  max-width: 300px;
-}
-
-.chart-bar {
-  width: 80px;
-  background-color: var(--primary-blue-light);
-  border-radius: 6px 6px 0 0;
-  position: relative;
-  transition: height 1s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding-bottom: 0.5rem;
-  color: white;
-  font-weight: 600;
+.value-range {
   font-size: 0.9rem;
-  min-height: 50px;
-}
-
-.investment-bar {
-  background-color: var(--primary-blue-light);
-}
-
-.revenue-bar {
-  background-color: var(--primary-orange);
-}
-
-.chart-label {
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: var(--gray-dark);
-  font-size: 0.9rem;
-}
-
-.chart-value {
-  font-size: 0.85rem;
-  font-weight: 600;
+  color: #666;
   margin-top: 0.5rem;
 }
 
-/* Placeholder for upcoming tools */
-.tool-content-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
-  background-color: var(--gray-lightest);
-  border-radius: var(--border-radius-lg);
-}
-
-.tool-content-placeholder i {
-  font-size: 3rem;
-  color: var(--gray);
-  margin-bottom: 1.5rem;
-}
-
-.tool-content-placeholder p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: var(--gray-dark);
-}
-
-.tool-notify-button {
-  background-color: var(--primary-blue);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius-md);
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.tool-notify-button:hover {
-  background-color: var(--primary-blue-dark);
-  transform: translateY(-2px);
-}
-
-/* Tools Info Section */
-.tools-info {
-  max-width: 700px;
-  margin: 4rem auto 0;
-  text-align: center;
-  padding: 2rem;
+.result-details {
   background-color: white;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.tools-icon {
-  width: 70px;
-  height: 70px;
-  background-color: rgba(0, 114, 245, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-}
-
-.tools-icon i {
-  font-size: 2rem;
-  color: var(--primary-blue);
-}
-
-.tools-info h3 {
-  font-size: 1.5rem;
-  color: var(--dark-text);
+.result-details h4 {
+  font-size: 1.1rem;
+  color: #333;
   margin-bottom: 1rem;
 }
 
-.tools-info p {
-  color: var(--gray-dark);
-  margin-bottom: 1.5rem;
+.value-tips {
+  list-style-type: none;
+  padding: 0;
 }
 
-.tools-info-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background-color: var(--gray-light);
-  color: var(--dark-text);
-  padding: 0.85rem 1.5rem;
-  border-radius: var(--border-radius-md);
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.tools-info-btn:hover {
-  background-color: var(--gray);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.tools-info-btn i {
-  transition: var(--transition-fast);
-}
-
-.tools-info-btn:hover i {
-  transform: translateX(3px);
-}
-
-/* Alert Styles */
-.alert-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  max-width: 350px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.alert {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  border-radius: var(--border-radius-md);
-  background-color: white;
-  box-shadow: var(--shadow-lg);
-  transform: translateX(120%);
-  transition: transform 0.3s ease;
-  overflow: hidden;
+.value-tips li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
   position: relative;
 }
 
-.alert-show {
-  transform: translateX(0);
+.value-tips li:before {
+  content: "•";
+  color: var(--primary, #104891);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
 }
 
-.alert-hide {
-  transform: translateX(120%);
+/* Chart Styles for ROI Calculator */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  height: 200px;
+  align-items: flex-end;
 }
 
-.alert-success {
-  border-left: 4px solid #4caf50;
+.chart-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
 }
 
-.alert-error {
-  border-left: 4px solid #f44336;
+.chart-label {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #555;
 }
 
-.alert-warning {
-  border-left: 4px solid #ff9800;
+.chart-value {
+  width: 100%;
+  background: linear-gradient(135deg, #104891, #0a2e5c);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  min-height: 40px;
 }
 
-.alert-info {
-  border-left: 4px solid #2196f3;
+.investment-bar {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
-.alert-icon {
-  margin-right: 1rem;
+.revenue-bar {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.metric {
+  text-align: center;
+  min-width: 100px;
+  margin: 0 0.5rem 1rem;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.metric-value {
   font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary, #104891);
+}
+
+.result-analysis {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.result-analysis h4 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.result-analysis p {
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Coming Soon Overlay */
+.soon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+  border-radius: 8px;
 }
 
-.alert-success .alert-icon i {
-  color: #4caf50;
+.soon-message {
+  text-align: center;
+  max-width: 350px;
+  padding: 2rem;
 }
 
-.alert-error .alert-icon i {
-  color: #f44336;
+.soon-message h4 {
+  font-size: 1.5rem;
+  color: var(--primary, #104891);
+  margin-bottom: 1rem;
 }
 
-.alert-warning .alert-icon i {
-  color: #ff9800;
+.soon-message p {
+  margin-bottom: 1.5rem;
+  color: #555;
 }
 
-.alert-info .alert-icon i {
-  color: #2196f3;
+.soon-message input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-.alert-message {
-  flex: 1;
-  font-size: 0.9rem;
-  color: var(--dark-text);
-}
-
-.alert-close {
+.notify-button {
+  background: linear-gradient(135deg, #104891, #0a2e5c);
+  color: white;
   border: none;
-  background: none;
-  color: var(--gray);
-  font-size: 0.9rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  margin-left: 1rem;
-  padding: 0.3rem;
-  transition: var(--transition-fast);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-.alert-close:hover {
-  color: var(--dark-text);
+.notify-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive Styles */
 @media (max-width: 992px) {
   .business-tools-section {
-    padding: 4rem 0;
+    padding: 4rem 1.5rem;
   }
 
-  .tool-content {
-    padding: 1.5rem;
-  }
-
-  .tools-info {
-    padding: 1.5rem;
+  .chart-container {
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .tool-tab {
-    flex: 0 0 calc(50% - 0.5rem);
-    min-width: auto;
-    padding: 0.75rem 1rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    padding: 0.7rem 1rem;
+    min-width: 120px;
   }
 
-  .tool-result {
+  .tool-content {
     padding: 1.5rem;
   }
 
-  .result-metrics {
-    flex-direction: column;
+  .calculate-button {
+    width: 100%;
   }
 
   .chart-container {
-    height: 150px;
+    gap: 1rem;
+    height: 180px;
   }
 
   .chart-bar {
-    width: 60px;
-  }
-
-  .tools-info {
-    margin-top: 3rem;
+    width: 80px;
   }
 }
 
 @media (max-width: 576px) {
   .business-tools-section {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
   }
 
-  .tools-container {
-    margin: 0 1rem;
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .tool-tabs {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .tool-tab {
-    flex: 0 0 100%;
-    justify-content: flex-start;
-  }
-
-  .tool-form-row {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .tool-form-group {
     min-width: 100%;
   }
 
   .tool-content {
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
-  .tool-header h3 {
-    font-size: 1.3rem;
+  .form-group {
+    width: 100%;
   }
 
-  .result-value span:first-child {
-    font-size: 2rem;
+  .chart-container {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    gap: 2rem;
   }
 
-  .tools-info {
-    margin: 2rem 1rem 0;
-    padding: 1.25rem;
+  .chart-bar {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .tools-info h3 {
-    font-size: 1.3rem;
+  .chart-value {
+    height: 100%;
+    width: 60px;
+    border-radius: 8px 0 0 8px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
   }
 
-  .alert-container {
-    left: 20px;
-    right: 20px;
-    max-width: calc(100% - 40px);
+  .chart-label {
+    margin-top: 0;
+    margin-right: 1rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .metrics {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metric {
+    margin-bottom: 1.5rem;
   }
 }
