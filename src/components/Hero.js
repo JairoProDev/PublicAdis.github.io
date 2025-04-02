@@ -69,15 +69,15 @@ function loadHero() {
           <div class="hero-platforms">
             <div class="platform-badge">
               <i class="fa-solid fa-globe"></i>
-              <span>Web</span>
+              <span>Sitio Web</span>
             </div>
             <div class="platform-badge">
               <i class="fa-brands fa-android"></i>
-              <span>Android</span>
+              <span>Aplicación Móvil</span>
             </div>
             <div class="platform-badge">
               <i class="fa-brands fa-apple"></i>
-              <span>iOS</span>
+              <span>Revista Digital</span>
             </div>
             <div class="platform-badge">
               <i class="fa-solid fa-share-nodes"></i>
@@ -85,7 +85,11 @@ function loadHero() {
             </div>
             <div class="platform-badge">
               <i class="fa-solid fa-store"></i>
-              <span>Local Físico</span>
+              <span>Locales Presenciales</span>
+            </div>
+            <div class="platform-badge">
+              <i class="fa-solid fa-store"></i>
+              <span>Grupos de WhatsApp</span>
             </div>
           </div>
         </div>
