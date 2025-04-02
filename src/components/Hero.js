@@ -5,12 +5,43 @@ function loadHero() {
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title fade-in-up">
-            Haz Crecer Tu Negocio con <span class="hero-title-highlight">PublicAdis</span>
+            <span id="dynamicTitle">Haz Crecer Tu Negocio con</span> <span class="hero-title-highlight">PublicAdis</span>
           </h1>
           
           <p class="hero-subtitle fade-in-up delay-1">
-            La plataforma publicitaria más completa de Cusco que impulsa tus ventas en 7 canales diferentes
+            La plataforma publicitaria más completa de Cusco que impulsa tus ventas en todos los canales de forma efectiva
           </p>
+          
+          <div class="platforms-checklist fade-in-up delay-1">
+            <div class="platform-check">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Sitio Web</span>
+            </div>
+            <div class="platform-check">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Aplicación Móvil</span>
+            </div>
+            <div class="platform-check">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Revista Digital</span>
+            </div>
+            <div class="platform-check">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Redes Sociales</span>
+            </div>
+            <div class="platform-check">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Locales Presenciales</span>
+            </div>
+            <div class="platform-check">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Grupos de WhatsApp</span>
+            </div>
+            <div class="platform-check">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Campañas por Email</span>
+            </div>
+          </div>
           
           <div class="hero-metrics fade-in-up delay-2">
             <div class="hero-metric">
@@ -34,7 +65,7 @@ function loadHero() {
             <a href="#servicesSection" class="primary-btn pulse-animation">
               Explorar Servicios <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="#businessToolsSection" class="secondary-btn green-accent">
+            <a href="#businessToolsSection" class="secondary-btn gold-accent">
               Herramientas Gratuitas <i class="fa-solid fa-tools"></i>
             </a>
           </div>
@@ -133,33 +164,6 @@ function loadHero() {
               </div>
             </div>
           </div>
-          
-          <div class="hero-platforms">
-            <div class="platform-badge">
-              <i class="fa-solid fa-globe"></i>
-              <span>Sitio Web</span>
-            </div>
-            <div class="platform-badge">
-              <i class="fa-brands fa-android"></i>
-              <span>Aplicación Móvil</span>
-            </div>
-            <div class="platform-badge">
-              <i class="fa-brands fa-apple"></i>
-              <span>Revista Digital</span>
-            </div>
-            <div class="platform-badge">
-              <i class="fa-solid fa-share-nodes"></i>
-              <span>Redes Sociales</span>
-            </div>
-            <div class="platform-badge">
-              <i class="fa-solid fa-store"></i>
-              <span>Locales Presenciales</span>
-            </div>
-            <div class="platform-badge">
-              <i class="fa-brands fa-whatsapp"></i>
-              <span>Grupos de WhatsApp</span>
-            </div>
-          </div>
         </div>
       </div>
       
@@ -213,7 +217,37 @@ function loadHero() {
 }
 
 function initHeroInteractions() {
-  // Animate elements when they enter the viewport
+  // Configurar el título dinámico rotativo
+  const dynamicTexts = [
+    "Haz Crecer Tu Negocio con",
+    "Multiplica Tus Ventas con",
+    "Aumenta Tu Visibilidad con",
+    "Conquista Nuevos Clientes con",
+    "Potencia Tu Marca con",
+    "Expande Tu Alcance con",
+    "Transforma Tu Presencia con",
+    "Maximiza Tu Inversión con",
+  ];
+
+  let currentTextIndex = 0;
+  const dynamicTitleElement = document.getElementById("dynamicTitle");
+
+  // Iniciar la rotación del título
+  setInterval(() => {
+    // Fade out
+    dynamicTitleElement.style.opacity = "0";
+
+    setTimeout(() => {
+      // Cambiar texto
+      currentTextIndex = (currentTextIndex + 1) % dynamicTexts.length;
+      dynamicTitleElement.textContent = dynamicTexts[currentTextIndex];
+
+      // Fade in
+      dynamicTitleElement.style.opacity = "1";
+    }, 500);
+  }, 4000);
+
+  // Observe elements for animation
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -228,38 +262,6 @@ function initHeroInteractions() {
   // Observe all fade-in elements
   document.querySelectorAll(".fade-in-up, .fade-in-right").forEach((el) => {
     observer.observe(el);
-  });
-
-  // Platform badges tooltip functionality
-  const platformBadges = document.querySelectorAll(".platform-badge");
-
-  platformBadges.forEach((badge) => {
-    badge.addEventListener("mouseenter", () => {
-      const tooltipText = getTooltipText(
-        badge.querySelector("span").textContent.trim()
-      );
-
-      // Remove any existing tooltips
-      const existingTooltip = document.querySelector(".tooltip");
-      if (existingTooltip) {
-        existingTooltip.remove();
-      }
-
-      // Create new tooltip
-      const tooltip = document.createElement("div");
-      tooltip.className = "tooltip";
-      tooltip.textContent = tooltipText;
-
-      // Append tooltip to badge
-      badge.appendChild(tooltip);
-    });
-
-    badge.addEventListener("mouseleave", () => {
-      const tooltip = badge.querySelector(".tooltip");
-      if (tooltip) {
-        tooltip.remove();
-      }
-    });
   });
 
   // Initialize hero slider with improved animations

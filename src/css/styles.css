@@ -10,9 +10,9 @@
   --primary-orange: #ff7a00;
   --primary-orange-light: #ff9a3f;
   --primary-orange-dark: #e56e00;
-  --primary-green: #2ecc71;
-  --primary-green-light: #4cd787;
-  --primary-green-dark: #27ae60;
+  --primary-gold: #ffd700;
+  --primary-gold-light: #ffea80;
+  --primary-gold-dark: #b7a000;
   --accent-light: #00a8e8;
   --accent-dark: #0077b6;
 
@@ -33,10 +33,10 @@
     var(--primary-blue) 0%,
     var(--primary-blue-light) 100%
   );
-  --gradient-green: linear-gradient(
+  --gradient-gold: linear-gradient(
     90deg,
-    var(--primary-green) 0%,
-    var(--primary-green-light) 100%
+    var(--primary-gold) 0%,
+    var(--primary-gold-light) 100%
   );
   --gradient-accent: linear-gradient(
     90deg,
@@ -214,7 +214,7 @@
   /* * PublicAdis brand colors - new variables */
   --primary-orange: #ff7a00;
   --primary-blue: #00a8e8;
-  --accent-yellow: #ffd100;
+  --accent-gold: #ffd700;
   --accent-light-blue: #73d2f6;
   --dark-text: #222222;
   --light-text: #ffffff;
@@ -232,8 +232,8 @@
   );
   --gradient-accent: linear-gradient(
     135deg,
-    var(--accent-yellow) 0%,
-    #ffdf59 100%
+    var(--accent-gold) 0%,
+    #ffe659 100%
   );
   --border-radius-sm: 0.5rem;
   --border-radius-md: 1rem;
