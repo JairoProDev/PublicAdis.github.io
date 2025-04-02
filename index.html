@@ -31,7 +31,13 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print" onload="this.media='all'"
     />
+
+    <!-- Preload Critical CSS -->
+    <link rel="preload" href="./src/css/styles.css" as="style">
+    <link rel="preload" href="./src/css/components/header.css" as="style">
+    <link rel="preload" href="./src/css/components/hero.css" as="style">
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./src/css/styles.css" />
@@ -49,6 +55,7 @@
     <link rel="stylesheet" href="./src/css/components/business-tools.css" />
     <link rel="stylesheet" href="./src/css/components/sectors.css" />
     <link rel="stylesheet" href="./src/css/components/testimonials.css" />
+    <link rel="stylesheet" href="./src/css/components/channels.css" />
 
     <!-- Favicon -->
     <link
@@ -137,6 +144,34 @@
         <!-- Services Section -->
         <div id="servicesContainer"></div>
 
+        <!-- Channels Section -->
+        <div class="channels-container">
+          <div class="channel">
+            <i class="fa-solid fa-globe"></i>
+            <span>Web</span>
+          </div>
+          <div class="channel">
+            <i class="fa-brands fa-android"></i>
+            <span>Android</span>
+          </div>
+          <div class="channel">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Revista Digital</span>
+          </div>
+          <div class="channel">
+            <i class="fa-solid fa-share-nodes"></i>
+            <span>Redes Sociales</span>
+          </div>
+          <div class="channel">
+            <i class="fa-solid fa-store"></i>
+            <span>Local Físico</span>
+          </div>
+          <div class="channel">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Grupos WhatsApp</span>
+          </div>
+        </div>
+
         <!-- Sectors Section -->
         <div id="sectorsContainer"></div>
 
@@ -147,167 +182,7 @@
         <div id="testimonialsContainer"></div>
 
         <!-- Business Tools Section -->
-        <section id="businessToolsSection" class="pageSection">
-          <div class="section-container">
-            <div class="section-header">
-              <h2 class="section-title animate-on-scroll">
-                Herramientas para
-                <span class="section-title-highlight">Tu Negocio</span>
-              </h2>
-              <p class="section-subtitle animate-on-scroll">
-                Calculadoras y utilidades gratuitas para ayudarte a crecer
-              </p>
-            </div>
-
-            <div class="tools-container">
-              <!-- ROI Calculator Tool -->
-              <div class="tool-card animate-on-scroll" id="calculatorTool">
-                <div class="tool-header">
-                  <div class="tool-icon">
-                    <i class="fa-solid fa-calculator"></i>
-                  </div>
-                  <h3>Calculadora de ROI</h3>
-                </div>
-
-                <p class="tool-description">
-                  Calcula el retorno de inversión estimado para tu publicidad
-                </p>
-
-                <form class="tool-form">
-                  <div class="form-group">
-                    <label for="investmentAmount"
-                      >Monto de Inversión (S/.)</label
-                    >
-                    <input
-                      type="number"
-                      id="investmentAmount"
-                      min="1"
-                      step="1"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="investmentPeriod">Período (meses)</label>
-                    <input
-                      type="number"
-                      id="investmentPeriod"
-                      min="1"
-                      max="12"
-                      value="1"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="expectedROI">ROI esperado (%)</label>
-                    <input
-                      type="number"
-                      id="expectedROI"
-                      min="1"
-                      max="500"
-                      value="40"
-                      required
-                    />
-                  </div>
-
-                  <button type="submit" class="tool-button">
-                    Calcular <i class="fa-solid fa-arrow-right"></i>
-                  </button>
-                </form>
-
-                <div id="calculationResults" class="tool-results hidden">
-                  <div class="result-item">
-                    <span class="result-label">Ganancia estimada:</span>
-                    <span class="result-value"
-                      >S/. <span id="calculatedProfit">0.00</span></span
-                    >
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Retorno total:</span>
-                    <span class="result-value"
-                      >S/. <span id="calculatedReturn">0.00</span></span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Property Valuation Tool -->
-              <div
-                class="tool-card animate-on-scroll"
-                id="propertyValuationTool"
-              >
-                <div class="tool-header">
-                  <div class="tool-icon">
-                    <i class="fa-solid fa-home"></i>
-                  </div>
-                  <h3>Valoración de Propiedades</h3>
-                </div>
-
-                <p class="tool-description">
-                  Obtén una estimación del valor de mercado de tu propiedad
-                </p>
-
-                <form class="tool-form">
-                  <div class="form-group">
-                    <label for="propertyType">Tipo de Propiedad</label>
-                    <select id="propertyType" required>
-                      <option value="">Seleccionar...</option>
-                      <option value="apartment">Departamento</option>
-                      <option value="house">Casa</option>
-                      <option value="land">Terreno</option>
-                      <option value="commercial">Local Comercial</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="propertySize">Tamaño (m²)</label>
-                    <input type="number" id="propertySize" min="1" required />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="propertyLocation">Ubicación</label>
-                    <select id="propertyLocation" required>
-                      <option value="">Seleccionar...</option>
-                      <option value="center">Centro de la ciudad</option>
-                      <option value="residential">Zona residencial</option>
-                      <option value="outskirts">Afueras</option>
-                    </select>
-                  </div>
-
-                  <button type="submit" class="tool-button">
-                    Calcular <i class="fa-solid fa-arrow-right"></i>
-                  </button>
-                </form>
-
-                <div id="valuationResults" class="tool-results hidden">
-                  <div class="result-item">
-                    <span class="result-label">Valor estimado:</span>
-                    <span class="result-value"
-                      >S/. <span id="estimatedValue">0.00</span></span
-                    >
-                  </div>
-                  <div class="result-note">
-                    Nota: Esta es una estimación básica. Para una valoración
-                    precisa, contacta a un experto.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="tools-cta">
-              <a
-                href="https://wa.me/937054328"
-                target="_blank"
-                rel="noopener"
-                class="tools-cta-button"
-              >
-                ¿Necesitas ayuda con tu negocio? Contáctanos
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </section>
+        <div id="businessToolsContainer"></div>
 
         <!-- Application Section -->
         <div id="applicationContainer"></div>
@@ -315,25 +190,22 @@
         <!-- Features Section -->
         <div id="featuresContainer"></div>
 
-        <!-- Contact Section -->
-        <div id="contactContainer"></div>
+        <!-- Footer -->
+        <div id="footerContainer"></div>
+
+        <!-- Quick Action Button -->
+        <div class="quick-action-button">
+          <a
+            href="https://wa.me/937054328"
+            class="action-button"
+            aria-label="Contactar por WhatsApp"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
       </main>
-
-      <!-- Footer -->
-      <div id="footerContainer"></div>
-
-      <!-- Quick Action Button -->
-      <div class="quick-action-button">
-        <a
-          href="https://wa.me/937054328"
-          class="action-button"
-          aria-label="Contactar por WhatsApp"
-          target="_blank"
-          rel="noopener"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-      </div>
     </div>
 
     <!-- JavaScript Files -->
