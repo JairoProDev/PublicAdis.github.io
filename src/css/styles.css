@@ -10,6 +10,9 @@
   --primary-orange: #ff7a00;
   --primary-orange-light: #ff9a3f;
   --primary-orange-dark: #e56e00;
+  --primary-green: #2ecc71;
+  --primary-green-light: #4cd787;
+  --primary-green-dark: #27ae60;
   --accent-light: #00a8e8;
   --accent-dark: #0077b6;
 
@@ -29,6 +32,11 @@
     90deg,
     var(--primary-blue) 0%,
     var(--primary-blue-light) 100%
+  );
+  --gradient-green: linear-gradient(
+    90deg,
+    var(--primary-green) 0%,
+    var(--primary-green-light) 100%
   );
   --gradient-accent: linear-gradient(
     90deg,
@@ -1588,12 +1596,12 @@ ol {
     gap: 0.5rem;
     padding: 0 0.5rem;
   }
-  
+
   .service-tab {
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .pageSection {
     padding: 3rem 0;
   }
@@ -2935,7 +2943,11 @@ body {
 
 /* Hero section fixes */
 .hero-section {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-blue-light) 100%
+  );
   padding: 6rem 0 0;
   margin-bottom: 0;
   position: relative;
@@ -2968,7 +2980,9 @@ body {
 }
 
 /* Fix for section waves to properly connect sections */
-.hero-wave, .services-wave, .benefits-wave {
+.hero-wave,
+.services-wave,
+.benefits-wave {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2992,12 +3006,12 @@ body {
     gap: 0.5rem;
     padding: 0 0.5rem;
   }
-  
+
   .service-tab {
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .pageSection {
     padding: 3rem 0;
   }

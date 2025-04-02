@@ -53,6 +53,42 @@ function loadFooter() {
             </ul>
           </div>
           
+          <div class="footer-tools">
+            <h3 class="footer-heading">Herramientas</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#businessToolsSection" data-tool="property-valuation">
+                  <i class="fa-solid fa-home"></i> Calculadora Inmobiliaria
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="roi-calculator">
+                  <i class="fa-solid fa-chart-line"></i> Calculadora ROI
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="vehicle-price">
+                  <i class="fa-solid fa-car"></i> Precio de Vehículos
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="salary-compare">
+                  <i class="fa-solid fa-sack-dollar"></i> Comparador Salarial
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="social-media">
+                  <i class="fa-solid fa-share-nodes"></i> Alcance en Redes
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="event-planner">
+                  <i class="fa-solid fa-calendar-check"></i> Planificador
+                </a>
+              </li>
+            </ul>
+          </div>
+          
           <div class="footer-contact">
             <h3 class="footer-heading">Contacto</h3>
             <ul class="footer-contact-info">
@@ -123,6 +159,33 @@ function initFooterFunctionality() {
             );
             if (tab) {
               tab.click();
+            }
+          }
+        }, 800);
+      }
+    });
+  });
+
+  // Scroll to business tools section and select specific tool
+  const toolLinks = document.querySelectorAll(".footer-tools a");
+  toolLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetSection = document.querySelector(this.getAttribute("href"));
+      if (targetSection) {
+        // Scroll to section
+        targetSection.scrollIntoView({ behavior: "smooth" });
+
+        // Select the corresponding tool tab after a delay
+        setTimeout(() => {
+          const toolId = this.getAttribute("data-tool");
+          if (toolId) {
+            const toolTab = document.querySelector(
+              `.tool-tab[data-tool="${toolId}"]`
+            );
+            if (toolTab) {
+              toolTab.click();
             }
           }
         }, 800);
