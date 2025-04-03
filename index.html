@@ -18,7 +18,7 @@
       property="og:description"
       content="La plataforma publicitaria más completa de Cusco para impulsar tu negocio y aumentar tus ventas en múltiples canales."
     />
-    <meta property="og:image" content="./src/assets/images/og-image.jpg" />
+    <meta property="og:image" content="/src/assets/images/og-image.jpg" />
     <meta property="og:url" content="https://publicadis.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_PE" />
@@ -31,41 +31,10 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      media="print"
-      onload="this.media='all'"
     />
 
-    <!-- Preload Critical CSS -->
-    <link rel="preload" href="./src/css/styles.css" as="style" />
-    <link rel="preload" href="./src/css/components/header.css" as="style" />
-    <link rel="preload" href="./src/css/components/hero.css" as="style" />
-
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="./src/css/styles.css" />
-
-    <!-- Component Stylesheets -->
-    <link rel="stylesheet" href="./src/css/components/header.css" />
-    <link rel="stylesheet" href="./src/css/components/hero.css" />
-    <link rel="stylesheet" href="./src/css/components/services.css" />
-    <link rel="stylesheet" href="./src/css/components/benefits.css" />
-    <link rel="stylesheet" href="./src/css/components/footer.css" />
-    <link rel="stylesheet" href="./src/css/components/tools.css" />
-    <link rel="stylesheet" href="./src/css/components/business-tools.css" />
-    <link rel="stylesheet" href="./src/css/components/sectors.css" />
-    <link rel="stylesheet" href="./src/css/components/testimonials.css" />
-    <link rel="stylesheet" href="./src/css/components/channels.css" />
-
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      href="./src/assets/icons/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="./src/assets/icons/favicon.ico"
-      type="image/x-icon"
-    />
+    <!-- Services Icons -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
     <!-- Alpine.js -->
     <script
@@ -73,77 +42,8 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
 
-    <!-- Services Icons -->
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
-
-    <!-- Component Scripts -->
-    <script type="module" defer src="./src/components/Header.js"></script>
-    <script type="module" defer src="./src/components/Hero.js"></script>
-    <script type="module" defer src="./src/components/Services.js"></script>
-    <script type="module" defer src="./src/components/Benefits.js"></script>
-    <script type="module" defer src="./src/components/Footer.js"></script>
-    <script type="module" defer src="./src/components/Tools.js"></script>
-    <script type="module" defer src="./src/components/BusinessTools.js"></script>
-    <script type="module" defer src="./src/components/Sectors.js"></script>
-    <script type="module" defer src="./src/components/Testimonials.js"></script>
-    <script type="module"
-      defer
-      src="./src/components/business-tools/PropertyValueCalculator.js"
-    ></script>
-    <script type="module"
-      defer
-      src="./src/components/business-tools/RoiCalculator.js"
-    ></script>
-    <script type="module"
-      defer
-      src="./src/components/business-tools/VehiclePriceCalculator.js"
-    ></script>
-    <script type="module"
-      defer
-      src="./src/components/business-tools/SalaryCompareCalculator.js"
-    ></script>
-    <script type="module"
-      defer
-      src="./src/components/business-tools/SocialMediaReachCalculator.js"
-    ></script>
-    <script type="module"
-      defer
-      src="./src/components/business-tools/EventPlannerCalculator.js"
-    ></script>
-
     <!-- Main Script -->
-    <script type="module" defer src="./src/js/main.js"></script>
-
-    <!-- Utility Scripts -->
-    <script type="module" defer src="./src/js/carouselApp.js"></script>
-
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "PublicAdis",
-        "url": "https://publicadis.com",
-        "logo": "https://publicadis.com/src/assets/images/i01_download-1.png",
-        "description": "Portal digital líder de anuncios clasificados en Cusco.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Cusco",
-          "addressRegion": "Cusco",
-          "addressCountry": "PE"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+51937054328",
-          "contactType": "customer service"
-        },
-        "sameAs": [
-          "https://www.facebook.com/publicadis",
-          "https://www.instagram.com/publicadis",
-          "https://www.tiktok.com/@publicadis"
-        ]
-      }
-    </script>
+    <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <div id="loader" class="loader">
@@ -226,99 +126,5 @@
         </div>
       </main>
     </div>
-
-    <!-- Diagnóstico de Componentes -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        console.group("Diagnóstico de Componentes");
-
-        // Verificar si los contenedores existen
-        const containers = [
-          "headerContainer",
-          "heroContainer",
-          "servicesContainer",
-          "sectorsContainer",
-          "benefitsContainer",
-          "testimonialsContainer",
-          "businessToolsContainer",
-          "applicationContainer",
-          "featuresContainer",
-          "footerContainer",
-        ];
-
-        console.log("Verificando contenedores...");
-        containers.forEach((id) => {
-          const element = document.getElementById(id);
-          console.log(`${id}: ${element ? "Existe" : "NO EXISTE"}`);
-        });
-
-        // Verificar si las funciones de carga están disponibles
-        console.log("\nVerificando funciones de carga...");
-        const loaders = [
-          "loadHeader",
-          "loadHero",
-          "loadServices",
-          "loadSectors",
-          "loadBenefits",
-          "loadTestimonials",
-          "loadBusinessTools",
-          "loadFeatures",
-          "loadFooter",
-        ];
-
-        loaders.forEach((func) => {
-          console.log(
-            `${func}: ${
-              typeof window[func] === "function"
-                ? "Disponible"
-                : "NO DISPONIBLE"
-            }`
-          );
-        });
-
-        // Verificar si los scripts están cargados
-        console.log("\nVerificando scripts...");
-        const scripts = document.querySelectorAll("script");
-        const scriptUrls = Array.from(scripts)
-          .map((s) => s.src)
-          .filter((src) => src);
-
-        [
-          "Header.js",
-          "Hero.js",
-          "Services.js",
-          "Benefits.js",
-          "Features.js",
-          "Footer.js",
-          "Sectors.js",
-          "Testimonials.js",
-          "BusinessTools.js",
-          "main.js",
-        ].forEach((scriptName) => {
-          const found = scriptUrls.some((url) => url.includes(scriptName));
-          console.log(`${scriptName}: ${found ? "Cargado" : "NO CARGADO"}`);
-        });
-
-        console.groupEnd();
-      });
-
-      // Debug information for loader
-      console.log("Page loading...");
-
-      // Fix loader issue - hide after page loads
-      window.addEventListener("load", function () {
-        console.log("Window loaded, hiding loader...");
-        const loader = document.getElementById("loader");
-        if (loader) {
-          setTimeout(() => {
-            loader.style.opacity = "0";
-            setTimeout(() => {
-              loader.style.display = "none";
-              console.log("Loader hidden");
-            }, 300);
-          }, 500);
-        }
-      });
-    </script>
   </body>
 </html>

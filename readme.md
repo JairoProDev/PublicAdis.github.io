@@ -1,5 +1,115 @@
-# Deployed site:
-<a href = 'https://angeltech90.github.io/PublicAdis_new.io/'>See the site</a>
+# PublicAdis
+
+La plataforma publicitaria más completa de Cusco que impulsa tus ventas en todos los canales de forma efectiva.
+
+## Características
+
+- Sitio Web Responsive
+- Aplicación Móvil
+- Revista Digital
+- Integración con Redes Sociales
+- Presencia en Locales Físicos
+- Grupos de WhatsApp
+- Campañas por Email
+
+## Tecnologías Utilizadas
+
+- HTML5
+- CSS3 (Variables CSS, Flexbox, Grid)
+- JavaScript (ES6+)
+- Vite (Bundler)
+- Alpine.js (Interactividad)
+- Font Awesome (Iconos)
+- GitHub Pages (Despliegue)
+
+## Requisitos
+
+- Node.js 18 o superior
+- npm 7 o superior
+
+## Instalación
+
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/JairoProDev/PublicAdis.github.io.git
+cd PublicAdis.github.io
+```
+
+2. Instalar dependencias:
+```bash
+npm install
+```
+
+3. Iniciar servidor de desarrollo:
+```bash
+npm run dev
+```
+
+4. Construir para producción:
+```bash
+npm run build
+```
+
+5. Desplegar a GitHub Pages:
+```bash
+npm run deploy
+```
+
+## Estructura del Proyecto
+
+```
+publicadis/
+├── src/
+│   ├── components/
+│   │   ├── Hero/
+│   │   │   ├── Hero.js
+│   │   │   ├── HeroSlider.js
+│   │   │   ├── HeroMetrics.js
+│   │   │   └── HeroFloatingElements.js
+│   │   └── ...
+│   ├── styles/
+│   │   ├── components/
+│   │   │   └── hero.css
+│   │   └── main.css
+│   ├── assets/
+│   │   ├── images/
+│   │   └── icons/
+│   └── main.js
+├── public/
+│   └── favicon.ico
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Características Principales
+
+- Diseño moderno y responsive
+- Animaciones suaves y transiciones
+- Efectos de parallax
+- Métricas animadas
+- Elementos flotantes interactivos
+- Optimización de rendimiento
+- SEO optimizado
+- Integración con WhatsApp
+
+## Contribuir
+
+1. Fork el proyecto
+2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abrir un Pull Request
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## Contacto
+
+Jairo Salas - [@JairoProDev](https://github.com/JairoProDev)
+
+Link del Proyecto: [https://github.com/JairoProDev/PublicAdis.github.io](https://github.com/JairoProDev/PublicAdis.github.io)
 
 # WORK METHODOLOGY
 

@@ -1,0 +1,210 @@
+/* Import component styles */
+@import "./components/header.css";
+@import "./components/hero.css";
+@import "./components/services.css";
+@import "./components/benefits.css";
+@import "./components/footer.css";
+@import "./components/business-tools.css";
+@import "./components/sectors.css";
+@import "./components/testimonials.css";
+@import "./components/channels.css";
+
+:root {
+  /* Colors */
+  --primary-blue: #104891;
+  --primary-orange: #ff6b00;
+  --premium-gold: #ffd700;
+  --light-text: #ffffff;
+  --dark-text: #333333;
+  --background-light: #f8f9fa;
+  --background-dark: #1a1a1a;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    #1a237e 100%
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    var(--primary-orange) 0%,
+    #ff9100 100%
+  );
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Animations */
+  --animation-speed-fast: 0.2s;
+  --animation-speed-normal: 0.3s;
+  --animation-speed-slow: 0.5s;
+  --animation-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography */
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3rem;
+
+  /* Effects */
+  --backdrop-blur: blur(8px);
+  --border-premium: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  color: var(--dark-text);
+  background-color: var(--background-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity var(--animation-speed-normal) var(--animation-smooth);
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--animation-speed-normal) var(--animation-smooth),
+    transform var(--animation-speed-normal) var(--animation-smooth);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Quick Action Button */
+.quick-action-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--animation-speed-fast) var(--animation-smooth);
+  text-decoration: none;
+}
+
+.action-button:hover {
+  transform: scale(1.1);
+}
+
+.action-button i {
+  font-size: 2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .quick-action-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .action-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .action-button i {
+    font-size: 1.5rem;
+  }
+}

@@ -1,8 +1,8 @@
-import HeroSlider from "./HeroSlider";
-import HeroMetrics from "./HeroMetrics";
-import HeroFloatingElements from "./HeroFloatingElements";
+import { HeroSlider } from "./HeroSlider.js";
+import { HeroMetrics } from "./HeroMetrics.js";
+import { HeroFloatingElements } from "./HeroFloatingElements.js";
 
-class Hero {
+export class Hero {
   constructor() {
     this.slider = new HeroSlider();
     this.metrics = new HeroMetrics();
@@ -309,5 +309,3 @@ class Hero {
     });
   }
 }
-
-export default Hero;
