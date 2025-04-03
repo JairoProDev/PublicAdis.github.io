@@ -1,115 +1,114 @@
-# PublicAdis
+# PublicAdis - Digital Marketing Solutions
 
-La plataforma publicitaria más completa de Cusco que impulsa tus ventas en todos los canales de forma efectiva.
+A modern, responsive website for PublicAdis digital marketing agency, built with HTML, CSS, and JavaScript.
 
-## Características
+## Features
 
-- Sitio Web Responsive
-- Aplicación Móvil
-- Revista Digital
-- Integración con Redes Sociales
-- Presencia en Locales Físicos
-- Grupos de WhatsApp
-- Campañas por Email
+- 🎨 Modern and responsive design
+- 🌟 Dynamic hero section with slider
+- 📊 Interactive metrics display
+- 🛠️ Tools and services showcase
+- 📱 Mobile-first approach
+- 🎯 SEO optimized
+- 🚀 Performance focused
 
-## Tecnologías Utilizadas
+## Getting Started
 
-- HTML5
-- CSS3 (Variables CSS, Flexbox, Grid)
-- JavaScript (ES6+)
-- Vite (Bundler)
-- Alpine.js (Interactividad)
-- Font Awesome (Iconos)
-- GitHub Pages (Despliegue)
+### Prerequisites
 
-## Requisitos
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-- Node.js 18 o superior
-- npm 7 o superior
+### Installation
 
-## Instalación
-
-1. Clonar el repositorio:
+1. Clone the repository:
 ```bash
-git clone https://github.com/JairoProDev/PublicAdis.github.io.git
-cd PublicAdis.github.io
+git clone https://github.com/yourusername/PublicAdis_new.io.git
+cd PublicAdis_new.io
 ```
 
-2. Instalar dependencias:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Iniciar servidor de desarrollo:
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Construir para producción:
+The site will be available at `http://localhost:3000`
+
+### Building for Production
+
+To create a production build:
+
 ```bash
 npm run build
 ```
 
-5. Desplegar a GitHub Pages:
+### Deployment
+
+To deploy to GitHub Pages:
+
 ```bash
-npm run deploy
+./deploy.sh
 ```
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
-publicadis/
+PublicAdis_new.io/
 ├── src/
-│   ├── components/
-│   │   ├── Hero/
-│   │   │   ├── Hero.js
-│   │   │   ├── HeroSlider.js
-│   │   │   ├── HeroMetrics.js
-│   │   │   └── HeroFloatingElements.js
-│   │   └── ...
-│   ├── styles/
-│   │   ├── components/
-│   │   │   └── hero.css
-│   │   └── main.css
-│   ├── assets/
-│   │   ├── images/
-│   │   └── icons/
-│   └── main.js
-├── public/
-│   └── favicon.ico
-├── index.html
-├── package.json
-└── vite.config.js
+│   ├── components/     # React components
+│   ├── styles/        # CSS styles
+│   ├── assets/        # Images and other static files
+│   └── utils/         # Utility functions
+├── public/            # Static files
+└── package.json       # Project configuration
 ```
 
-## Características Principales
+## Customization
 
-- Diseño moderno y responsive
-- Animaciones suaves y transiciones
-- Efectos de parallax
-- Métricas animadas
-- Elementos flotantes interactivos
-- Optimización de rendimiento
-- SEO optimizado
-- Integración con WhatsApp
+### Colors and Typography
 
-## Contribuir
+Colors and typography can be customized in `src/styles/variables.css`:
 
-1. Fork el proyecto
-2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir un Pull Request
+```css
+:root {
+  --primary-blue: #007bff;
+  --primary-orange: #ff6b00;
+  --premium-gold: #ffd700;
+  /* ... other variables */
+}
+```
 
-## Licencia
+### Components
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+Each component is self-contained with its own styles and logic. Modify components in the `src/components` directory.
 
-## Contacto
+## Contributing
 
-Jairo Salas - [@JairoProDev](https://github.com/JairoProDev)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Link del Proyecto: [https://github.com/JairoProDev/PublicAdis.github.io](https://github.com/JairoProDev/PublicAdis.github.io)
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Your Name - your.email@example.com
+Project Link: [https://github.com/yourusername/PublicAdis_new.io](https://github.com/yourusername/PublicAdis_new.io)
+
+## Acknowledgments
+
+- [Font Awesome](https://fontawesome.com) for icons
+- [Google Fonts](https://fonts.google.com) for typography
+- [Unsplash](https://unsplash.com) for stock images
 
 # WORK METHODOLOGY
 
