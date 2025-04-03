@@ -17,7 +17,7 @@
 .hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 0rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -33,6 +33,7 @@
   flex-direction: column;
   gap: 1.25rem;
   max-width: 550px;
+  grid-column: 1; /* Make sure it stays in the first column */
 }
 
 .hero-title {
@@ -137,7 +138,8 @@
 #buttonsContainer {
   display: flex;
   gap: 1.25rem;
-  margin-top: 1rem;
+  margin-top: 1rem; /* Adjust top margin as needed */
+  flex-direction: row; /* Ensure buttons are in a row */
 }
 
 .primary-btn {
@@ -259,166 +261,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 400px; /* Example value, adjust based on your desired look */
+  grid-column: 2;
 }
 
-/* Hero Image Slider */
-.hero-slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.slider-container {
-  display: flex;
-  height: 100%;
-  position: relative;
-}
-
-.slide {
-  flex: 0 0 100%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  transform: translateX(100%);
-}
-
-.slide.slide-active {
-  opacity: 1;
-  transform: translateX(0);
-  z-index: 2;
-}
-
-.slide.slide-from-left {
-  transform: translateX(-100%);
-  animation: slideInFromLeft 0.8s forwards;
-}
-
-.slide.slide-from-right {
-  transform: translateX(100%);
-  animation: slideInFromRight 0.8s forwards;
-}
-
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slide-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  padding: 2rem 1.5rem 1rem;
-  color: white;
-  transform: translateY(100%);
-  transition: transform 0.5s ease 0.3s;
-  z-index: 5;
-}
-
-.slide-active .slide-overlay {
-  transform: translateY(0);
-}
-
-.slide-overlay h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #2ecc71;
-}
-
-.slide-overlay p {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* Slider Navigation */
-.slider-nav {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 10;
-}
-
-.slider-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.slider-dot.active {
-  background: var(--primary-orange);
-  width: 24px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 122, 0, 0.5);
-}
-
-.slider-arrows {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.slider-arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  pointer-events: auto;
-}
-
-.slider-arrow:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-}
-
-.slider-arrow i {
-  color: white;
-  font-size: 1.2rem;
-}
 
 .floating-elements {
   position: absolute;
@@ -490,31 +336,32 @@
   }
 }
 
-.device-mockup {
-  position: relative;
-  height: 450px;
-  width: 100%;
+/* Hero Image Container for Two Images */
+.device-mockup-container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  z-index: 1;
+  gap: 0rem;
+  max-width: 100%;
+  height: 100%;
 }
 
 .device-screen {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
-  object-fit: cover;
+  object-fit: contain; /* Changed to contain to fit within bounds */
   transition: var(--transition-medium);
+  max-height: 350px; /* Adjust max height of images */
 }
 
 .main-device {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  z-index: 2;
+  /* Styles for the laptop image */
   border: 8px solid #333;
   border-radius: 1rem;
   transform: perspective(1000px) rotateY(-10deg);
   transition: all 0.5s ease;
+  max-width: 60%; /* Adjust size */
+  height: auto;
 }
 
 .main-device:hover {
@@ -523,16 +370,13 @@
 }
 
 .mobile-device {
-  height: 80%;
-  width: auto;
-  position: absolute;
-  right: -10%;
-  top: 10%;
-  z-index: 1;
+  /* Styles for the phone image */
   border: 8px solid #333;
   border-radius: 1.5rem;
   transform: perspective(1000px) rotateY(20deg);
   transition: all 0.5s ease;
+  max-width: 30%; /* Adjust size */
+  height: auto;
 }
 
 .mobile-device:hover {
@@ -854,46 +698,11 @@
   transition-delay: 0.6s;
 }
 
-/* Slide Animations */
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.slide-active {
-  animation: fadeIn 0.8s forwards;
-}
-
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .hero-container {
     padding: 0 1.5rem;
+    display: flex
   }
 
   .hero-title {
@@ -923,7 +732,7 @@
   .hero-container {
     flex-direction: column;
     padding: 0 1.5rem;
-    gap: 2rem;
+    gap: 0rem;
   }
 
   .hero-content {
@@ -960,7 +769,7 @@
     flex-wrap: wrap;
   }
 
-  .device-mockup {
+  .device-mockup-container {
     width: 90%;
     max-width: 500px;
     margin: 0 auto;
@@ -985,6 +794,16 @@
     bottom: 1rem;
   }
 
+  .floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+  }
+  
   .floating-element {
     position: absolute;
     opacity: 0.7;
@@ -1055,7 +874,7 @@
     font-size: 1.2rem;
   }
 
-  .device-mockup {
+  .device-mockup-container {
     display: flex;
     width: 95%;
     justify-content: center;
@@ -1120,11 +939,6 @@
     font-size: 1.2rem;
   }
 
-  .slider-arrow {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
   .platforms-checklist {
     gap: 0.3rem;
     margin: 0.6rem 0 1rem;
@@ -1166,9 +980,24 @@
     font-size: 0.9rem;
   }
 
-  .device-mockup {
+  .device-mockup-container {
     max-width: 280px;
-    height: 250px;
+    height: auto; /* Adjust height for smaller screens */
+    flex-direction: column; /* Stack images on smaller screens */
+    align-items: center;
+  }
+
+  .device-screen {
+    max-height: 200px; /* Adjust max height for smaller screens */
+    max-width: 80%;
+  }
+
+  .main-device {
+    max-width: 80%;
+  }
+
+  .mobile-device {
+    max-width: 50%;
   }
 
   #buttonsContainer {
@@ -1221,24 +1050,6 @@
 
   .floating-element i {
     font-size: 1rem;
-  }
-
-  .slider-arrow {
-    width: 30px;
-    height: 30px;
-  }
-
-  .slider-arrow i {
-    font-size: 1rem;
-  }
-
-  .slider-dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .slider-dot.active {
-    width: 16px;
   }
 
   .platforms-checklist {
@@ -1312,4 +1123,59 @@
 #dynamicTitle {
   display: inline-block;
   transition: opacity 0.5s ease;
+}
+
+/* New Styles for Two Images */
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Adjust height as needed */
+  grid-column: 2;
+}
+
+.device-mockup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem; /* Increased spacing between images */
+  max-width: 100%;
+  /* height: 100%; Remove fixed height to allow content to dictate */
+}
+
+.device-screen {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: contain;
+  transition: var(--transition-medium);
+  max-height: 500px; /* Increased maximum height */
+}
+
+.main-device {
+  border: 8px solid #333;
+  border-radius: 1rem;
+  transform: perspective(1000px) rotateY(-10deg);
+  transition: all 0.5s ease;
+  max-width: 100%; /* Increased maximum width */
+  height: auto;
+}
+
+.mobile-device {
+  border: 8px solid #333;
+  border-radius: 1.5rem;
+  transform: perspective(1000px) rotateY(20deg);
+  transition: all 0.5s ease;
+  max-width: 100%; /* Adjust size of phone image */
+  height: auto;
+}
+
+/* Adjust button placement */
+.hero-container {
+  grid-template-columns: 1fr 1fr; /* Ensure two columns */
+}
+
+#buttonsContainer {
+  margin-top: 2rem; /* Add some space above the buttons */
+  justify-content: flex-end; /* Align buttons to the right */
 }

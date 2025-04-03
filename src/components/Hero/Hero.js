@@ -120,7 +120,7 @@ class Hero {
       {
         desktop: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
         mobile: "https://images.unsplash.com/photo-1601972599720-36938d4ecd31",
-        title: "Plataforma Web",
+        title: "Plataforma wWeb",
         description: "Gestiona tus anuncios en un solo lugar",
       },
       {
