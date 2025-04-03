@@ -16,6 +16,15 @@
   --accent-light: #00a8e8;
   --accent-dark: #0077b6;
 
+  /* Premium Colors */
+  --premium-gold: #d4af37;
+  --premium-gold-light: #f4d03f;
+  --premium-gold-dark: #996515;
+  --premium-blue: #1e3d59;
+  --premium-blue-light: #2a5f8f;
+  --premium-blue-dark: #0c2845;
+
+  /* Dark/Light */
   --dark-text: #333333;
   --light-text: #ffffff;
   --gray-light: #f8f9fa;
@@ -24,24 +33,41 @@
 
   /* Gradients */
   --gradient-primary: linear-gradient(
-    90deg,
+    135deg,
     var(--primary-orange) 0%,
     var(--primary-orange-light) 100%
   );
   --gradient-secondary: linear-gradient(
-    90deg,
+    135deg,
     var(--primary-blue) 0%,
     var(--primary-blue-light) 100%
   );
   --gradient-gold: linear-gradient(
-    90deg,
+    135deg,
     var(--primary-gold) 0%,
     var(--primary-gold-light) 100%
   );
   --gradient-accent: linear-gradient(
-    90deg,
+    135deg,
     var(--accent-light) 0%,
     var(--accent-dark) 100%
+  );
+
+  /* Premium Gradients */
+  --gradient-premium: linear-gradient(
+    135deg,
+    var(--premium-gold) 0%,
+    var(--premium-gold-dark) 100%
+  );
+  --gradient-premium-blue: linear-gradient(
+    135deg,
+    var(--premium-blue) 0%,
+    var(--premium-blue-dark) 100%
+  );
+  --gradient-premium-reverse: linear-gradient(
+    -45deg,
+    var(--premium-gold-light) 0%,
+    var(--premium-gold) 100%
   );
 
   /* Shadows */
@@ -49,6 +75,23 @@
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
   --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.2);
+
+  /* Premium Shadows */
+  --shadow-premium: 0 8px 16px rgba(212, 175, 55, 0.15);
+  --shadow-premium-lg: 0 12px 24px rgba(212, 175, 55, 0.2);
+  --shadow-premium-hover: 0 16px 32px rgba(212, 175, 55, 0.25);
+
+  /* Effects */
+  --glow-premium: 0 0 20px rgba(212, 175, 55, 0.3);
+  --border-premium: 2px solid var(--premium-gold);
+  --backdrop-blur: blur(8px);
+
+  /* Animations */
+  --animation-speed-fast: 0.3s;
+  --animation-speed-normal: 0.5s;
+  --animation-speed-slow: 0.8s;
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --animation-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Border Radius */
   --border-radius-sm: 4px;
