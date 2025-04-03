@@ -166,7 +166,7 @@ function loadHero() {
           </div>
         </div>
       </div>
-      
+     <!-- 
       <div class="hero-stats">
         <div class="stats-container">
           <div class="stat-item fade-in-up">
@@ -191,14 +191,14 @@ function loadHero() {
           </div>
         </div>
       </div>
-      
+
       <div class="scroll-indicator">
         <div class="mouse">
           <div class="wheel"></div>
         </div>
         <p>Desplaza para ver más</p>
       </div>
-      
+      -->
       <div class="hero-wave">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path fill="#f8f9fa" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,149.3C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
