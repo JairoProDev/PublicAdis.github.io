@@ -1,8 +1,8 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  base: "/",
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -13,16 +13,16 @@ export default defineConfig({
     open: true,
     hmr: {
       overlay: true,
-    }
+    },
   },
   build: {
-    outDir: "dist",
-    assetsDir: "assets",
+    outDir: 'dist',
+    assetsDir: 'assets',
     sourcemap: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ["font-awesome"],
+          vendor: ['font-awesome'],
         },
       },
     },

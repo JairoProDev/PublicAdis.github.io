@@ -25,29 +25,44 @@ export class Header {
         <nav class="header-nav">
           <ul class="nav-list">
             <li class="nav-item">
-              <a href="#services" class="nav-link">Servicios</a>
+              <a href="#services" class="nav-link">
+                <i class="fas fa-rocket nav-icon"></i>
+                Servicios
+              </a>
             </li>
             <li class="nav-item">
-              <a href="#sectors" class="nav-link">Sectores</a>
+              <a href="#sectors" class="nav-link">
+                <i class="fas fa-building nav-icon"></i>
+                Sectores
+              </a>
             </li>
             <li class="nav-item">
-              <a href="#benefits" class="nav-link">Beneficios</a>
+              <a href="#benefits" class="nav-link">
+                <i class="fas fa-star nav-icon"></i>
+                Beneficios
+              </a>
             </li>
             <li class="nav-item">
-              <a href="#businessTools" class="nav-link">Herramientas</a>
+              <a href="#businessTools" class="nav-link">
+                <i class="fas fa-tools nav-icon"></i>
+                Herramientas
+              </a>
             </li>
             <li class="nav-item">
-              <a href="#testimonials" class="nav-link">Testimonios</a>
+              <a href="#testimonials" class="nav-link">
+                <i class="fas fa-comment-alt nav-icon"></i>
+                Testimonios
+              </a>
             </li>
           </ul>
         </nav>
         
         <div class="header-actions">
-          <a href="https://buscadis.com" class="btn btn-outline" target="_blank" rel="noopener">
+          <a href="https://buscadis.com" class="btn btn-outline premium-link-btn" target="_blank" rel="noopener">
             <i class="fas fa-search"></i>
             Ir a Buscadis
           </a>
-          <a href="#contacto" class="btn btn-primary">
+          <a href="#contacto" class="btn btn-primary btn-gold">
             <i class="fas fa-envelope"></i>
             Contáctanos
           </a>
@@ -66,38 +81,66 @@ export class Header {
         <nav class="mobile-nav">
           <ul class="mobile-nav-list">
             <li class="mobile-nav-item">
-              <a href="#services" class="mobile-nav-link">Servicios</a>
+              <a href="#services" class="mobile-nav-link">
+                <i class="fas fa-rocket"></i>
+                Servicios
+              </a>
             </li>
             <li class="mobile-nav-item">
-              <a href="#sectors" class="mobile-nav-link">Sectores</a>
+              <a href="#sectors" class="mobile-nav-link">
+                <i class="fas fa-building"></i>
+                Sectores
+              </a>
             </li>
             <li class="mobile-nav-item">
-              <a href="#benefits" class="mobile-nav-link">Beneficios</a>
+              <a href="#benefits" class="mobile-nav-link">
+                <i class="fas fa-star"></i>
+                Beneficios
+              </a>
             </li>
             <li class="mobile-nav-item">
-              <a href="#businessTools" class="mobile-nav-link">Herramientas</a>
+              <a href="#businessTools" class="mobile-nav-link">
+                <i class="fas fa-tools"></i>
+                Herramientas
+              </a>
             </li>
             <li class="mobile-nav-item">
-              <a href="#testimonials" class="mobile-nav-link">Testimonios</a>
+              <a href="#testimonials" class="mobile-nav-link">
+                <i class="fas fa-comment-alt"></i>
+                Testimonios
+              </a>
             </li>
             <li class="mobile-nav-item">
-              <a href="#contacto" class="mobile-nav-link">Contáctanos</a>
+              <a href="#contacto" class="mobile-nav-link contact-link">
+                <i class="fas fa-envelope"></i>
+                Contáctanos
+              </a>
             </li>
           </ul>
         </nav>
         
         <div class="mobile-social">
-          <a href="https://wa.me/937054328" class="mobile-social-link" target="_blank" rel="noopener">
+          <a href="https://wa.me/937054328" class="mobile-social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
-          <a href="https://www.facebook.com/publicadis" class="mobile-social-link" target="_blank" rel="noopener">
+          <a href="https://www.facebook.com/publicadis" class="mobile-social-link" target="_blank" rel="noopener" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="https://www.instagram.com/publicadis" class="mobile-social-link" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/publicadis" class="mobile-social-link" target="_blank" rel="noopener" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
+          <a href="https://www.tiktok.com/@publicadis" class="mobile-social-link" target="_blank" rel="noopener" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+
+        <div class="mobile-premium-badge">
+          <i class="fas fa-crown"></i>
+          <span>Publicidad Premium</span>
         </div>
       </div>
+
+      <div class="overlay" id="menuOverlay"></div>
     `;
   }
 
@@ -119,14 +162,26 @@ export class Header {
     // Manejar el menú móvil
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.getElementById('menuOverlay');
     const body = document.body;
 
-    if (menuToggle && mobileMenu) {
+    if (menuToggle && mobileMenu && overlay) {
       menuToggle.addEventListener('click', () => {
         this.isMenuOpen = !this.isMenuOpen;
         menuToggle.classList.toggle('active', this.isMenuOpen);
         mobileMenu.classList.toggle('active', this.isMenuOpen);
         body.classList.toggle('menu-open', this.isMenuOpen);
+        overlay.classList.toggle('active', this.isMenuOpen);
+      });
+
+      overlay.addEventListener('click', () => {
+        if (this.isMenuOpen) {
+          this.isMenuOpen = false;
+          menuToggle.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          body.classList.remove('menu-open');
+          overlay.classList.remove('active');
+        }
       });
     }
 
@@ -135,10 +190,11 @@ export class Header {
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         this.isMenuOpen = false;
-        if (menuToggle && mobileMenu) {
+        if (menuToggle && mobileMenu && overlay) {
           menuToggle.classList.remove('active');
           mobileMenu.classList.remove('active');
           body.classList.remove('menu-open');
+          overlay.classList.remove('active');
         }
       });
     });
@@ -161,5 +217,48 @@ export class Header {
         }
       });
     });
+
+    // Añadir efectos de hover a los enlaces nav
+    this.addNavEffects();
+    
+    // Inicializar header como scrolled si ya estamos bajados
+    if (window.scrollY > 50) {
+      document.querySelector('.site-header').classList.add('scrolled');
+    }
+  }
+
+  addNavEffects() {
+    // Añadir efectos de hover a los enlaces nav
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+      // Crear elemento para efecto de hover
+      const hoverEffect = document.createElement('span');
+      hoverEffect.className = 'nav-hover-effect';
+      link.appendChild(hoverEffect);
+      
+      // Animar el efecto de hover
+      link.addEventListener('mouseenter', () => {
+        link.classList.add('nav-active');
+      });
+      
+      link.addEventListener('mouseleave', () => {
+        link.classList.remove('nav-active');
+      });
+    });
+    
+    // Añadir efecto de destello a los botones premium
+    const goldBtn = document.querySelector('.btn-gold');
+    if (goldBtn) {
+      goldBtn.addEventListener('mouseenter', () => {
+        goldBtn.classList.add('gold-shimmer');
+      });
+      
+      goldBtn.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          goldBtn.classList.remove('gold-shimmer');
+        }, 1000);
+      });
+    }
   }
 }

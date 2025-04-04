@@ -2,24 +2,24 @@ export class HeroMetrics {
   constructor() {
     this.metrics = [
       {
-        icon: "chart-line",
+        icon: 'chart-line',
         value: 300,
-        suffix: "%",
-        label: "Multiplicación de Clientes",
+        suffix: '%',
+        label: 'Multiplicación de Clientes',
         duration: 2000,
       },
       {
-        icon: "users",
+        icon: 'users',
         value: 50000,
-        suffix: "+",
-        label: "Personas Interesadas al Mes",
+        suffix: '+',
+        label: 'Personas Interesadas al Mes',
         duration: 2500,
       },
       {
-        icon: "arrow-trend-up",
+        icon: 'arrow-trend-up',
         value: 200,
-        suffix: "%",
-        label: "Aumento en Ventas",
+        suffix: '%',
+        label: 'Aumento en Ventas',
         duration: 2000,
       },
     ];
@@ -31,14 +31,14 @@ export class HeroMetrics {
   }
 
   render() {
-    const metricsContainer = document.querySelector(".hero-metrics");
+    const metricsContainer = document.querySelector('.hero-metrics');
     if (!metricsContainer) return;
 
     metricsContainer.innerHTML = `
       <div class="metrics-grid">
         ${this.metrics
           .map(
-            (metric) => `
+            metric => `
           <div class="hero-metric" data-value="${metric.value}" data-suffix="${metric.suffix}">
             <div class="metric-icon">
               <i class="fas fa-${metric.icon}"></i>
@@ -48,7 +48,7 @@ export class HeroMetrics {
           </div>
         `
           )
-          .join("")}
+          .join('')}
       </div>
     `;
   }
@@ -56,17 +56,17 @@ export class HeroMetrics {
   setupIntersectionObserver() {
     const options = {
       root: null,
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 0.5,
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           const metric = entry.target;
           const targetValue = parseInt(metric.dataset.value);
           const suffix = metric.dataset.suffix;
-          const valueDisplay = metric.querySelector(".metric-value");
+          const valueDisplay = metric.querySelector('.metric-value');
 
           this.animateValue(valueDisplay, 0, targetValue, suffix);
           observer.unobserve(metric);
@@ -74,14 +74,14 @@ export class HeroMetrics {
       });
     }, options);
 
-    document.querySelectorAll(".hero-metric").forEach((metric) => {
+    document.querySelectorAll('.hero-metric').forEach(metric => {
       observer.observe(metric);
     });
   }
 
   animateValue(element, start, end, suffix, duration = 2000) {
     let startTimestamp = null;
-    const step = (timestamp) => {
+    const step = timestamp => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       const currentValue = Math.floor(progress * (end - start) + start);

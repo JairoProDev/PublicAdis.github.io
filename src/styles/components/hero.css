@@ -132,19 +132,17 @@
 }
 
 .primary-btn::before {
-  content: "";
+  content: '';
   position: absolute;
   top: var(--mouse-y, 0);
   left: var(--mouse-x, 0);
   width: 0;
   height: 0;
-  background: radial-gradient(
-    circle closest-side,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.2), transparent);
   transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
 }
 
 .primary-btn:hover::before {
@@ -171,19 +169,17 @@
 }
 
 .secondary-btn::before {
-  content: "";
+  content: '';
   position: absolute;
   top: var(--mouse-y, 0);
   left: var(--mouse-x, 0);
   width: 0;
   height: 0;
-  background: radial-gradient(
-    circle closest-side,
-    rgba(255, 215, 0, 0.2),
-    transparent
-  );
+  background: radial-gradient(circle closest-side, rgba(255, 215, 0, 0.2), transparent);
   transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
 }
 
 .secondary-btn:hover::before {

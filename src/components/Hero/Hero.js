@@ -1,23 +1,25 @@
-import { HeroSlider } from "./HeroSlider.js";
-import { HeroMetrics } from "./HeroMetrics.js";
-import { HeroFloatingElements } from "./HeroFloatingElements.js";
+import { HeroSlider } from './HeroSlider.js';
+import { HeroMetrics } from './HeroMetrics.js';
+import { HeroFloatingElements } from './HeroFloatingElements.js';
 
 export class Hero {
   constructor() {
     this.dynamicTexts = [
-      "Haz Crecer Tu Negocio con",
-      "Multiplica Tus Ventas con",
-      "Aumenta Tu Visibilidad con",
-      "Conquista Nuevos Clientes con",
-      "Potencia Tu Marca con",
-      "Expande Tu Alcance con",
-      "Transforma Tu Presencia con",
-      "Maximiza Tu Inversión con",
+      'Haz Crecer Tu Negocio con',
+      'Multiplica Tus Ventas con',
+      'Aumenta Tu Visibilidad con',
+      'Conquista Nuevos Clientes con',
+      'Potencia Tu Marca con',
+      'Expande Tu Alcance con',
+      'Transforma Tu Presencia con',
+      'Maximiza Tu Inversión con',
     ];
     this.currentTextIndex = 0;
     this.dynamicTitleElement = null;
     this.slideInterval = null;
     this.currentSlide = 0;
+    this.touchStartX = 0;
+    this.touchEndX = 0;
   }
 
   init() {
@@ -26,18 +28,25 @@ export class Hero {
     this.initHeroSlider();
     this.initMetricsAnimation();
     this.addParallaxEffect();
+    this.setupTouchEvents();
+    this.addGoldEffects();
   }
 
   render() {
-    const heroSection = document.querySelector(".hero-section");
+    const heroSection = document.querySelector('.hero-section');
     if (!heroSection) return;
 
     heroSection.innerHTML = `
       <div class="hero-container">
         <div class="hero-content">
+          <div class="premium-badge gold-shimmer">
+            <i class="fas fa-crown"></i>
+            <span>Plataforma Premium</span>
+          </div>
+          
           <h1 class="hero-title fade-in-up">
             <span id="dynamicTitle">${this.dynamicTexts[0]}</span> 
-            <span class="hero-title-highlight">PublicAdis</span>
+            <span class="hero-title-highlight gold-shimmer">PublicAdis</span>
           </h1>
 
           <p class="hero-subtitle fade-in-up delay-1">
@@ -73,28 +82,34 @@ export class Hero {
 
           <div class="hero-metrics fade-in-up delay-2">
             <div class="hero-metric">
-              <i class="fa-solid fa-chart-line metric-icon"></i>
+              <div class="metric-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
               <span class="metric-number" data-value="+380">+380%</span>
               <span class="metric-text">Multiplica tus clientes potenciales</span>
             </div>
             <div class="hero-metric">
-              <i class="fa-solid fa-users metric-icon"></i>
+              <div class="metric-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
               <span class="metric-number" data-value="+25k">+25k</span>
               <span class="metric-text">Personas interesadas al mes</span>
             </div>
             <div class="hero-metric">
-              <i class="fa-solid fa-sack-dollar metric-icon"></i>
+              <div class="metric-icon">
+                <i class="fa-solid fa-sack-dollar"></i>
+              </div>
               <span class="metric-number" data-value="+200">+200%</span>
               <span class="metric-text">Incremento en ventas promedio</span>
             </div>
           </div>
 
-          <div class="hero-buttons fade-in-up delay-2">
+          <div class="hero-buttons fade-in-up delay-3">
             <a href="#services" class="btn btn-primary pulse-animation">
               <i class="fas fa-rocket"></i>
               Explorar Servicios
             </a>
-            <a href="#tools" class="btn btn-secondary green-accent">
+            <a href="#businessTools" class="btn btn-gold">
               <i class="fas fa-tools"></i>
               Herramientas Gratuitas
             </a>
@@ -127,15 +142,15 @@ export class Hero {
           </div>
 
           <div class="slider-navigation">
-            <button id="prevSlide" class="slider-arrow prev">
+            <button id="prevSlide" class="slider-arrow prev" aria-label="Slide anterior">
               <i class="fas fa-chevron-left"></i>
             </button>
             <div class="slider-dots">
-              <button class="slider-dot active"></button>
-              <button class="slider-dot"></button>
-              <button class="slider-dot"></button>
+              <button class="slider-dot active" aria-label="Slide 1"></button>
+              <button class="slider-dot" aria-label="Slide 2"></button>
+              <button class="slider-dot" aria-label="Slide 3"></button>
             </div>
-            <button id="nextSlide" class="slider-arrow next">
+            <button id="nextSlide" class="slider-arrow next" aria-label="Siguiente slide">
               <i class="fas fa-chevron-right"></i>
             </button>
           </div>
@@ -155,6 +170,10 @@ export class Hero {
             <i class="fa-solid fa-store"></i>
           </div>
         </div>
+
+        <div class="premium-accent"></div>
+        <div class="premium-accent-secondary" style="right: 10%; top: 30%"></div>
+        <div class="premium-accent-gold" style="left: 30%; top: 20%"></div>
       </div>
       
       <div class="hero-wave">
@@ -165,7 +184,7 @@ export class Hero {
     `;
 
     // Guardar referencia al elemento de título dinámico
-    this.dynamicTitleElement = document.getElementById("dynamicTitle");
+    this.dynamicTitleElement = document.getElementById('dynamicTitle');
   }
 
   initHeroInteractions() {
@@ -173,7 +192,7 @@ export class Hero {
     setInterval(() => {
       // Fade out
       if (this.dynamicTitleElement) {
-        this.dynamicTitleElement.style.opacity = "0";
+        this.dynamicTitleElement.style.opacity = '0';
 
         setTimeout(() => {
           // Cambiar texto
@@ -181,17 +200,17 @@ export class Hero {
           this.dynamicTitleElement.textContent = this.dynamicTexts[this.currentTextIndex];
 
           // Fade in
-          this.dynamicTitleElement.style.opacity = "1";
+          this.dynamicTitleElement.style.opacity = '1';
         }, 500);
       }
     }, 4000);
 
     // Observe elements for animation
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add('visible');
           }
         });
       },
@@ -199,29 +218,76 @@ export class Hero {
     );
 
     // Observe all fade-in elements
-    document.querySelectorAll(".fade-in-up, .fade-in-right").forEach((el) => {
+    document.querySelectorAll('.fade-in-up, .fade-in-right').forEach(el => {
       observer.observe(el);
     });
 
     // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute("href");
+        const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
           const headerOffset = 100;
           const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition =
-            elementPosition + window.pageYOffset - headerOffset;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
           window.scrollTo({
             top: offsetPosition,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
         }
       });
+    });
+
+    // Agregar animación de contador para las métricas cuando son visibles
+    this.initCounterAnimation();
+  }
+
+  initCounterAnimation() {
+    const counters = document.querySelectorAll('.metric-number');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = counter.getAttribute('data-value');
+            let isNumeric = !isNaN(parseInt(target.replace(/[^\d]/g, '')));
+
+            if (isNumeric) {
+              let num = parseInt(target.replace(/[^\d]/g, ''));
+              let prefix = target.match(/[^\d]*/)[0];
+              let count = 0;
+              let step = Math.ceil(num / 50); // Aumentamos más rápido para números grandes
+
+              const updateCounter = () => {
+                count += step;
+                if (count > num) count = num;
+                counter.textContent = `${prefix}${count}`;
+                if (count < num) {
+                  requestAnimationFrame(updateCounter);
+                } else {
+                  counter.textContent = target; // Aseguramos el valor final exacto
+                }
+              };
+
+              updateCounter();
+            } else {
+              counter.textContent = target;
+            }
+
+            observer.unobserve(counter);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    counters.forEach(counter => {
+      observer.observe(counter);
     });
   }
 
@@ -253,40 +319,14 @@ export class Hero {
     // Navegación con puntos
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
-        this.currentSlide = index;
-        this.showSlide(this.currentSlide);
+        this.showSlide(index);
       });
     });
 
-    // Auto rotación
-    this.startSlideInterval();
-
-    // Detener auto rotación al interactuar con el slider
-    const slider = document.getElementById('heroSlider');
-    if (slider) {
-      slider.addEventListener('mouseenter', () => {
-        this.stopSlideInterval();
-      });
-
-      slider.addEventListener('mouseleave', () => {
-        this.startSlideInterval();
-      });
-    }
-
-    // Soporte para gestos táctiles
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    if (slider) {
-      slider.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-      }, { passive: true });
-
-      slider.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        this.handleSwipe();
-      }, { passive: true });
-    }
+    // Auto-rotación
+    this.slideInterval = setInterval(() => {
+      this.nextSlide();
+    }, 5000);
   }
 
   showSlide(index) {
@@ -295,159 +335,146 @@ export class Hero {
 
     if (!slides.length || !dots.length) return;
 
-    // Ocultar todas las slides
-    slides.forEach(slide => {
-      slide.classList.remove('slide-active', 'slide-from-left', 'slide-from-right');
-      slide.style.display = 'none';
-    });
+    // Ocultar slide actual
+    slides[this.currentSlide].classList.remove('slide-active');
+    dots[this.currentSlide].classList.remove('active');
 
-    // Mostrar slide actual
-    slides[index].style.display = 'block';
-    
-    // Añadir animación según la dirección
-    if (this.lastSlide > index) {
-      slides[index].classList.add('slide-from-left');
-    } else if (this.lastSlide < index) {
+    // Configurar dirección de la animación
+    if (index > this.currentSlide) {
+      slides[this.currentSlide].classList.add('slide-from-left');
       slides[index].classList.add('slide-from-right');
+    } else {
+      slides[this.currentSlide].classList.add('slide-from-right');
+      slides[index].classList.add('slide-from-left');
     }
-    
+
+    // Actualizar índice actual
+    this.currentSlide = index;
+
+    // Si está fuera de rango, volver al inicio
+    if (this.currentSlide >= slides.length) {
+      this.currentSlide = 0;
+    } else if (this.currentSlide < 0) {
+      this.currentSlide = slides.length - 1;
+    }
+
+    // Mostrar nuevo slide después de un breve retraso
     setTimeout(() => {
-      slides[index].classList.add('slide-active');
+      // Limpiar clases de dirección
+      slides.forEach(slide => {
+        slide.classList.remove('slide-from-left', 'slide-from-right');
+      });
+
+      // Mostrar slide actual
+      slides[this.currentSlide].classList.add('slide-active');
+      dots[this.currentSlide].classList.add('active');
     }, 50);
-
-    // Actualizar puntos de navegación
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-
-    this.lastSlide = index;
   }
 
   nextSlide() {
-    const slides = document.querySelectorAll('.hero-slider .slide');
-    if (!slides.length) return;
-    
-    this.currentSlide = (this.currentSlide + 1) % slides.length;
-    this.showSlide(this.currentSlide);
+    let newIndex = this.currentSlide + 1;
+    if (newIndex >= document.querySelectorAll('.hero-slider .slide').length) {
+      newIndex = 0;
+    }
+    this.showSlide(newIndex);
   }
 
   prevSlide() {
-    const slides = document.querySelectorAll('.hero-slider .slide');
-    if (!slides.length) return;
-    
-    this.currentSlide = (this.currentSlide - 1 + slides.length) % slides.length;
-    this.showSlide(this.currentSlide);
+    let newIndex = this.currentSlide - 1;
+    if (newIndex < 0) {
+      newIndex = document.querySelectorAll('.hero-slider .slide').length - 1;
+    }
+    this.showSlide(newIndex);
   }
 
-  startSlideInterval() {
-    this.stopSlideInterval(); // Limpiar intervalo existente
+  setupTouchEvents() {
+    const slider = document.getElementById('heroSlider');
+    if (!slider) return;
+
+    slider.addEventListener(
+      'touchstart',
+      e => {
+        this.touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true }
+    );
+
+    slider.addEventListener(
+      'touchend',
+      e => {
+        this.touchEndX = e.changedTouches[0].screenX;
+        this.handleSwipe();
+      },
+      { passive: true }
+    );
+  }
+
+  handleSwipe() {
+    const threshold = 50; // Mínima distancia para considerar como swipe
+    const diff = this.touchStartX - this.touchEndX;
+
+    if (Math.abs(diff) < threshold) return;
+
+    if (diff > 0) {
+      // Swipe hacia la izquierda - siguiente slide
+      this.nextSlide();
+    } else {
+      // Swipe hacia la derecha - slide anterior
+      this.prevSlide();
+    }
+
+    // Reiniciar temporizador de autorotación
+    clearInterval(this.slideInterval);
     this.slideInterval = setInterval(() => {
       this.nextSlide();
     }, 5000);
   }
 
-  stopSlideInterval() {
-    if (this.slideInterval) {
-      clearInterval(this.slideInterval);
-    }
-  }
-
-  handleSwipe() {
-    const SWIPE_THRESHOLD = 50;
-    if (touchEndX < touchStartX - SWIPE_THRESHOLD) {
-      this.nextSlide(); // Swipe izquierdo, siguiente slide
-    }
-    if (touchEndX > touchStartX + SWIPE_THRESHOLD) {
-      this.prevSlide(); // Swipe derecho, slide anterior
-    }
-  }
-
   initMetricsAnimation() {
-    // Observador para la animación de métricas
-    const metricsObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.animateMetrics();
-            metricsObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    const metricsContainer = document.querySelector('.hero-metrics');
-    if (metricsContainer) {
-      metricsObserver.observe(metricsContainer);
-    }
-  }
-
-  animateMetrics() {
-    const metrics = document.querySelectorAll('.metric-number');
-    
-    metrics.forEach(metric => {
-      const value = metric.getAttribute('data-value');
-      if (!value) return;
-      
-      let finalValue = value;
-      let startValue = 0;
-      let duration = 2000; // 2 segundos
-      
-      // Manejar valores con + o k
-      let isPlus = false;
-      let isK = false;
-      let targetValue = finalValue;
-      
-      if (finalValue.includes('+')) {
-        isPlus = true;
-        targetValue = finalValue.replace('+', '');
-      }
-      
-      if (finalValue.includes('k')) {
-        isK = true;
-        targetValue = parseFloat(targetValue.replace('k', '')) * 1000;
-      }
-      
-      // Eliminar comas para cálculos
-      targetValue = parseFloat(targetValue.replace(/,/g, ''));
-      
-      const increment = targetValue / (duration / 16);
-      let currentValue = 0;
-      
-      const counterTimer = setInterval(() => {
-        currentValue += increment;
-        
-        if (currentValue >= targetValue) {
-          clearInterval(counterTimer);
-          metric.textContent = finalValue;
-        } else {
-          let displayValue = Math.floor(currentValue);
-          
-          if (isK) {
-            displayValue = (displayValue / 1000).toFixed(0) + 'k';
-          }
-          
-          if (isPlus) {
-            displayValue = '+' + displayValue;
-          }
-          
-          metric.textContent = displayValue;
-        }
-      }, 16);
-    });
+    // Esta función ahora se maneja dentro de initCounterAnimation()
   }
 
   addParallaxEffect() {
-    window.addEventListener('mousemove', (e) => {
-      const floatingElements = document.querySelectorAll('.floating-element');
-      
+    const floatingElements = document.querySelectorAll('.floating-element');
+
+    window.addEventListener('mousemove', e => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
       floatingElements.forEach(element => {
-        const speed = parseFloat(element.getAttribute('data-speed') || '0.02');
-        const x = (window.innerWidth / 2 - e.clientX) * speed;
-        const y = (window.innerHeight / 2 - e.clientY) * speed;
-        
-        element.style.transform = `translate(${x}px, ${y}px)`;
+        const speed = element.getAttribute('data-speed') || 0.05;
+        const moveX = (x - 0.5) * 100 * speed;
+        const moveY = (y - 0.5) * 100 * speed;
+
+        element.style.transform = `translate(${moveX}px, ${moveY}px)`;
       });
     });
+  }
+
+  addGoldEffects() {
+    // Añadir efectos dorados adicionales cuando se pase el cursor sobre elementos del hero
+    const heroHighlight = document.querySelector('.hero-title-highlight');
+    if (heroHighlight) {
+      heroHighlight.addEventListener('mouseover', () => {
+        heroHighlight.classList.add('gold-shimmer');
+      });
+      heroHighlight.addEventListener('mouseout', () => {
+        setTimeout(() => {
+          heroHighlight.classList.remove('gold-shimmer');
+        }, 1000);
+      });
+    }
+
+    // Añadir efecto pulsante a los botones gold
+    const goldButton = document.querySelector('.btn-gold');
+    if (goldButton) {
+      goldButton.classList.add('gold-pulse');
+    }
+
+    // Añadir efecto de rotación a los acentos premium
+    const goldAccent = document.querySelector('.premium-accent-gold');
+    if (goldAccent) {
+      goldAccent.classList.add('rotate-effect');
+    }
   }
 }
