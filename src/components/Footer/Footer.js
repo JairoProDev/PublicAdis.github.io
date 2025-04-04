@@ -5,31 +5,40 @@ export class Footer {
 
   init() {
     this.render();
+    this.initFooterFunctionality();
   }
 
   render() {
-    const footer = document.querySelector(".site-footer");
+    const footer = document.querySelector('.site-footer');
     if (!footer) return;
 
     footer.innerHTML = `
       <div class="footer-container">
         <div class="footer-top">
           <div class="footer-logo">
-            <img src="/assets/images/logo-white.png" alt="PublicAdis Logo">
+            <img src="/assets/images/logo-white.png" alt="PublicAdis Logo" class="footer-logo-img" />
+            <h2 class="footer-logo-text">PublicAdis</h2>
             <p>Revolucionando la publicidad digital con tecnología disruptiva y soluciones innovadoras.</p>
+          </div>
+          
+          <div class="footer-slogan">
+            La plataforma publicitaria líder en Cusco
           </div>
           
           <div class="footer-social">
             <h4>Síguenos</h4>
             <div class="social-links">
-              <a href="https://facebook.com/publicadis" target="_blank" rel="noopener">
-                <i class="fab fa-facebook-f"></i>
+              <a href="https://wa.me/937054328" class="social-link" title="WhatsApp" rel="noopener" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="https://twitter.com/publicadis" target="_blank" rel="noopener">
-                <i class="fab fa-twitter"></i>
+              <a href="https://www.facebook.com/publicadis" class="social-link" title="Facebook" rel="noopener" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
               </a>
-              <a href="https://instagram.com/publicadis" target="_blank" rel="noopener">
-                <i class="fab fa-instagram"></i>
+              <a href="https://www.instagram.com/publicadis" class="social-link" title="Instagram" rel="noopener" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.tiktok.com/@publicadis" class="social-link" title="TikTok" rel="noopener" target="_blank">
+                <i class="fa-brands fa-tiktok"></i>
               </a>
               <a href="https://linkedin.com/company/publicadis" target="_blank" rel="noopener">
                 <i class="fab fa-linkedin-in"></i>
@@ -52,10 +61,11 @@ export class Footer {
           <div class="footer-section">
             <h4>Servicios</h4>
             <ul class="footer-links">
-              <li><a href="/servicios/publicidad"><i class="fas fa-chevron-right"></i>Publicidad Digital</a></li>
-              <li><a href="/servicios/analitica"><i class="fas fa-chevron-right"></i>Analítica Avanzada</a></li>
-              <li><a href="/servicios/automatizacion"><i class="fas fa-chevron-right"></i>Automatización</a></li>
-              <li><a href="/servicios/consultoria"><i class="fas fa-chevron-right"></i>Consultoría</a></li>
+              <li><a href="#servicesSection" data-target="inmuebles"><i class="fas fa-chevron-right"></i>Inmuebles</a></li>
+              <li><a href="#servicesSection" data-target="vehiculos"><i class="fas fa-chevron-right"></i>Vehículos</a></li>
+              <li><a href="#servicesSection" data-target="empleos"><i class="fas fa-chevron-right"></i>Empleos</a></li>
+              <li><a href="#servicesSection" data-target="servicios"><i class="fas fa-chevron-right"></i>Servicios Profesionales</a></li>
+              <li><a href="#servicesSection" data-target="productos"><i class="fas fa-chevron-right"></i>Productos</a></li>
             </ul>
           </div>
 
@@ -70,36 +80,123 @@ export class Footer {
           </div>
 
           <div class="footer-section">
-            <h4>Soporte</h4>
+            <h4>Herramientas</h4>
             <ul class="footer-links">
-              <li><a href="/soporte"><i class="fas fa-chevron-right"></i>Centro de Ayuda</a></li>
-              <li><a href="/contacto"><i class="fas fa-chevron-right"></i>Contáctanos</a></li>
-              <li><a href="/faq"><i class="fas fa-chevron-right"></i>Preguntas Frecuentes</a></li>
-              <li><a href="/estado"><i class="fas fa-chevron-right"></i>Estado del Sistema</a></li>
+              <li>
+                <a href="#businessToolsSection" data-tool="property-valuation">
+                  <i class="fa-solid fa-home"></i> Calculadora Inmobiliaria
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="roi-calculator">
+                  <i class="fa-solid fa-chart-line"></i> Calculadora ROI
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="vehicle-price">
+                  <i class="fa-solid fa-car"></i> Precio de Vehículos
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="salary-compare">
+                  <i class="fa-solid fa-sack-dollar"></i> Comparador Salarial
+                </a>
+              </li>
+              <li>
+                <a href="#businessToolsSection" data-tool="social-media">
+                  <i class="fa-solid fa-share-nodes"></i> Alcance en Redes
+                </a>
+              </li>
             </ul>
           </div>
 
           <div class="footer-section">
-            <h4>Legal</h4>
-            <ul class="footer-links">
-              <li><a href="/legal/terminos"><i class="fas fa-chevron-right"></i>Términos de Servicio</a></li>
-              <li><a href="/legal/privacidad"><i class="fas fa-chevron-right"></i>Política de Privacidad</a></li>
-              <li><a href="/legal/cookies"><i class="fas fa-chevron-right"></i>Política de Cookies</a></li>
-              <li><a href="/legal/seguridad"><i class="fas fa-chevron-right"></i>Seguridad</a></li>
+            <h4>Contacto</h4>
+            <ul class="footer-contact-info">
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Local físico en San Sebastián, Cusco</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <span><a href="tel:+51937054328">+51 937 054 328</a></span>
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <span><a href="mailto:publicadis@gmail.com">publicadis@gmail.com</a></span>
+              </li>
             </ul>
+            <div class="footer-app-download">
+              <h5>Descarga nuestra app:</h5>
+              <a href="https://play.google.com/store/apps/details?id=buscadis.publicadis&pli=1" class="app-download-btn" target="_blank" rel="noopener">
+                <i class="fa-brands fa-google-play"></i>
+                <span>Google Play</span>
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; ${this.currentYear} PublicAdis. Todos los derechos reservados.</p>
+          <p>&copy; ${this.currentYear} PublicAdis - BuscAdis. Todos los derechos reservados.</p>
           
           <div class="footer-badges">
-            <img src="/assets/images/badges/ssl-secure.png" alt="SSL Secure">
-            <img src="/assets/images/badges/gdpr-compliant.png" alt="GDPR Compliant">
-            <img src="/assets/images/badges/iso-certified.png" alt="ISO Certified">
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
           </div>
         </div>
       </div>
     `;
+  }
+
+  initFooterFunctionality() {
+    // Scroll to section functionality for service links
+    const serviceLinks = document.querySelectorAll('.footer-section a[data-target]');
+    serviceLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetSection = document.querySelector(this.getAttribute('href'));
+        if (targetSection) {
+          // Scroll to section
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+
+          // Select the corresponding tab after a delay
+          setTimeout(() => {
+            const targetTab = this.getAttribute('data-target');
+            if (targetTab) {
+              const tab = document.querySelector(`.service-tab[data-target="${targetTab}"]`);
+              if (tab) {
+                tab.click();
+              }
+            }
+          }, 800);
+        }
+      });
+    });
+
+    // Scroll to business tools section and select specific tool
+    const toolLinks = document.querySelectorAll('.footer-section a[data-tool]');
+    toolLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetSection = document.querySelector(this.getAttribute('href'));
+        if (targetSection) {
+          // Scroll to section
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+
+          // Select the corresponding tool tab after a delay
+          setTimeout(() => {
+            const toolId = this.getAttribute('data-tool');
+            if (toolId) {
+              const toolTab = document.querySelector(`.tool-tab[data-tool="${toolId}"]`);
+              if (toolTab) {
+                toolTab.click();
+              }
+            }
+          }, 800);
+        }
+      });
+    });
   }
 }

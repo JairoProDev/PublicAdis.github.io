@@ -1,259 +1,186 @@
 // Sectors Component
-function loadSectors() {
-  const sectors = `
-      <section id="sectorsSection" class="pageSection sectors-section">
+export class Sectors {
+  constructor() {
+    this.sectors = [
+      {
+        id: 'inmobiliario',
+        icon: 'fa-building',
+        title: 'Sector Inmobiliario',
+        description:
+          'Multiplique sus ventas y alquileres con nuestro alcance especializado en el sector inmobiliario de Cusco.',
+        stats: [
+          { value: '300+', label: 'Inmobiliarias asociadas' },
+          { value: '1200+', label: 'Propiedades vendidas al mes' },
+        ],
+      },
+      {
+        id: 'automotriz',
+        icon: 'fa-car',
+        title: 'Sector Automotriz',
+        description:
+          'Venda vehículos nuevos y usados más rápido con nuestra plataforma especializada en el mercado automotriz.',
+        stats: [
+          { value: '85%', label: 'Reducción en tiempo de venta' },
+          { value: '250+', label: 'Concesionarios asociados' },
+        ],
+      },
+      {
+        id: 'profesional',
+        icon: 'fa-briefcase',
+        title: 'Servicios Profesionales',
+        description:
+          'Conecte con clientes potenciales para sus servicios profesionales y construya una cartera sólida.',
+        stats: [
+          { value: '3500+', label: 'Profesionales registrados' },
+          { value: '92%', label: 'Tasa de satisfacción cliente' },
+        ],
+      },
+      {
+        id: 'retail',
+        icon: 'fa-shopping-cart',
+        title: 'Retail y Comercio',
+        description:
+          'Impulse sus ventas minoristas y mayoristas con nuestras soluciones publicitarias multiplataforma.',
+        stats: [
+          { value: '200+', label: 'Tiendas con crecimiento sostenido' },
+          { value: '40%', label: 'Incremento en ticket promedio' },
+        ],
+      },
+      {
+        id: 'turismo',
+        icon: 'fa-plane',
+        title: 'Turismo y Hostelería',
+        description:
+          'Atraiga más turistas y visitantes a sus servicios turísticos y de hostelería en la región de Cusco.',
+        stats: [
+          { value: '150+', label: 'Hoteles y hostales asociados' },
+          { value: '75%', label: 'Incremento en reservas directas' },
+        ],
+      },
+      {
+        id: 'educacion',
+        icon: 'fa-graduation-cap',
+        title: 'Educación y Formación',
+        description:
+          'Capte más estudiantes para sus programas educativos con nuestra plataforma especializada.',
+        stats: [
+          { value: '50+', label: 'Instituciones educativas' },
+          { value: '120%', label: 'Aumento en matrículas' },
+        ],
+      },
+    ];
+  }
+
+  init() {
+    this.render();
+    this.addInteractions();
+  }
+
+  render() {
+    const container =
+      document.getElementById('sectorsContainer') || document.querySelector('#sectors');
+    if (!container) return;
+
+    container.innerHTML = `
+      <section id="sectors" class="sectors-section">
         <div class="section-container">
           <div class="section-header">
-            <h2 class="section-title fade-in-up">
-              Soluciones para <span class="section-title-highlight">Todos los Sectores</span>
-            </h2>
-            <p class="section-subtitle fade-in-up">
-              Ofrecemos herramientas y servicios especializados para cada tipo de industria
-            </p>
+            <h2 class="section-title">Sectores Especializados</h2>
+            <p class="section-subtitle">Soluciones publicitarias adaptadas a las necesidades específicas de cada industria</p>
           </div>
           
           <div class="sectors-grid">
-            <!-- Mascotas Sector -->
-            <div class="sector-card fade-in-up">
-              <div class="sector-icon">
-                <i class="fa-solid fa-paw"></i>
-              </div>
-              <h3 class="sector-title">Mascotas</h3>
-              <p class="sector-description">
-                Impulsa tu negocio veterinario, tienda de mascotas o servicios para animales con soluciones publicitarias efectivas.
-              </p>
-              <div class="sector-metrics">
-                <div class="sector-metric">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <span>+210% incremento en ventas</span>
+            ${this.sectors
+              .map(
+                sector => `
+              <div class="sector-card" data-sector="${sector.id}">
+                <div class="sector-icon">
+                  <i class="fas ${sector.icon}"></i>
                 </div>
-                <div class="sector-metric">
-                  <i class="fa-solid fa-users"></i>
-                  <span>+8K alcance mensual</span>
+                <h3 class="sector-title">${sector.title}</h3>
+                <p class="sector-description">${sector.description}</p>
+                <div class="sector-stats">
+                  ${sector.stats
+                    .map(
+                      stat => `
+                    <div class="sector-stat">
+                      <span class="stat-value">${stat.value}</span>
+                      <span class="stat-label">${stat.label}</span>
+                    </div>
+                  `
+                    )
+                    .join('')}
                 </div>
+                <a href="#contacto" class="sector-link" data-sector="${sector.id}">
+                  Conocer solución <i class="fas fa-arrow-right"></i>
+                </a>
               </div>
-              <a href="#servicesSection" class="sector-button">
-                Ver Soluciones <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            
-            <!-- Educación Sector -->
-            <div class="sector-card fade-in-up delay-1">
-              <div class="sector-icon">
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-              <h3 class="sector-title">Educación</h3>
-              <p class="sector-description">
-                Aumenta la visibilidad de tu instituto, academia o servicios educativos con estrategias digitales efectivas.
-              </p>
-              <div class="sector-metrics">
-                <div class="sector-metric">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <span>+175% incremento en matrículas</span>
-                </div>
-                <div class="sector-metric">
-                  <i class="fa-solid fa-users"></i>
-                  <span>+12K alcance mensual</span>
-                </div>
-              </div>
-              <a href="#servicesSection" class="sector-button">
-                Ver Soluciones <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            
-            <!-- Turismo Sector -->
-            <div class="sector-card fade-in-up delay-2">
-              <div class="sector-icon">
-                <i class="fa-solid fa-mountain-sun"></i>
-              </div>
-              <h3 class="sector-title">Turismo</h3>
-              <p class="sector-description">
-                Promociona tus tours, hoteles o servicios turísticos llegando al público adecuado en el momento preciso.
-              </p>
-              <div class="sector-metrics">
-                <div class="sector-metric">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <span>+230% incremento en reservas</span>
-                </div>
-                <div class="sector-metric">
-                  <i class="fa-solid fa-users"></i>
-                  <span>+15K alcance mensual</span>
-                </div>
-              </div>
-              <a href="#servicesSection" class="sector-button">
-                Ver Soluciones <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            
-            <!-- Gastronomía Sector -->
-            <div class="sector-card fade-in-up delay-3">
-              <div class="sector-icon">
-                <i class="fa-solid fa-utensils"></i>
-              </div>
-              <h3 class="sector-title">Gastronomía</h3>
-              <p class="sector-description">
-                Llena tu restaurante, cafetería o servicio de catering con campañas publicitarias atractivas y efectivas.
-              </p>
-              <div class="sector-metrics">
-                <div class="sector-metric">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <span>+195% incremento en clientes</span>
-                </div>
-                <div class="sector-metric">
-                  <i class="fa-solid fa-users"></i>
-                  <span>+10K alcance mensual</span>
-                </div>
-              </div>
-              <a href="#servicesSection" class="sector-button">
-                Ver Soluciones <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            
-            <!-- Belleza Sector -->
-            <div class="sector-card fade-in-up">
-              <div class="sector-icon">
-                <i class="fa-solid fa-spa"></i>
-              </div>
-              <h3 class="sector-title">Belleza</h3>
-              <p class="sector-description">
-                Destaca tu salón de belleza, spa o servicios estéticos con anuncios que atraigan a tu público ideal.
-              </p>
-              <div class="sector-metrics">
-                <div class="sector-metric">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <span>+185% incremento en citas</span>
-                </div>
-                <div class="sector-metric">
-                  <i class="fa-solid fa-users"></i>
-                  <span>+9K alcance mensual</span>
-                </div>
-              </div>
-              <a href="#servicesSection" class="sector-button">
-                Ver Soluciones <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            
-            <!-- Salud Sector -->
-            <div class="sector-card fade-in-up delay-1">
-              <div class="sector-icon">
-                <i class="fa-solid fa-heart-pulse"></i>
-              </div>
-              <h3 class="sector-title">Salud</h3>
-              <p class="sector-description">
-                Promociona tus servicios médicos, clínicas o consultorios con estrategias que generen confianza y visibilidad.
-              </p>
-              <div class="sector-metrics">
-                <div class="sector-metric">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <span>+165% incremento en pacientes</span>
-                </div>
-                <div class="sector-metric">
-                  <i class="fa-solid fa-users"></i>
-                  <span>+11K alcance mensual</span>
-                </div>
-              </div>
-              <a href="#servicesSection" class="sector-button">
-                Ver Soluciones <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            
-            <!-- Moda Sector -->
-            <div class="sector-card fade-in-up delay-2">
-              <div class="sector-icon">
-                <i class="fa-solid fa-shirt"></i>
-              </div>
-              <h3 class="sector-title">Moda</h3>
-              <p class="sector-description">
-                Impulsa tu tienda de ropa, boutique o marca de moda con publicidad que conecte con los amantes de la moda.
-              </p>
-              <div class="sector-metrics">
-                <div class="sector-metric">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <span>+205% incremento en ventas</span>
-                </div>
-                <div class="sector-metric">
-                  <i class="fa-solid fa-users"></i>
-                  <span>+13K alcance mensual</span>
-                </div>
-              </div>
-              <a href="#servicesSection" class="sector-button">
-                Ver Soluciones <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            
-            <!-- Tecnología Sector -->
-            <div class="sector-card fade-in-up delay-3">
-              <div class="sector-icon">
-                <i class="fa-solid fa-microchip"></i>
-              </div>
-              <h3 class="sector-title">Tecnología</h3>
-              <p class="sector-description">
-                Aumenta la visibilidad de tu tienda de tecnología, servicio técnico o soluciones digitales con publicidad efectiva.
-              </p>
-              <div class="sector-metrics">
-                <div class="sector-metric">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <span>+220% incremento en ventas</span>
-                </div>
-                <div class="sector-metric">
-                  <i class="fa-solid fa-users"></i>
-                  <span>+14K alcance mensual</span>
-                </div>
-              </div>
-              <a href="#servicesSection" class="sector-button">
-                Ver Soluciones <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
+            `
+              )
+              .join('')}
           </div>
           
           <div class="sectors-cta">
-            <div class="cta-container">
-              <div class="cta-content">
-                <h3>¿Tu sector no está en la lista?</h3>
-                <p>Sin importar a qué tipo de industria pertenezcas, tenemos soluciones específicas para ti.</p>
-              </div>
-              <a href="https://wa.me/937054328" class="cta-button" target="_blank" rel="noopener">
-                <i class="fa-solid fa-message"></i> Consulta Personalizada
-              </a>
+            <div class="cta-content">
+              <h3>¿Su sector no aparece en la lista?</h3>
+              <p>Contáctenos para diseñar una solución publicitaria personalizada para su industria específica.</p>
             </div>
+            <a href="#contacto" class="btn btn-primary">Solicitar Asesoría</a>
           </div>
         </div>
       </section>
     `;
+  }
 
-  document.getElementById('sectorsContainer').innerHTML = sectors;
+  addInteractions() {
+    // Añadir efectos de hover y animación a las tarjetas
+    const sectorCards = document.querySelectorAll('.sector-card');
 
-  initSectorsInteractions();
-}
+    // Observe intersection para animar entrada
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-function initSectorsInteractions() {
-  // Scroll-triggered animations
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+    sectorCards.forEach((card, index) => {
+      // Añadir delay a cada card para animación escalonada
+      card.style.transitionDelay = `${index * 0.1}s`;
 
-  // Observe all animatable elements
-  document.querySelectorAll('.fade-in-up, .fade-in-right').forEach(el => {
-    observer.observe(el);
-  });
+      // Observar para animar entrada
+      observer.observe(card);
 
-  // Add hover effects
-  const sectorCards = document.querySelectorAll('.sector-card');
+      // Manejar clicks en los enlaces
+      const link = card.querySelector('.sector-link');
+      if (link) {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const sectorId = link.getAttribute('data-sector');
 
-  sectorCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.classList.add('hover');
+          // Guardar sector seleccionado en sessionStorage para referencia posterior
+          sessionStorage.setItem('selectedSector', sectorId);
+
+          // Navegar al formulario de contacto
+          const contactForm = document.querySelector('#contacto');
+          if (contactForm) {
+            contactForm.scrollIntoView({ behavior: 'smooth' });
+
+            // Preseleccionar el sector en el formulario si existe
+            setTimeout(() => {
+              const sectorSelect = document.querySelector('#contact-sector');
+              if (sectorSelect) {
+                sectorSelect.value = sectorId;
+              }
+            }, 800);
+          }
+        });
+      }
     });
-
-    card.addEventListener('mouseleave', () => {
-      card.classList.remove('hover');
-    });
-  });
+  }
 }

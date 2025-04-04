@@ -1,10 +1,19 @@
 import { defineConfig } from "vite";
+import path from 'path';
 
 export default defineConfig({
-  base: "/PublicAdis.github.io/",
+  base: "/",
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   server: {
     port: 5173,
     open: true,
+    hmr: {
+      overlay: true,
+    }
   },
   build: {
     outDir: "dist",
