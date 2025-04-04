@@ -1,0 +1,116 @@
+/* Canales de Publicidad */
+.channels-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.channel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.channel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.channel i {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.channel span {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Colores específicos para cada canal */
+.channel:nth-child(1) i {
+  color: #104891;
+}
+
+.channel:nth-child(2) i {
+  color: #3ddc84;
+}
+
+.channel:nth-child(3) i {
+  color: #ff5722;
+}
+
+.channel:nth-child(4) i {
+  color: #4267b2;
+}
+
+.channel:nth-child(5) i {
+  color: #8b4513;
+}
+
+.channel:nth-child(6) i {
+  color: #25d366;
+}
+
+/* Estilos animados */
+.channel:hover i {
+  transform: scale(1.2);
+}
+
+/* Media queries para responsividad */
+@media screen and (max-width: 768px) {
+  .channels-container {
+    gap: 10px;
+    padding: 20px 10px;
+  }
+
+  .channel {
+    min-width: 100px;
+    padding: 15px;
+  }
+
+  .channel i {
+    font-size: 24px;
+  }
+
+  .channel span {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .channels-container {
+    gap: 8px;
+  }
+
+  .channel {
+    min-width: 80px;
+    padding: 10px;
+  }
+
+  .channel i {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .channel span {
+    font-size: 11px;
+  }
+}

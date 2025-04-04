@@ -27,6 +27,17 @@
     <meta name="theme-color" content="#104891" />
     <title>PublicAdis - Haz Crecer Tu Negocio</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -42,6 +53,9 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/styles/main.css" />
+
     <!-- Main Script -->
     <script type="module" src="/src/main.js"></script>
   </head>
@@ -53,12 +67,12 @@
     <!-- Page Container -->
     <div class="app-container">
       <!-- Header -->
-      <div id="headerContainer"></div>
+      <header class="site-header"></header>
 
       <!-- Main Content -->
       <main class="main-content">
         <!-- Hero Section -->
-        <div id="heroContainer"></div>
+        <section class="hero-section"></section>
 
         <!-- Services Section -->
         <div id="servicesContainer"></div>
@@ -108,23 +122,33 @@
 
         <!-- Features Section -->
         <div id="featuresContainer"></div>
-
-        <!-- Footer -->
-        <div id="footerContainer"></div>
-
-        <!-- Quick Action Button -->
-        <div class="quick-action-button">
-          <a
-            href="https://wa.me/937054328"
-            class="action-button"
-            aria-label="Contactar por WhatsApp"
-            target="_blank"
-            rel="noopener"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </div>
       </main>
+
+      <!-- Footer -->
+      <footer class="site-footer"></footer>
+
+      <!-- Quick Action Button -->
+      <div class="quick-action-button">
+        <a
+          href="https://wa.me/937054328"
+          class="action-button"
+          aria-label="Contactar por WhatsApp"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
     </div>
+
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/51937054328"
+      class="whatsapp-button"
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
   </body>
 </html>

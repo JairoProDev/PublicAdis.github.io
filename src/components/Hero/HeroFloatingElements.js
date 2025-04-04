@@ -1,36 +1,11 @@
-class HeroFloatingElements {
+export class HeroFloatingElements {
   constructor() {
     this.elements = [
-      {
-        icon: "fa-star",
-        color: "var(--premium-gold)",
-        size: "2rem",
-        animation: "float-1",
-      },
-      {
-        icon: "fa-circle",
-        color: "var(--primary-blue)",
-        size: "1.5rem",
-        animation: "float-2",
-      },
-      {
-        icon: "fa-square",
-        color: "var(--primary-orange)",
-        size: "1.8rem",
-        animation: "float-3",
-      },
-      {
-        icon: "fa-diamond",
-        color: "var(--premium-gold)",
-        size: "1.2rem",
-        animation: "float-4",
-      },
-      {
-        icon: "fa-circle",
-        color: "var(--primary-blue)",
-        size: "1rem",
-        animation: "float-5",
-      },
+      { icon: "chart-pie", color: "var(--primary-orange)", size: "2rem" },
+      { icon: "bullseye", color: "var(--premium-gold)", size: "3rem" },
+      { icon: "lightbulb", color: "var(--primary-blue)", size: "2.5rem" },
+      { icon: "rocket", color: "var(--primary-orange)", size: "2rem" },
+      { icon: "star", color: "var(--premium-gold)", size: "1.5rem" },
     ];
   }
 
@@ -46,12 +21,13 @@ class HeroFloatingElements {
     container.innerHTML = this.elements
       .map(
         (element, index) => `
-        <div class="floating-element ${element.animation}"
-             style="--element-color: ${element.color}; --element-size: ${element.size};"
-             data-index="${index}">
-          <i class="fa-solid ${element.icon}"></i>
-        </div>
-      `
+      <div class="floating-element float-${index + 1}" 
+           style="--element-color: ${element.color}; --element-size: ${
+          element.size
+        }">
+        <i class="fas fa-${element.icon}"></i>
+      </div>
+    `
       )
       .join("");
   }
@@ -61,23 +37,36 @@ class HeroFloatingElements {
     const elements = document.querySelectorAll(".floating-element");
     if (!container || !elements.length) return;
 
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      const { width, height } = container.getBoundingClientRect();
-      const centerX = width / 2;
-      const centerY = height / 2;
+    let mouseX = 0;
+    let mouseY = 0;
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
 
+    // Update dimensions on resize
+    window.addEventListener("resize", () => {
+      windowWidth = window.innerWidth;
+      windowHeight = window.innerHeight;
+    });
+
+    // Track mouse position
+    container.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Animate elements
+    const animate = () => {
       elements.forEach((element, index) => {
-        const depth = 0.05 + (index % 3) * 0.02;
-        const moveX = (clientX - centerX) * depth;
-        const moveY = (clientY - centerY) * depth;
+        const speed = 0.03 + (index % 3) * 0.01;
+        const x = (mouseX / windowWidth - 0.5) * 100 * speed;
+        const y = (mouseY / windowHeight - 0.5) * 100 * speed;
 
-        element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        element.style.transform = `translate(${x}px, ${y}px)`;
       });
+
+      requestAnimationFrame(animate);
     };
 
-    container.addEventListener("mousemove", handleMouseMove);
+    animate();
   }
 }
-
-export default HeroFloatingElements;

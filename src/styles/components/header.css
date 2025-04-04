@@ -1,1 +1,144 @@
- 
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  background: var(--gradient-primary);
+  transition: transform var(--animation-speed) var(--animation-smooth);
+}
+
+.site-header.scroll-down {
+  transform: translateY(-100%);
+}
+
+.site-header.scroll-up {
+  transform: translateY(0);
+  box-shadow: var(--shadow-lg);
+}
+
+.header-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: block;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--spacing-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--animation-speed-fast) var(--animation-smooth);
+}
+
+.nav-list a:hover {
+  color: var(--primary-orange);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--light-text);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: var(--gradient-primary);
+  padding: var(--spacing-lg);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all var(--animation-speed) var(--animation-smooth);
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-list li {
+  margin-bottom: var(--spacing-md);
+}
+
+.mobile-nav-list a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  display: block;
+  padding: var(--spacing-sm) 0;
+}
+
+.mobile-actions {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media screen and (max-width: 992px) {
+  .main-nav,
+  .header-actions .btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .logo img {
+    height: 32px;
+  }
+
+  .header-container {
+    padding: var(--spacing-sm) var(--container-padding);
+  }
+}
