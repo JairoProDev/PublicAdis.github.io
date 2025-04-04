@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="PublicAdis - La plataforma publicitaria más completa de Cusco para impulsar tu negocio y aumentar tus ventas en múltiples canales."
+      content="Multiplique sus ventas con PublicAdis, la plataforma publicitaria más completa de Cusco. Alcance multicanal y estrategias personalizadas para su negocio."
     />
     <meta
       name="keywords"
@@ -13,19 +13,19 @@
     />
     <meta name="author" content="PublicAdis" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="PublicAdis - Haz Crecer Tu Negocio" />
+    <meta property="og:title" content="PublicAdis - Publicidad Premium Multicanal" />
     <meta
       property="og:description"
-      content="La plataforma publicitaria más completa de Cusco para impulsar tu negocio y aumentar tus ventas en múltiples canales."
+      content="Potencie su negocio con la plataforma publicitaria líder en Cusco. Alcance máximo y resultados extraordinarios."
     />
-    <meta property="og:image" content="/src/assets/images/og-image.jpg" />
+    <meta property="og:image" content="/assets/images/og-image.jpg" />
     <meta property="og:url" content="https://publicadis.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_PE" />
     <meta property="og:site_name" content="PublicAdis" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#104891" />
-    <title>PublicAdis - Haz Crecer Tu Negocio</title>
+    <title>PublicAdis - Plataforma Publicitaria Premium de Cusco</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -48,20 +48,23 @@
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
     <!-- Alpine.js -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/css/premium.css" />
 
     <!-- Main Script -->
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <div id="loader" class="loader">
-      <div class="loader-spinner"></div>
+      <div class="loader-content">
+        <img src="/assets/images/logo.png" alt="PublicAdis Logo" class="loader-logo" />
+        <div class="loader-spinner">
+          <div class="spinner"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Page Container -->
@@ -75,7 +78,7 @@
         <section class="hero-section"></section>
 
         <!-- Services Section -->
-        <div id="servicesContainer"></div>
+        <section id="services"></section>
 
         <!-- Channels Section -->
         <div class="channels-container">
@@ -106,22 +109,25 @@
         </div>
 
         <!-- Sectors Section -->
-        <div id="sectorsContainer"></div>
+        <section id="sectors"></section>
 
         <!-- Benefits Section -->
-        <div id="benefitsContainer"></div>
+        <section id="benefits"></section>
 
         <!-- Testimonials Section -->
-        <div id="testimonialsContainer"></div>
+        <section id="testimonials"></section>
 
         <!-- Business Tools Section -->
-        <div id="businessToolsContainer"></div>
+        <section id="businessTools"></section>
 
         <!-- Application Section -->
         <div id="applicationContainer"></div>
 
         <!-- Features Section -->
         <div id="featuresContainer"></div>
+
+        <!-- Contact Section -->
+        <section id="contacto"></section>
       </main>
 
       <!-- Footer -->
@@ -142,13 +148,16 @@
     </div>
 
     <!-- WhatsApp Button -->
-    <a
-      href="https://wa.me/51937054328"
-      class="whatsapp-button"
-      target="_blank"
-      rel="noopener"
-    >
+    <a href="https://wa.me/51937054328" class="whatsapp-button" target="_blank" rel="noopener">
       <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Overlay para modal -->
+    <div id="overlay" class="overlay"></div>
   </body>
 </html>

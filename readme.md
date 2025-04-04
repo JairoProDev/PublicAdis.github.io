@@ -1,170 +1,135 @@
-# PublicAdis - Digital Marketing Solutions
+# PublicAdis - Plataforma Publicitaria Premium
 
-A modern, responsive website for PublicAdis digital marketing agency, built with HTML, CSS, and JavaScript.
+![PublicAdis Logo](./assets/images/logo.png)
 
-## Features
+## Descripción 📝
 
-- 🎨 Modern and responsive design
-- 🌟 Dynamic hero section with slider
-- 📊 Interactive metrics display
-- 🛠️ Tools and services showcase
-- 📱 Mobile-first approach
-- 🎯 SEO optimized
-- 🚀 Performance focused
+PublicAdis es una plataforma publicitaria premium diseñada específicamente para el mercado de Cusco. 
+Ofrece soluciones publicitarias multicanal para diversos sectores empresariales, garantizando 
+máxima visibilidad y resultados excepcionales para sus clientes.
 
-## Getting Started
+## Características ✨
 
-### Prerequisites
+- **Diseño Premium**: Interfaz elegante y sofisticada con efectos visuales avanzados
+- **Enfoque Multicanal**: Publicidad en web, aplicación móvil, revista digital, redes sociales y puntos físicos
+- **Secciones Especializadas**: Servicios, sectores industriales, herramientas de negocio y testimonios
+- **Funcionalidades Interactivas**: Sliders dinámicos, animaciones en scroll, formularios interactivos
+- **Totalmente Responsive**: Diseño adaptable a cualquier dispositivo y tamaño de pantalla
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
+## Tecnologías Utilizadas 🛠️
 
-### Installation
+- HTML5, CSS3 y JavaScript (ES6+)
+- Arquitectura de componentes modular
+- Font Awesome para iconografía
+- Google Fonts (Poppins)
+- Animaciones CSS avanzadas y transiciones suaves
+- Vite como bundler y servidor de desarrollo
 
-1. Clone the repository:
+## Requisitos Previos 📋
+
+- Node.js (v14.0.0 o superior)
+- npm (v6.0.0 o superior)
+
+## Instalación 🚀
+
+1. Clone el repositorio:
 ```bash
-git clone https://github.com/yourusername/PublicAdis_new.io.git
-cd PublicAdis_new.io
+git clone https://github.com/tu-usuario/publicadis.git
+cd publicadis
 ```
 
-2. Install dependencies:
+2. Instale las dependencias:
 ```bash
 npm install
 ```
 
-3. Start the development server:
+3. Inicie el servidor de desarrollo:
 ```bash
 npm run dev
 ```
 
-The site will be available at `http://localhost:3000`
+4. Abra su navegador y vaya a `http://localhost:5173`
 
-### Building for Production
+## Compilación para Producción 📦
 
-To create a production build:
-
+Para generar los archivos optimizados para producción:
 ```bash
 npm run build
 ```
 
-### Deployment
+Los archivos compilados se encontrarán en el directorio `dist/`.
 
-To deploy to GitHub Pages:
+## Despliegue 🌐
 
+Para realizar una vista previa del build:
 ```bash
-./deploy.sh
+npm run preview
 ```
 
-## Project Structure
+## Estructura del Proyecto 📂
 
 ```
-PublicAdis_new.io/
-├── src/
-│   ├── components/     # React components
-│   ├── styles/        # CSS styles
-│   ├── assets/        # Images and other static files
-│   └── utils/         # Utility functions
-├── public/            # Static files
-└── package.json       # Project configuration
+publicadis/
+├── assets/                 # Recursos estáticos (imágenes, fuentes, etc.)
+├── dist/                   # Archivos compilados para producción
+├── src/                    # Código fuente
+│   ├── components/         # Componentes JavaScript
+│   │   ├── Benefits/       # Componente de Beneficios
+│   │   ├── BusinessTools/  # Componente de Herramientas de Negocio
+│   │   ├── Contact/        # Componente de Contacto
+│   │   ├── Footer/         # Componente de Footer
+│   │   ├── Header/         # Componente de Header
+│   │   ├── Hero/           # Componente de Hero
+│   │   ├── Sectors/        # Componente de Sectores
+│   │   ├── Services/       # Componente de Servicios
+│   │   └── Testimonials/   # Componente de Testimonios
+│   ├── css/                # Estilos CSS específicos
+│   │   └── premium.css     # Estilos Premium
+│   ├── styles/             # Estilos CSS globales
+│   │   └── main.css        # Estilos principales
+│   └── main.js             # Punto de entrada JavaScript
+├── index.html              # Página HTML principal
+├── package.json            # Configuración de npm
+└── vite.config.js          # Configuración de Vite
 ```
 
-## Customization
+## Personalización 🎨
 
-### Colors and Typography
+### Colores
 
-Colors and typography can be customized in `src/styles/variables.css`:
+Los colores principales pueden modificarse en los archivos CSS:
 
-```css
-:root {
-  --primary-blue: #007bff;
-  --primary-orange: #ff6b00;
-  --premium-gold: #ffd700;
-  /* ... other variables */
-}
-```
+- `src/styles/main.css`: Variables CSS globales
+- `src/css/premium.css`: Estilos premium y variables específicas
 
-### Components
+### Contenido
 
-Each component is self-contained with its own styles and logic. Modify components in the `src/components` directory.
+El contenido de cada sección se define en los respectivos componentes dentro de `src/components/`.
 
-## Contributing
+## Mantenimiento 🔧
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Extensión de Sectores
 
-## License
+Para añadir nuevos sectores, modifique el array `sectors` en el archivo `src/components/Sectors/Sectors.js`.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Añadir Testimonios
 
-## Contact
+Para añadir nuevos testimonios, modifique el array `testimonials` en el archivo `src/components/Testimonials/Testimonials.js`.
 
-Your Name - your.email@example.com
-Project Link: [https://github.com/yourusername/PublicAdis_new.io](https://github.com/yourusername/PublicAdis_new.io)
+### Nuevas Herramientas
 
-## Acknowledgments
+Para añadir nuevas herramientas de negocio, modifique el objeto `tools` en el archivo `src/components/BusinessTools/BusinessTools.js`.
 
-- [Font Awesome](https://fontawesome.com) for icons
-- [Google Fonts](https://fonts.google.com) for typography
-- [Unsplash](https://unsplash.com) for stock images
+## Contribuciones 🤝
 
-# WORK METHODOLOGY
+Las contribuciones son bienvenidas. Por favor, abra un issue o envíe un pull request para sugerir cambios o mejoras.
 
-*We'll be working naming our classes using camelCase to make it easier to write code
+## Licencia 📄
 
-*We'll connect our html elements to common css classes like the common width
+Este proyecto está bajo la Licencia MIT - vea el archivo LICENSE para más detalles.
 
-*We'll define the components dimesion like titles, images and icons
+## Contacto 📧
 
-*Our project we'll be based in a single html file and a single css file
-
-*For separate and make easier the readind and coding of the main styles we'll use comments for every comment
-
-*We'll use too comments for set the global classes like the titles page components and page sections
-
-*We'll work using css global vars for all sizes and colors of the global classes and components for make easier modify the page colors
-
-## GLOBAL COMPONENTS NAMES
-
-1.singleComponent: This is for elements like footers, headers and navbars
-
-2.pageSection: this is for define de global width of our sections
-
-3.mainTitle: This is the styles for our h1 component
-
-4.subTitle: This is the styles for h2 component
-
-5.title: This is the style for title component
-
-## IMPORTANT EXTENSIONS
-
-1.Better comments: For improve the coding experience
-2.rainbow indent: For make easier the html indentation
-
-## TOOLS
-
-1. draw.io: For structure flow charts for development process
-2. AI: could be chatgpt, you.ai or other chat bot
-
-## WORK FLOW
-
-*Per day in a draw.io flow chart we set the development process.
-
-*The development tasks are focused in structure the page with html taking like reference the structure of the UX and write the css styles using the development metodology.
-
-*For the implementation we'll set tasks in notion, and define the flow of every dev process in a flow chart
-
-*The implementation in the UI could be structure the new component size, seeing the scripts or react components implementation if it's neccesary
-
-## AI WORK METODOLOGY
-
-*We wont use the ia for generate code directly, because in small projects it makes slower the development for the testing to implement the generated code
-
-*We'll ask to the AI for be a front-end senior developer that is a specialist in HTML and CSS desing
--(HTML or CSS could be any other front end tecnology for that will ask concepts and that stuff)
-
-*We'll adapt our personal chat bot asking for the fundamentals of the tecnologies and concepts that we'll use in the project (responsive designg, camelCase names, semantic HTML, react concepts)
-
-*Once we be constantly training our AI it we'll be easier ask for front-end development and implementation question
+- Email: publicadis@gmail.com
+- WhatsApp: +51 937 054 328
+- Sitio: [www.publicadis.com](https://www.publicadis.com)

@@ -1,4 +1,5 @@
 import './styles/main.css';
+import './css/premium.css';
 import { Header } from './components/Header/Header.js';
 import { Hero } from './components/Hero/Hero.js';
 import { Services } from './components/Services/Services.js';
@@ -7,6 +8,7 @@ import { Footer } from './components/Footer/Footer.js';
 import { BusinessTools } from './components/BusinessTools/BusinessTools.js';
 import { Sectors } from './components/Sectors/Sectors.js';
 import { Testimonials } from './components/Testimonials/Testimonials.js';
+import { Contact } from './components/Contact/Contact.js';
 
 // Initialize components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const businessTools = new BusinessTools();
   const sectors = new Sectors();
   const testimonials = new Testimonials();
+  const contact = new Contact();
 
   // Initialize each component
   header.init();
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   businessTools.init();
   sectors.init();
   testimonials.init();
+  contact.init();
 
   // Handle loader
   const loader = document.getElementById('loader');
@@ -40,6 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('loaded');
       }, 300);
     }, 800);
+  }
+
+  // Apply premium class to hero
+  const heroSection = document.querySelector('.hero-section');
+  if (heroSection) {
+    heroSection.classList.add('premium-hero');
   }
 });
 
