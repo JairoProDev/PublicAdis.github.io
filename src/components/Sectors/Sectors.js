@@ -82,7 +82,7 @@ export class Sectors {
     if (!container) return;
 
     container.innerHTML = `
-      <section id="sectors" class="sectors-section">
+      <section id="sectors" class="sectors-section pageSection">
         <div class="section-container">
           <div class="section-header">
             <h2 class="section-title">Sectores Especializados</h2>
@@ -93,7 +93,7 @@ export class Sectors {
             ${this.sectors
               .map(
                 sector => `
-              <div class="sector-card" data-sector="${sector.id}">
+              <div class="sector-card fade-in-up" data-sector="${sector.id}">
                 <div class="sector-icon">
                   <i class="fas ${sector.icon}"></i>
                 </div>
@@ -104,7 +104,7 @@ export class Sectors {
                     .map(
                       stat => `
                     <div class="sector-stat">
-                      <span class="stat-value">${stat.value}</span>
+                      <span class="stat-value" data-count="${stat.value.replace(/\D/g, '')}">${stat.value}</span>
                       <span class="stat-label">${stat.label}</span>
                     </div>
                   `
@@ -151,7 +151,9 @@ export class Sectors {
 
     sectorCards.forEach((card, index) => {
       // Añadir delay a cada card para animación escalonada
-      card.style.transitionDelay = `${index * 0.1}s`;
+      if (card instanceof HTMLElement) {
+        card.style.transitionDelay = `${index * 0.1}s`;
+      }
 
       // Observar para animar entrada
       observer.observe(card);

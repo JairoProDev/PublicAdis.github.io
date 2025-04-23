@@ -18,13 +18,12 @@ export class Footer {
           <div class="footer-logo">
             <img src="/assets/images/logo-white.png" alt="PublicAdis Logo" class="footer-logo-img" />
             <h2 class="footer-logo-text">PublicAdis</h2>
-            <p>Revolucionando la publicidad digital con tecnología disruptiva y soluciones innovadoras.</p>
           </div>
-          
+
           <div class="footer-slogan">
             La plataforma publicitaria líder en Cusco
           </div>
-          
+
           <div class="footer-social">
             <h4>Síguenos</h4>
             <div class="social-links">
@@ -49,7 +48,7 @@ export class Footer {
 
         <div class="footer-middle">
           <div class="footer-section">
-            <h4>Empresa</h4>
+            <h3 class="footer-heading">Empresa</h3>
             <ul class="footer-links">
               <li><a href="/nosotros"><i class="fas fa-chevron-right"></i>Sobre Nosotros</a></li>
               <li><a href="/equipo"><i class="fas fa-chevron-right"></i>Nuestro Equipo</a></li>
@@ -59,7 +58,7 @@ export class Footer {
           </div>
 
           <div class="footer-section">
-            <h4>Servicios</h4>
+            <h3 class="footer-heading">Servicios</h3>
             <ul class="footer-links">
               <li><a href="#servicesSection" data-target="inmuebles"><i class="fas fa-chevron-right"></i>Inmuebles</a></li>
               <li><a href="#servicesSection" data-target="vehiculos"><i class="fas fa-chevron-right"></i>Vehículos</a></li>
@@ -70,7 +69,7 @@ export class Footer {
           </div>
 
           <div class="footer-section">
-            <h4>Recursos</h4>
+            <h3 class="footer-heading">Recursos</h3>
             <ul class="footer-links">
               <li><a href="/recursos/guias"><i class="fas fa-chevron-right"></i>Guías y Tutoriales</a></li>
               <li><a href="/recursos/webinars"><i class="fas fa-chevron-right"></i>Webinars</a></li>
@@ -80,7 +79,7 @@ export class Footer {
           </div>
 
           <div class="footer-section">
-            <h4>Herramientas</h4>
+            <h3 class="footer-heading">Herramientas</h3>
             <ul class="footer-links">
               <li>
                 <a href="#businessToolsSection" data-tool="property-valuation">
@@ -111,7 +110,7 @@ export class Footer {
           </div>
 
           <div class="footer-section">
-            <h4>Contacto</h4>
+            <h3 class="footer-heading">Contacto</h3>
             <ul class="footer-contact-info">
               <li>
                 <i class="fa-solid fa-location-dot"></i>
@@ -137,8 +136,8 @@ export class Footer {
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; ${this.currentYear} PublicAdis - BuscAdis. Todos los derechos reservados.</p>
-          
+          <p class="footer-copyright">&copy; ${this.currentYear} PublicAdis - BuscAdis. Todos los derechos reservados.</p>
+
           <div class="footer-badges">
             <a href="#">Términos y Condiciones</a>
             <a href="#">Política de Privacidad</a>
@@ -157,10 +156,8 @@ export class Footer {
 
         const targetSection = document.querySelector(this.getAttribute('href'));
         if (targetSection) {
-          // Scroll to section
           targetSection.scrollIntoView({ behavior: 'smooth' });
 
-          // Select the corresponding tab after a delay
           setTimeout(() => {
             const targetTab = this.getAttribute('data-target');
             if (targetTab) {
@@ -182,10 +179,8 @@ export class Footer {
 
         const targetSection = document.querySelector(this.getAttribute('href'));
         if (targetSection) {
-          // Scroll to section
           targetSection.scrollIntoView({ behavior: 'smooth' });
 
-          // Select the corresponding tool tab after a delay
           setTimeout(() => {
             const toolId = this.getAttribute('data-tool');
             if (toolId) {

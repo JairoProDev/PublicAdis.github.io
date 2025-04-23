@@ -1,53 +1,61 @@
+// Benefits Component
 export class Benefits {
   constructor() {
     this.benefits = [
       {
-        icon: 'fa-bullseye',
-        title: 'Segmentación Precisa',
+        icon: 'fa-bullhorn',
+        title: 'Exposición en 7 Canales Diferentes',
         description:
-          'Llegue exactamente a su público objetivo con nuestro sistema de segmentación avanzado basado en intereses, ubicación y comportamiento.',
+          'Tu anuncio aparecerá en nuestra web, app, local físico, Facebook, TikTok, WhatsApp y revista digital.',
+        stats: [{ value: '7x', label: 'Más alcance' }],
         color: 'blue',
       },
       {
-        icon: 'fa-chart-line',
-        title: 'ROI Maximizado',
+        icon: 'fa-user-plus',
+        title: 'Audiencia Local Altamente Interesada',
         description:
-          'Obtenga el máximo retorno de su inversión publicitaria con campañas optimizadas que generan conversiones reales y medibles.',
+          'Conecta con personas que realmente buscan tus productos o servicios en Cusco y alrededores.',
+        stats: [{ value: '+5K', label: 'Usuarios diarios' }],
         color: 'green',
+      },
+      {
+        icon: 'fa-chart-line',
+        title: 'Incremento de Ventas Demostrado',
+        description:
+          'Nuestros anunciantes reportan un aumento significativo en consultas y ventas tras publicar.',
+        stats: [{ value: '+40%', label: 'Ventas promedio' }],
+        color: 'orange',
+      },
+      {
+        icon: 'fa-clock',
+        title: 'Publicación Simple y Rápida',
+        description:
+          'Crea y publica tu anuncio en menos de 5 minutos, desde cualquier dispositivo y a cualquier hora.',
+        stats: [{ value: '5 min', label: 'Tiempo promedio' }],
+        color: 'purple',
+      },
+      {
+        icon: 'fa-hand-pointer',
+        title: 'Control Total de tus Anuncios',
+        description:
+          'Gestiona, edita o actualiza tus anuncios cuando quieras. Tú tienes el control total.',
+        stats: [{ value: '100%', label: 'Control' }],
+        color: 'teal',
+      },
+      {
+        icon: 'fa-comments-dollar',
+        title: 'Retorno de Inversión Superior',
+        description:
+          'El mejor ROI del mercado publicitario local. Inversión mínima, resultados máximos.',
+        stats: [{ value: '3.5x', label: 'ROI promedio' }],
+        color: 'red',
       },
       {
         icon: 'fa-globe',
         title: 'Alcance Multicanal',
         description:
           'Su mensaje llegará a través de web, aplicación móvil, revista digital, redes sociales, grupos de WhatsApp y puntos físicos.',
-        color: 'orange',
-      },
-      {
-        icon: 'fa-bolt',
-        title: 'Resultados Inmediatos',
-        description:
-          'Comience a ver resultados desde el primer día gracias a nuestra red establecida de usuarios activos en busca de sus productos y servicios.',
-        color: 'purple',
-      },
-      {
-        icon: 'fa-cogs',
-        title: 'Automatización Total',
-        description:
-          'Nuestros sistemas automatizados gestionan sus campañas 24/7, optimizando presupuesto y rendimiento sin intervención manual constante.',
-        color: 'teal',
-      },
-      {
-        icon: 'fa-chart-pie',
-        title: 'Análisis Avanzado',
-        description:
-          'Acceda a métricas detalladas y análisis en tiempo real para entender el desempeño de sus campañas y tomar decisiones informadas.',
-        color: 'red',
-      },
-      {
-        icon: 'fa-users',
-        title: 'Comunidad Activa',
-        description:
-          'Aproveche nuestra comunidad de más de 50,000 usuarios activos mensuales en Cusco, todos ellos buscando activamente productos y servicios.',
+        stats: [{ value: '7', label: 'Canales integrados' }],
         color: 'amber',
       },
       {
@@ -55,45 +63,93 @@ export class Benefits {
         title: 'Protección Antifrauide',
         description:
           'Nuestro sistema de detección de fraude garantiza que su presupuesto publicitario se invierta exclusivamente en interacciones legítimas.',
+        stats: [{ value: '100%', label: 'Seguridad' }],
         color: 'indigo',
+      },
+    ];
+
+    this.testimonials = [
+      {
+        text: 'Desde que empecé a publicar mis propiedades en PublicAdis, logré alquilar dos departamentos en menos de una semana. El alcance es impresionante.',
+        rating: 5,
+        author: 'Carlos Mendoza',
+        title: 'Agente Inmobiliario',
+        image: './src/assets/images/testimonials/user1.jpg',
+      },
+      {
+        text: 'Encontré a mi equipo de trabajo gracias a los anuncios de empleo. La plataforma es muy fácil de usar y los resultados son rápidos.',
+        rating: 4.5,
+        author: 'María Flores',
+        title: 'Dueña de Restaurante',
+        image: './src/assets/images/testimonials/user2.jpg',
+      },
+      {
+        text: 'Vendí mi auto en 3 días gracias a PublicAdis. Lo mejor es que pude publicarlo en todos los canales con un solo clic. Muy recomendado.',
+        rating: 5,
+        author: 'Juan Perez',
+        title: 'Ingeniero',
+        image: './src/assets/images/testimonials/user3.jpg',
       },
     ];
   }
 
   init() {
+    console.log('Initializing Benefits component');
     this.render();
     this.addAnimations();
+    this.initTestimonialSlider();
   }
 
   render() {
     const container =
       document.getElementById('benefitsContainer') || document.querySelector('#benefits');
-    if (!container) return;
+    if (!container) {
+      console.error('Benefits container not found');
+      return;
+    }
 
     container.innerHTML = `
-      <section id="benefits" class="benefits-section">
+      <section id="benefits" class="benefits-section pageSection">
         <div class="section-container">
           <div class="section-header">
-            <h2 class="section-title">Ventajas de Publicitar con Nosotros</h2>
-            <p class="section-subtitle">Descubra por qué cientos de negocios eligen PublicAdis para sus estrategias publicitarias</p>
+            <h2 class="section-title animate-on-scroll">
+              Beneficios de Anunciarte con
+              <span class="section-title-highlight">PublicAdis</span>
+            </h2>
+            <p class="section-subtitle animate-on-scroll">
+              Descubre por qué los negocios en Cusco prefieren nuestra plataforma
+            </p>
           </div>
-          
+
           <div class="benefits-grid">
             ${this.benefits
               .map(
                 (benefit, index) => `
-              <div class="benefit-card benefit-${benefit.color}" data-aos="fade-up" data-aos-delay="${index * 100}">
-                <div class="benefit-icon">
-                  <i class="fas ${benefit.icon}"></i>
+              <div class="benefit-card animate-on-scroll benefit-${benefit.color}" data-aos="fade-up" data-aos-delay="${index * 100}">
+                <div class="benefit-icon-container">
+                  <i class="fa-solid ${benefit.icon}"></i>
                 </div>
                 <h3 class="benefit-title">${benefit.title}</h3>
                 <p class="benefit-description">${benefit.description}</p>
+                <div class="benefit-metrics">
+                  ${benefit.stats
+                    .map(
+                      stat => `
+                    <div class="metric">
+                      <span class="metric-value" data-count="${stat.value.replace(/\D/g, '')}">${stat.value}</span>
+                      <span class="metric-label">${stat.label}</span>
+                    </div>
+                  `
+                    )
+                    .join('')}
+                </div>
+                <div class="benefit-icon-bg"></div>
               </div>
             `
               )
               .join('')}
           </div>
-          
+
           <div class="benefits-stats">
             <div class="stat-item">
               <span class="stat-value">+380%</span>
@@ -112,16 +168,56 @@ export class Benefits {
               <span class="stat-label">Canales integrados</span>
             </div>
           </div>
+
+          <div class="benefits-cta animate-on-scroll">
+            <a href="https://wa.me/937054328" class="btn-cta">
+              Comienza a Anunciar Ahora
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
           
-          <div class="benefits-cta">
-            <h3>Potencie su negocio con nuestra plataforma publicitaria</h3>
-            <a href="#contacto" class="btn btn-primary">Solicitar Demostración</a>
+          <div class="benefits-testimonials">
+            <h3 class="testimonials-title animate-on-scroll">Lo que dicen nuestros usuarios</h3>
+            
+            <div class="testimonials-slider">
+              ${this.testimonials
+                .map(
+                  testimonial => `
+                <div class="testimonial-card animate-on-scroll">
+                  <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                      <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">
+                      ${testimonial.text}
+                    </p>
+                    <div class="testimonial-rating">
+                      ${this.generateRatingStars(testimonial.rating)}
+                    </div>
+                  </div>
+                  <div class="testimonial-author">
+                    <div class="testimonial-author-image">
+                      <img src="${testimonial.image}" alt="${testimonial.author}" onerror="this.src='https://ui-avatars.com/api/?name=${testimonial.author
+                        .split(' ')
+                        .map(n => n[0])
+                        .join('+')}&background=0D8ABC&color=fff'">
+                    </div>
+                    <div class="testimonial-author-info">
+                      <h4 class="testimonial-author-name">${testimonial.author}</h4>
+                      <p class="testimonial-author-title">${testimonial.title}</p>
+                    </div>
+                  </div>
+                </div>
+              `
+                )
+                .join('')}
+            </div>
           </div>
         </div>
         
         <div class="benefits-wave">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f8f9fa" fill-opacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,106.7C672,117,768,171,864,186.7C960,203,1056,181,1152,165.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="white" fill-opacity="1" d="M0,128L48,149.3C96,171,192,213,288,218.7C384,224,480,192,576,176C672,160,768,160,864,181.3C960,203,1056,245,1152,245.3C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>
         </div>
       </section>
@@ -131,13 +227,17 @@ export class Benefits {
   addAnimations() {
     // Implementar animaciones en scroll para los benefit cards
     const cards = document.querySelectorAll('.benefit-card');
-
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            entry.target.classList.add('animate');
             observer.unobserve(entry.target);
+
+            // Si hay contadores, iniciarlos
+            const counters = entry.target.querySelectorAll('.metric-value');
+            counters.forEach(counter => this.animateCounter(counter));
           }
         });
       },
@@ -146,80 +246,181 @@ export class Benefits {
 
     cards.forEach((card, index) => {
       // Añadir delay progresivo para animar en secuencia
-      card.style.transitionDelay = `${index * 0.1}s`;
+      if (card instanceof HTMLElement) {
+        card.style.transitionDelay = `${index * 0.1}s`;
+      }
       observer.observe(card);
     });
 
-    // Animar las estadísticas con contador
-    const statValues = document.querySelectorAll('.stat-value');
-    const statsObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.animateStats();
-            statsObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
+    // Animar todas las estadísticas con contador
     const statsSection = document.querySelector('.benefits-stats');
     if (statsSection) {
+      const statsObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              this.animateStats();
+              statsObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
       statsObserver.observe(statsSection);
     }
+
+    // Observar elementos con animación en scroll
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  animateCounter(element) {
+    const value = element.textContent;
+    const finalValue = value;
+    let startValue = 0;
+    let duration = 2000;
+
+    // Manejar valores con +, % o x
+    let isPlus = false;
+    let isPercent = false;
+    let isX = false;
+    let targetValue = finalValue;
+
+    if (finalValue.includes('+')) {
+      isPlus = true;
+      targetValue = targetValue.replace('+', '');
+    }
+
+    if (finalValue.includes('%')) {
+      isPercent = true;
+      targetValue = targetValue.replace('%', '');
+    }
+
+    if (finalValue.includes('x')) {
+      isX = true;
+      targetValue = targetValue.replace('x', '');
+    }
+
+    if (finalValue.includes('K')) {
+      targetValue = parseFloat(targetValue.replace('K', '')) * 1000;
+    }
+
+    // Convertir a número para los cálculos
+    targetValue = parseFloat(targetValue.replace(/,/g, ''));
+    if (isNaN(targetValue)) return;
+
+    const increment = targetValue / (duration / 16);
+    let currentValue = 0;
+
+    const counterTimer = setInterval(() => {
+      currentValue += increment;
+
+      if (currentValue >= targetValue) {
+        clearInterval(counterTimer);
+        element.textContent = finalValue;
+      } else {
+        let displayValue = Math.floor(currentValue).toString();
+
+        if (isPlus) displayValue = '+' + displayValue;
+        if (isPercent) displayValue += '%';
+        if (isX) displayValue += 'x';
+
+        element.textContent = displayValue;
+      }
+    }, 16);
   }
 
   animateStats() {
     const statValues = document.querySelectorAll('.stat-value');
+    statValues.forEach(statValue => this.animateCounter(statValue));
+  }
 
-    statValues.forEach(statValue => {
-      const value = statValue.textContent;
-      let finalValue = value;
-      let startValue = 0;
-      let duration = 2000; // 2 segundos
+  generateRatingStars(rating) {
+    let starsHtml = '';
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5;
 
-      // Manejar valores con + o K
-      let isPlus = false;
-      let isK = false;
-      let targetValue = finalValue;
+    for (let i = 0; i < fullStars; i++) {
+      starsHtml += '<i class="fa-solid fa-star"></i>';
+    }
 
-      if (finalValue.includes('+')) {
-        isPlus = true;
-        targetValue = finalValue.replace('+', '');
-      }
+    if (halfStar) {
+      starsHtml += '<i class="fa-solid fa-star-half-alt"></i>';
+    }
 
-      if (finalValue.includes('K')) {
-        isK = true;
-        targetValue = parseFloat(targetValue.replace('K', '')) * 1000;
-      }
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+    for (let i = 0; i < emptyStars; i++) {
+      starsHtml += '<i class="fa-regular fa-star"></i>';
+    }
 
-      // Eliminar comas para cálculos
-      targetValue = parseFloat(targetValue.replace(/,/g, ''));
+    return starsHtml;
+  }
 
-      const increment = targetValue / (duration / 16);
-      let currentValue = 0;
+  initTestimonialSlider() {
+    const slider = document.querySelector('.testimonials-slider');
+    if (!slider) return;
 
-      const counterTimer = setInterval(() => {
-        currentValue += increment;
+    const cards = slider.querySelectorAll('.testimonial-card');
+    if (cards.length <= 1) return;
 
-        if (currentValue >= targetValue) {
-          clearInterval(counterTimer);
-          statValue.textContent = finalValue;
-        } else {
-          let displayValue = Math.floor(currentValue);
+    let currentIndex = 0;
+    let autoplayInterval;
 
-          if (isK) {
-            displayValue = (displayValue / 1000).toFixed(0) + 'K';
-          }
+    // Añadir navegación
+    const sliderNav = document.createElement('div');
+    sliderNav.className = 'slider-nav';
 
-          if (isPlus) {
-            displayValue = '+' + displayValue;
-          }
-
-          statValue.textContent = displayValue;
-        }
-      }, 16);
+    // Añadir flechas de navegación
+    const prevButton = document.createElement('button');
+    prevButton.className = 'slider-prev';
+    prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    prevButton.addEventListener('click', () => {
+      goToSlide((currentIndex - 1 + cards.length) % cards.length);
     });
+
+    const nextButton = document.createElement('button');
+    nextButton.className = 'slider-next';
+    nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    nextButton.addEventListener('click', () => {
+      goToSlide((currentIndex + 1) % cards.length);
+    });
+
+    sliderNav.appendChild(prevButton);
+    sliderNav.appendChild(nextButton);
+    slider.appendChild(sliderNav);
+
+    // Iniciar autoplay
+    startAutoplay();
+
+    // Pausar autoplay al hacer hover
+    slider.addEventListener('mouseenter', () => {
+      clearInterval(autoplayInterval);
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      startAutoplay();
+    });
+
+    // Función para ir a un slide específico
+    function goToSlide(index) {
+      cards.forEach((card, i) => {
+        card.style.transform = `translateX(${100 * (i - index)}%)`;
+        card.style.opacity = i === index ? '1' : '0.5';
+        card.style.pointerEvents = i === index ? 'all' : 'none';
+      });
+      currentIndex = index;
+    }
+
+    // Iniciar autoplay
+    function startAutoplay() {
+      clearInterval(autoplayInterval);
+      autoplayInterval = setInterval(() => {
+        goToSlide((currentIndex + 1) % cards.length);
+      }, 5000);
+    }
+
+    // Inicializar el primer slide
+    goToSlide(0);
   }
 }

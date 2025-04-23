@@ -28,7 +28,7 @@
     <title>PublicAdis - Plataforma Publicitaria Premium de Cusco</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,17 +50,28 @@
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/src/styles/main.css" />
-    <link rel="stylesheet" href="/src/css/premium.css" />
+    <!-- Styles - Corrección de rutas usando rutas relativas en lugar de absolutas -->
+    <link rel="stylesheet" href="./src/css/variables.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/premium.css" />
 
-    <!-- Main Script -->
-    <script type="module" src="/src/main.js"></script>
+    <!-- Component Styles - Corrección de rutas usando rutas relativas en lugar de absolutas -->
+    <link rel="stylesheet" href="./src/css/components/header.css" />
+    <link rel="stylesheet" href="./src/css/components/hero.css" />
+    <link rel="stylesheet" href="./src/css/components/services.css" />
+    <link rel="stylesheet" href="./src/css/components/sectors.css" />
+    <link rel="stylesheet" href="./src/css/components/benefits.css" />
+    <link rel="stylesheet" href="./src/css/components/testimonials.css" />
+    <link rel="stylesheet" href="./src/css/components/tools.css" />
+    <link rel="stylesheet" href="./src/css/components/footer.css" />
+
+    <!-- Main Script - Corrección de ruta usando ruta relativa en lugar de absoluta -->
+    <script type="module" src="./src/main.js"></script>
   </head>
   <body>
     <div id="loader" class="loader">
       <div class="loader-content">
-        <img src="/assets/images/logo.png" alt="PublicAdis Logo" class="loader-logo" />
+        <img src="./assets/images/logo-anaranjado.svg" alt="PublicAdis Logo" class="loader-logo" />
         <div class="loader-spinner">
           <div class="spinner"></div>
         </div>
@@ -153,7 +164,7 @@
     </a>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
+    <button id="backToTop" class="back-to-top" aria-label="Volver arriba" title="Volver arriba">
       <i class="fas fa-chevron-up"></i>
     </button>
 

@@ -17,7 +17,7 @@ export class Header {
       <div class="header-container">
         <div class="header-logo">
           <a href="/" title="PublicAdis - Inicio">
-            <img src="/assets/images/logo.png" alt="PublicAdis Logo" class="logo-img" />
+            <img src="./assets/images/logo.png" alt="PublicAdis Logo" class="logo-img" />
             <span class="logo-text">PublicAdis</span>
           </a>
         </div>
@@ -220,7 +220,7 @@ export class Header {
 
     // Añadir efectos de hover a los enlaces nav
     this.addNavEffects();
-    
+
     // Inicializar header como scrolled si ya estamos bajados
     if (window.scrollY > 50) {
       document.querySelector('.site-header').classList.add('scrolled');
@@ -230,30 +230,30 @@ export class Header {
   addNavEffects() {
     // Añadir efectos de hover a los enlaces nav
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
       // Crear elemento para efecto de hover
       const hoverEffect = document.createElement('span');
       hoverEffect.className = 'nav-hover-effect';
       link.appendChild(hoverEffect);
-      
+
       // Animar el efecto de hover
       link.addEventListener('mouseenter', () => {
         link.classList.add('nav-active');
       });
-      
+
       link.addEventListener('mouseleave', () => {
         link.classList.remove('nav-active');
       });
     });
-    
+
     // Añadir efecto de destello a los botones premium
     const goldBtn = document.querySelector('.btn-gold');
     if (goldBtn) {
       goldBtn.addEventListener('mouseenter', () => {
         goldBtn.classList.add('gold-shimmer');
       });
-      
+
       goldBtn.addEventListener('mouseleave', () => {
         setTimeout(() => {
           goldBtn.classList.remove('gold-shimmer');
