@@ -1,3 +1,4 @@
+import '../../css/components/hero.css';
 import { HeroSlider } from './HeroSlider.js';
 import { HeroMetrics } from './HeroMetrics.js';
 import { HeroFloatingElements } from './HeroFloatingElements.js';

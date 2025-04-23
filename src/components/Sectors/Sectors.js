@@ -1,3 +1,5 @@
+import '../../css/components/sectors.css';
+
 // Sectors Component
 export class Sectors {
   constructor() {

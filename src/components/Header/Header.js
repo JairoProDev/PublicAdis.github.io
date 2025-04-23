@@ -1,3 +1,5 @@
+import '../../css/components/header.css';
+
 export class Header {
   constructor() {
     this.scrollY = 0;

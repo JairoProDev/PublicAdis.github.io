@@ -1,3 +1,5 @@
+import '../../css/components/benefits.css';
+
 // Benefits Component
 export class Benefits {
   constructor() {
@@ -276,8 +278,8 @@ export class Benefits {
   }
 
   animateCounter(element) {
-    const value = element.textContent;
-    const finalValue = value;
+    const value = element.textContent || '';
+    const finalValue = value.trim();
     let startValue = 0;
     let duration = 2000;
 
@@ -285,38 +287,58 @@ export class Benefits {
     let isPlus = false;
     let isPercent = false;
     let isX = false;
-    let targetValue = finalValue;
+    let targetValueStr = finalValue;
 
-    if (finalValue.includes('+')) {
-      isPlus = true;
-      targetValue = targetValue.replace('+', '');
-    }
+    if (typeof finalValue === 'string') {
+      if (finalValue.includes('+')) {
+        isPlus = true;
+        targetValueStr = targetValueStr.replace('+', '');
+      }
 
-    if (finalValue.includes('%')) {
-      isPercent = true;
-      targetValue = targetValue.replace('%', '');
-    }
+      if (finalValue.includes('%')) {
+        isPercent = true;
+        targetValueStr = targetValueStr.replace('%', '');
+      }
 
-    if (finalValue.includes('x')) {
-      isX = true;
-      targetValue = targetValue.replace('x', '');
-    }
+      if (finalValue.includes('x')) {
+        isX = true;
+        targetValueStr = targetValueStr.replace('x', '');
+      }
 
-    if (finalValue.includes('K')) {
-      targetValue = parseFloat(targetValue.replace('K', '')) * 1000;
+      if (finalValue.includes('K')) {
+        const numericPart = parseFloat(targetValueStr.replace('K', '').replace(/,/g, ''));
+        if (!isNaN(numericPart)) {
+          targetValueStr = (numericPart * 1000).toString();
+        } else {
+          console.error('Invalid K value:', finalValue);
+          return;
+        }
+      }
+    } else {
+      targetValueStr = String(finalValue);
     }
 
     // Convertir a número para los cálculos
-    targetValue = parseFloat(targetValue.replace(/,/g, ''));
-    if (isNaN(targetValue)) return;
+    const targetValueNum = parseFloat(targetValueStr.replace(/,/g, ''));
 
-    const increment = targetValue / (duration / 16);
+    if (isNaN(targetValueNum)) {
+      console.error(
+        'Failed to parse target value as number:',
+        finalValue,
+        'processed as:',
+        targetValueStr
+      );
+      element.textContent = finalValue;
+      return;
+    }
+
+    const increment = targetValueNum / (duration / 16);
     let currentValue = 0;
 
     const counterTimer = setInterval(() => {
       currentValue += increment;
 
-      if (currentValue >= targetValue) {
+      if (currentValue >= targetValueNum) {
         clearInterval(counterTimer);
         element.textContent = finalValue;
       } else {
@@ -405,9 +427,14 @@ export class Benefits {
     // Función para ir a un slide específico
     function goToSlide(index) {
       cards.forEach((card, i) => {
-        card.style.transform = `translateX(${100 * (i - index)}%)`;
-        card.style.opacity = i === index ? '1' : '0.5';
-        card.style.pointerEvents = i === index ? 'all' : 'none';
+        // Asegurarse de que 'card' es un HTMLElement antes de acceder a 'style'
+        if (card instanceof HTMLElement) {
+          card.style.transform = `translateX(${100 * (i - index)}%)`;
+          card.style.opacity = i === index ? '1' : '0.5';
+          card.style.pointerEvents = i === index ? 'all' : 'none';
+        } else {
+          console.warn('Testimonial card is not an HTMLElement:', card);
+        }
       });
       currentIndex = index;
     }

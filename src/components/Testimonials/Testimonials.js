@@ -1,3 +1,5 @@
+import '../../css/components/testimonials.css';
+
 export class Testimonials {
   constructor() {
     this.testimonials = [

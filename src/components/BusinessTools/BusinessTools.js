@@ -1,3 +1,5 @@
+import '../../css/components/tools.css';
+
 export class BusinessTools {
   constructor() {
     this.activeTool = 'property-valuation';

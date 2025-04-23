@@ -23,7 +23,7 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: var(--background-lighter);
+  background-color: #ffffff;
 }
 
 img {

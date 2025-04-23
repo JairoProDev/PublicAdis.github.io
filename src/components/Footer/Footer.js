@@ -1,3 +1,5 @@
+import '../../css/components/footer.css';
+
 export class Footer {
   constructor() {
     this.currentYear = new Date().getFullYear();

@@ -1,3 +1,5 @@
+import '../../css/components/services.css';
+
 export class Services {
   constructor() {
     this.activeTab = 'inmuebles';
