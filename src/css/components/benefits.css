@@ -1,7 +1,7 @@
 /* Benefits Section Styles */
 .benefits-section {
   padding: 100px 0;
-  background-color: var(--background-light);
+  background-color: white;
   position: relative;
   overflow: hidden;
 }
@@ -23,6 +23,11 @@
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .benefit-card.visible {
@@ -253,32 +258,37 @@
   margin-bottom: 40px;
   font-size: 2rem;
   font-weight: 700;
+  color: var(--text-dark);
 }
 
 .testimonials-slider {
   position: relative;
   overflow: hidden;
   padding: 20px;
+  min-height: 300px;
 }
 
 .testimonial-card {
   background: white;
   border-radius: var(--border-radius-lg);
   padding: 30px;
-  box-shadow: var(--shadow-soft);
-  position: absolute;
-  width: calc(100% - 40px);
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
   transition: all 0.5s ease;
-  transform: translateX(100%);
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.testimonial-card.visible {
+.testimonial-card.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.testimonial-card.animate-on-scroll.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .testimonial-quote {
@@ -288,7 +298,7 @@
 
 .fa-quote-left {
   font-size: 2rem;
-  color: var(--primary-blue-light);
+  color: var(--primary-orange-light);
   opacity: 0.3;
   position: absolute;
   top: -20px;

@@ -7,7 +7,7 @@
 
 .tools-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -17,10 +17,16 @@
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
   padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .tool-card.animate {
@@ -65,7 +71,7 @@
 
 .tool-description {
   font-size: 1rem;
-  color: var(--gray-dark);
+  color: var(--text-medium);
   margin-bottom: 1.5rem;
   line-height: 1.5;
 }
@@ -95,7 +101,9 @@
   border-radius: var(--border-radius-sm);
   border: 1px solid var(--gray-medium);
   font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
@@ -118,7 +126,9 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   margin-top: 0.5rem;
   align-self: flex-start;
 }
@@ -201,7 +211,9 @@
   border-radius: var(--border-radius-md);
   font-weight: 600;
   font-size: 1.1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: var(--shadow-md);
 }
 

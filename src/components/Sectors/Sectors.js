@@ -96,23 +96,25 @@ export class Sectors {
               .map(
                 sector => `
               <div class="sector-card fade-in-up" data-sector="${sector.id}">
-                <div class="sector-icon">
+                <div class="sector-icon-container">
                   <i class="fas ${sector.icon}"></i>
                 </div>
                 <h3 class="sector-title">${sector.title}</h3>
                 <p class="sector-description">${sector.description}</p>
+                
                 <div class="sector-stats">
                   ${sector.stats
                     .map(
                       stat => `
                     <div class="sector-stat">
-                      <span class="stat-value" data-count="${stat.value.replace(/\D/g, '')}">${stat.value}</span>
-                      <span class="stat-label">${stat.label}</span>
+                      <div class="stat-value">${stat.value}</div>
+                      <div class="stat-label">${stat.label}</div>
                     </div>
                   `
                     )
                     .join('')}
                 </div>
+                
                 <a href="#contacto" class="sector-link" data-sector="${sector.id}">
                   Conocer solución <i class="fas fa-arrow-right"></i>
                 </a>
