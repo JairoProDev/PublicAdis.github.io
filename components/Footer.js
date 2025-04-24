@@ -46,23 +46,29 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services/digital-transformation">
-                  <a className="text-gray-300 hover:text-white">Digital Transformation</a>
+                <Link
+                  href="/services/digital-transformation"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Digital Transformation
                 </Link>
               </li>
               <li>
-                <Link href="/services/software-development">
-                  <a className="text-gray-300 hover:text-white">Software Development</a>
+                <Link
+                  href="/services/software-development"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Software Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/consulting">
-                  <a className="text-gray-300 hover:text-white">Consulting</a>
+                <Link href="/services/consulting" className="text-gray-300 hover:text-white">
+                  Consulting
                 </Link>
               </li>
               <li>
-                <Link href="/services/support">
-                  <a className="text-gray-300 hover:text-white">Support & Maintenance</a>
+                <Link href="/services/support" className="text-gray-300 hover:text-white">
+                  Support & Maintenance
                 </Link>
               </li>
             </ul>
@@ -72,23 +78,23 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about">
-                  <a className="text-gray-300 hover:text-white">About Us</a>
+                <Link href="/about" className="text-gray-300 hover:text-white">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/careers">
-                  <a className="text-gray-300 hover:text-white">Careers</a>
+                <Link href="/careers" className="text-gray-300 hover:text-white">
+                  Careers
                 </Link>
               </li>
               <li>
-                <Link href="/blog">
-                  <a className="text-gray-300 hover:text-white">Blog</a>
+                <Link href="/blog" className="text-gray-300 hover:text-white">
+                  Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="text-gray-300 hover:text-white">Contact</a>
+                <Link href="/contact" className="text-gray-300 hover:text-white">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -112,13 +118,13 @@ const Footer = () => {
           <div className="mt-4 md:mt-0">
             <ul className="flex space-x-6">
               <li>
-                <Link href="/privacy">
-                  <a className="text-gray-300 hover:text-white">Privacy Policy</a>
+                <Link href="/privacy" className="text-gray-300 hover:text-white">
+                  Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms">
-                  <a className="text-gray-300 hover:text-white">Terms of Service</a>
+                <Link href="/terms" className="text-gray-300 hover:text-white">
+                  Terms of Service
                 </Link>
               </li>
             </ul>
